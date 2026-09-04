@@ -108,27 +108,55 @@ const KEY = {
   pads: "launchpads",         // token address -> launchpad, resolved once and kept
   longbow: "longbow",         // anchor token -> the memes Longbow sees riding it
   history: (d) => `history:${d}`,
+  lock: "lock:pools",         // held while a crawl runs, so ticks cannot overlap
 };
 
 // ---------------------------------------------------------------- fetch helpers
 
+// Dexscreener allows roughly 300 requests a minute. Pulling the Longbow tail
+// pushed us past that, and a 429 that outlives its retries drops a whole chunk
+// of a roster with no error, so every call is paced through one gate and the
+// ones we still lose are counted rather than swallowed.
+let _gate = 0;
+let _lost = 0, _lost429 = 0, _lostBad = 0, _lostErr = 0;
+async function paced() {
+  const now = Date.now();
+  const at = Math.max(now, _gate);
+  _gate = at + 260;
+  if (at > now) await sleep(at - now);
+}
+
 async function getJSON(url, tries = 3) {
+  const ds = url.includes("dexscreener");
+  if (ds) tries = 5;
   const browser = url.includes("blockscout");
   const headers = browser
     ? { "User-Agent": BROWSER_UA, Accept: "application/json" }
     : { "User-Agent": UA };
+  let last = "";
   for (let i = 0; i < tries; i++) {
+    // pace every attempt, not just the first: an unpaced retry storm is what
+    // pushes us back over the limit and loses the chunk for good
+    if (ds) await paced();
     try {
       const r = await fetch(url, { headers });
       if (r.status === 429) {
-        await sleep(600 * (i + 1));
+        last = "429";
+        await sleep(800 * (i + 1));
         continue;
       }
       if (r.ok) return await r.json();
+      last = "http" + r.status;
     } catch (_) {
-      // network blip; fall through to the retry
+      last = "throw";
     }
     await sleep(300 * (i + 1));
+  }
+  if (ds) {
+    _lost++;
+    if (last === "429") _lost429++;
+    else if (last === "throw") _lostErr++;
+    else _lostBad++;
   }
   return null;
 }
@@ -227,6 +255,35 @@ async function refreshLongbow(env) {
   return { ok: true, memes: coins.length, anchors: Object.keys(anchors).length, padsAdded: added };
 }
 
+/**
+ * Ask Dexscreener about every coin Longbow names, once, in batches of 30.
+ * Batching per stock wasted half of each request on anchors with a short tail;
+ * doing it globally cuts the crawl by roughly a hundred requests.
+ * Returns anchor address -> the pairs riding it.
+ */
+async function longbowTail(env, reg) {
+  const lb = JSON.parse((await env.SY.get(KEY.longbow)) || "{}");
+  const inReg = new Set(reg.map((e) => (e.a || "").toLowerCase()));
+  const want = new Set();
+  for (const [anchor, list] of Object.entries(lb)) {
+    if (inReg.has(anchor)) for (const a of list) want.add(a);
+  }
+
+  const addrs = [...want];
+  const byAnchor = new Map();
+  for (let i = 0; i < addrs.length; i += 30) {
+    const d = await getJSON(
+      `https://api.dexscreener.com/latest/dex/tokens/${addrs.slice(i, i + 30).join(",")}`);
+    for (const p of d?.pairs || []) {
+      const q = (p.quoteToken?.address || "").toLowerCase();
+      if (!inReg.has(q)) continue;
+      if (!byAnchor.has(q)) byAnchor.set(q, []);
+      byAnchor.get(q).push(p);
+    }
+  }
+  return byAnchor;
+}
+
 // ---------------------------------------------------------------- pools
 
 // Every pool where this stock token is the quote is a memecoin riding it. The
@@ -280,7 +337,7 @@ function absorb(memes, pairs, addr) {
   }
 }
 
-async function stockRow(entry, known = []) {
+async function stockRow(entry, tailPairs = null) {
   const { t, a: addr } = entry;
   const memes = new Map();
   let sl = 0, sv = 0, price = null, img = null;
@@ -305,13 +362,8 @@ async function stockRow(entry, known = []) {
     if (d?.pairs) absorb(memes, d.pairs, addr);
   }
 
-  // the tail Dexscreener truncated, named by Longbow and confirmed here
-  const tail = known.filter((a) => !memes.has(a));
-  for (let i = 0; i < tail.length; i += 30) {
-    const d = await getJSON(
-      `https://api.dexscreener.com/latest/dex/tokens/${tail.slice(i, i + 30).join(",")}`);
-    if (d?.pairs) absorb(memes, d.pairs, addr);
-  }
+  // the tail Dexscreener truncated, named by Longbow and already fetched
+  if (tailPairs) absorb(memes, tailPairs, addr);
 
   const list = [...memes.values()].filter((m) => m.l >= MIN_LIQ);
   for (const m of list) {
@@ -371,12 +423,22 @@ async function quote(t) {
 
 // ---------------------------------------------------------------- jobs
 
-async function refreshPools(env) {
+async function refreshPools(env, force = false) {
   const reg = JSON.parse((await env.SY.get(KEY.registry)) || "[]");
   if (!reg.length) return { ok: false, why: "no registry yet" };
 
-  const lb = JSON.parse((await env.SY.get(KEY.longbow)) || "{}");
-  const rows = await pooled(reg, 6, (e) => stockRow(e, lb[(e.a || "").toLowerCase()] || []));
+  // Two crawls at once each get half of Dexscreener's budget and both come back
+  // short, which is how the snapshot started oscillating. One at a time.
+  const now = Date.now();
+  const until = Number((await env.SY.get(KEY.lock)) || 0);
+  if (!force && until > now) {
+    return { ok: false, why: "a refresh is already running", freeAt: new Date(until).toISOString() };
+  }
+  await env.SY.put(KEY.lock, String(now + 9 * 60 * 1000), { expirationTtl: 600 });
+
+  _lost = _lost429 = _lostBad = _lostErr = 0;
+  const tail = await longbowTail(env, reg);
+  const rows = await pooled(reg, 6, (e) => stockRow(e, tail.get((e.a || "").toLowerCase())));
   const pads = JSON.parse((await env.SY.get(KEY.pads)) || "{}");
   const resolved = await resolveNewPads(env, rows, pads);
   for (const r of rows) for (const m of r.m) {
@@ -398,11 +460,16 @@ async function refreshPools(env) {
   rows.sort((a, b) => b.ml - a.ml);
   const blob = { asOf: new Date().toISOString().slice(0, 16).replace("T", " ") + " UTC", rows };
   await env.SY.put(KEY.snapshot, JSON.stringify(blob));
+  await env.SY.put(KEY.lock, "0", { expirationTtl: 60 });
   return {
     ok: true, stocks: rows.length,
     memes: rows.reduce((s, r) => s + r.n, 0),
     padsResolved: resolved,
     padsKnown: Object.keys(pads).length,
+    // requests Dexscreener never answered. Anything above zero means the
+    // snapshot is missing part of some roster.
+    droppedRequests: _lost,
+    dropReasons: { rateLimited: _lost429, badStatus: _lostBad, network: _lostErr },
   };
 }
 
@@ -473,7 +540,7 @@ export default {
       const run = job === "registry" ? buildRegistry(env)
                 : job === "quotes"   ? refreshQuotes(env)
                 : job === "longbow"  ? refreshLongbow(env)
-                : refreshPools(env);
+                : refreshPools(env, url.searchParams.get("force") === "1");
       return json(await run);
     }
 

@@ -876,14 +876,14 @@
 
   function headline(){
     var el=document.getElementById("stat");
-    if(el) el.innerHTML='<span class="tick">live, every 5 min</span>';
+    if(el) el.innerHTML='<span class="tick">live, every 10 min</span>';
   }
 
   function boot(d){
     DATA=d;
     headline();
     document.getElementById("src").textContent=
-      "Refreshes every 5 minutes. Pools and memes from Dexscreener, Robinhood Chain only, "+
+      "Refreshes every 10 minutes. Pools and memes from Dexscreener, Robinhood Chain only, "+
       "with the long tail behind each ticker filled in from Longbow. "+
       "Real-world prices from Yahoo Finance, stock logos from Financial Modeling Prep, "+
       "launchpads resolved from the chain. Last snapshot "+d.asOf+".";
@@ -898,7 +898,7 @@
     });
   });
 
-  /* the Worker rebuilds every 5 minutes, so pick it up without a reload */
+  /* the Worker rebuilds every 10 minutes, so pick it up without a reload */
   setInterval(function(){
     fetch("/api/map.json",{cache:"no-store"}).then(function(r){return r.json();})
       .then(function(d){ if(d&&d.rows){ DATA=d; headline(); render(); } })

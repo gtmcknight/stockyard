@@ -24,8 +24,11 @@
   },
 
   "triggers": {
-    // pools every 5 minutes, real-world prices hourly, registry once a day
-    "crons": ["*/5 * * * *", "7 * * * *", "23 6 * * *"]
+    // Pools every 10 minutes. A paced crawl of the full roster, Longbow tail
+    // included, runs two to three minutes; at five it overlapped itself and
+    // both runs lost chunks to Dexscreener's rate limit.
+    // Real-world prices hourly, registry once a day.
+    "crons": ["*/10 * * * *", "7 * * * *", "23 6 * * *"]
   },
 
   "kv_namespaces": [
