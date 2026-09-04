@@ -1,0 +1,7510 @@
+{
+ "NVDA": {
+  "ticker": "NVDA",
+  "liq": 6225261.819999999,
+  "vol": 43735177.51,
+  "price": "222.97",
+  "addr": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+  "memes": [
+   {
+    "sym": "AI",
+    "liq": 5376122.0,
+    "vol": 29871092.19,
+    "chg": 18.79,
+    "price": "0.2231",
+    "mcap": 223105852,
+    "addr": "0x2E8c31162b855A2ffa90F6F8634643Ad6F111e18"
+   },
+   {
+    "sym": "microduck",
+    "liq": 519155.66,
+    "vol": 2351165.46,
+    "chg": 146,
+    "price": "0.03635",
+    "mcap": 36358591,
+    "addr": "0xD5f1afEA47b1A9eab414D2ee740cF1d6d039E725"
+   },
+   {
+    "sym": "RIPE",
+    "liq": 292023.83999999997,
+    "vol": 2471024.06,
+    "chg": -68.82,
+    "price": "4.86",
+    "mcap": 8558870,
+    "addr": "0x4D3f37a965b21aB4122e92Dd41D2693E742c883b"
+   },
+   {
+    "sym": "ORBIO",
+    "liq": 248686.2,
+    "vol": 4269477.88,
+    "chg": 135,
+    "price": "0.008342",
+    "mcap": 7925822,
+    "addr": "0xAa07A0e9209e16aC99708C3EC70159c6eF3128A3"
+   },
+   {
+    "sym": "KOLI",
+    "liq": 122481.83,
+    "vol": 1148696.76,
+    "chg": 1043,
+    "price": "0.0002340",
+    "mcap": 234096,
+    "addr": "0xb8D9F969dB56bb57353e36Fd0015D98e3A761E18"
+   },
+   {
+    "sym": "HUGGY",
+    "liq": 111023.11,
+    "vol": 484048.11,
+    "chg": -20.38,
+    "price": "0.00003735",
+    "mcap": 159947,
+    "addr": "0xF46c317fa757979164fBa591E6d4B83c688060E3"
+   },
+   {
+    "sym": "JACKET",
+    "liq": 105286.09,
+    "vol": 164446.75,
+    "chg": -18.02,
+    "price": "0.0001912",
+    "mcap": 190501,
+    "addr": "0x395c45c2e5170aB9d020010DC13214ab73051E18"
+   },
+   {
+    "sym": "FLOPS",
+    "liq": 94887.51,
+    "vol": 157247.94,
+    "chg": 259,
+    "price": "0.0001559",
+    "mcap": 155948,
+    "addr": "0x9DAD613c96Bd6E9D0f4fd840D53557Dc5EdE1e18"
+   },
+   {
+    "sym": "REACHY",
+    "liq": 42678.14,
+    "vol": 256706.01,
+    "chg": 75.66,
+    "price": "0.0002457",
+    "mcap": 245713,
+    "addr": "0xC4AF8805543ad90F101e841DB0f30Bf97300a36d"
+   },
+   {
+    "sym": "AC",
+    "liq": 42291.23,
+    "vol": 54003.93,
+    "chg": -16.88,
+    "price": "0.00004711",
+    "mcap": 47119,
+    "addr": "0xaBdD9Bb4883eC43277fd35a29Ac27a6F003d1E18"
+   },
+   {
+    "sym": "UNC",
+    "liq": 38173.55,
+    "vol": 25739.97,
+    "chg": 78.98,
+    "price": "0.0001965",
+    "mcap": 196581,
+    "addr": "0xF6E4F7945Bba125c36f4f42Ae904DD6Cc129Cf2A"
+   },
+   {
+    "sym": "SHELLY",
+    "liq": 21942.88,
+    "vol": 129009.45,
+    "chg": 7.21,
+    "price": "0.00002173",
+    "mcap": 21739,
+    "addr": "0x95eEA0fb9Afb4dB490972E8B375D97EAE7071E18"
+   },
+   {
+    "sym": "LLM",
+    "liq": 20627.68,
+    "vol": 221834.32,
+    "chg": -64.67,
+    "price": "0.00005740",
+    "mcap": 57401,
+    "addr": "0x334796C7A865892654E5d987756B1f9078B7b904"
+   },
+   {
+    "sym": "QUADDLE",
+    "liq": 18565.12,
+    "vol": 310784.98,
+    "chg": -2.86,
+    "price": "0.00004649",
+    "mcap": 46496,
+    "addr": "0x14B66f817032Dfb0EFfF55c0aF562ce68a028Cdc"
+   },
+   {
+    "sym": "CPU",
+    "liq": 18444.03,
+    "vol": 197333.08,
+    "chg": -86.91,
+    "price": "0.00004589",
+    "mcap": 45890,
+    "addr": "0x28BfF607409535285A5392f0b79516673b6072ac"
+   },
+   {
+    "sym": "GPU",
+    "liq": 17805.48,
+    "vol": 219648.76,
+    "chg": -93.39,
+    "price": "0.000002975",
+    "mcap": 14030,
+    "addr": "0x6bca79326aE7a062346054eFD8c13555c01dDd91"
+   },
+   {
+    "sym": "Datacenter",
+    "liq": 15483.34,
+    "vol": 101235.21,
+    "chg": -67.45,
+    "price": "0.00003234",
+    "mcap": 32341,
+    "addr": "0x45bA193CC1C20502EBded24d543CD3996aD1069b"
+   },
+   {
+    "sym": "NVision",
+    "liq": 15429.04,
+    "vol": 31014.47,
+    "chg": -35.43,
+    "price": "0.00003211",
+    "mcap": 32114,
+    "addr": "0x50E1d80E311773C205671F0a0f8cd090ec55A459"
+   },
+   {
+    "sym": "CHIPS",
+    "liq": 13791.9,
+    "vol": 102135.84,
+    "chg": 12.06,
+    "price": "0.0002559",
+    "mcap": 255905,
+    "addr": "0xbcd09284dFfe06f868a4650546233e3E9AbE4d97"
+   },
+   {
+    "sym": "AGI",
+    "liq": 12201.31,
+    "vol": 290443.07,
+    "chg": -55.53,
+    "price": "0.00002008",
+    "mcap": 20083,
+    "addr": "0x2Fe2CE40bE763335873f359Fc34271A0d02Fb1Ca"
+   },
+   {
+    "sym": "TABLE",
+    "liq": 7667.33,
+    "vol": 172632.35,
+    "chg": -80.55,
+    "price": "0.000007930",
+    "mcap": 7931,
+    "addr": "0x00551F8Ad23c1d51AF3dEAcA1624b4256f236c54"
+   },
+   {
+    "sym": "FROGE",
+    "liq": 6836.03,
+    "vol": 363281.62,
+    "chg": -85.6,
+    "price": "0.000006304",
+    "mcap": 6304,
+    "addr": "0x27A8D57aba55DfE0212f1e4a89b09Ac89c4fB648"
+   },
+   {
+    "sym": "$BITBOTS",
+    "liq": 5729.51,
+    "vol": 264019.58,
+    "chg": 964,
+    "price": "0.00003943",
+    "mcap": 31545,
+    "addr": "0x6D8C0c5045F0c4cDb7Ca8900C1D95B4E95eCb453"
+   },
+   {
+    "sym": "WATER",
+    "liq": 5066.93,
+    "vol": 289205.32,
+    "chg": -92.35,
+    "price": "0.000003463",
+    "mcap": 3463,
+    "addr": "0xAe377E224765a26dc21eE1CbcF124ee30Fe0207d"
+   },
+   {
+    "sym": "REPAIR",
+    "liq": 3645.32,
+    "vol": 105526.83,
+    "chg": 142,
+    "price": "0.000008669",
+    "mcap": 8669,
+    "addr": "0x4Ed3D050973BcAa92e580d2B716B1faCeeCB8E9E"
+   }
+  ]
+ },
+ "HIMS": {
+  "ticker": "HIMS",
+  "liq": 1328121.6199999999,
+  "vol": 7456068.880000001,
+  "price": "28.92",
+  "addr": "0xCceE82fE024c36fA15E1005edE3E9e4787e23D09",
+  "memes": [
+   {
+    "sym": "BONER",
+    "liq": 2047964.26,
+    "vol": 4531117.82,
+    "chg": -34.96,
+    "price": "0.03876",
+    "mcap": 38760115,
+    "addr": "0x98096d17e191B3dA1d5f99a6D7b3584351b11E18"
+   },
+   {
+    "sym": "VIAGRA",
+    "liq": 34527.83,
+    "vol": 42131.0,
+    "chg": -3.4,
+    "price": "0.00003695",
+    "mcap": 36958,
+    "addr": "0x3fAc90D5d8Ff1702fD304805Badad4e7C9b71e18"
+   },
+   {
+    "sym": "HIMSTER",
+    "liq": 33421.44,
+    "vol": 718735.29,
+    "chg": -66.64,
+    "price": "0.00001776",
+    "mcap": 21172,
+    "addr": "0xd4e077BFA5329F807dC39860CC8998a8b9B858B5"
+   },
+   {
+    "sym": "PEPETIDES",
+    "liq": 32233.7,
+    "vol": 18086.45,
+    "chg": -38.94,
+    "price": "0.00003295",
+    "mcap": 32954,
+    "addr": "0x422FA6121BeeB19dc322dBb52AB2b9f7e8d71E18"
+   },
+   {
+    "sym": "PEPTIDE",
+    "liq": 30643.93,
+    "vol": 3798.17,
+    "chg": 3.66,
+    "price": "0.00003165",
+    "mcap": 31660,
+    "addr": "0x5fda38f45e5915A3f8546cbB7C8faf68B18f1e18"
+   },
+   {
+    "sym": "WET",
+    "liq": 23793.57,
+    "vol": 9219.95,
+    "chg": 14.82,
+    "price": "0.00002388",
+    "mcap": 23886,
+    "addr": "0x50586f7aC26c096320c3AA0721806429452d1E18"
+   },
+   {
+    "sym": "WOLVERINE",
+    "liq": 22908.64,
+    "vol": 70963.95,
+    "chg": 9.74,
+    "price": "0.00002268",
+    "mcap": 22684,
+    "addr": "0x7c8175aE39f71D7b4947854C3376D2BFc0B51E18"
+   },
+   {
+    "sym": "HOODCOIN",
+    "liq": 21747.53,
+    "vol": 21255.23,
+    "chg": 3.19,
+    "price": "0.00002170",
+    "mcap": 21709,
+    "addr": "0x1DD1baf5C98cb734EaFCB1afe62c19d939e11E18"
+   },
+   {
+    "sym": "MINOX",
+    "liq": 21659.45,
+    "vol": 1278.53,
+    "chg": 5.88,
+    "price": "0.00002167",
+    "mcap": 21673,
+    "addr": "0x2F1daDAfec9df4dBAb4bf2cC8974cEe21a3e1e18"
+   },
+   {
+    "sym": "BP",
+    "liq": 21382.58,
+    "vol": 138740.63,
+    "chg": -3.02,
+    "price": "0.00002112",
+    "mcap": 21128,
+    "addr": "0xc4ECb13FeB5866A05e0E17dd7145C79bD37e1e18"
+   },
+   {
+    "sym": "TESTICLES",
+    "liq": 21340.89,
+    "vol": 43350.75,
+    "chg": -3.3,
+    "price": "0.00002116",
+    "mcap": 21170,
+    "addr": "0xaC8f199146C60293D22458Bce79891A43B481E18"
+   },
+   {
+    "sym": "HOOD",
+    "liq": 21133.04,
+    "vol": 81439.76,
+    "chg": -0.96,
+    "price": "0.00002095",
+    "mcap": 20955,
+    "addr": "0x412BAf5CD7b028A08bF7E68a42F38730de991E18"
+   },
+   {
+    "sym": "SNATCHED",
+    "liq": 20992.33,
+    "vol": 99.49,
+    "chg": -0.11,
+    "price": "0.00002094",
+    "mcap": 20940,
+    "addr": "0x262DADa63D6E7876E4ffD648018E1Dd00bed1e18"
+   },
+   {
+    "sym": "FLACCID",
+    "liq": 20899.28,
+    "vol": 1194.2,
+    "chg": -2.44,
+    "price": "0.00002031",
+    "mcap": 20310,
+    "addr": "0xBA630d620dBC4c4B5a1BeBed1A9648172CEc1e18"
+   },
+   {
+    "sym": "RETA",
+    "liq": 20656.4,
+    "vol": 9275.6,
+    "chg": 0.14,
+    "price": "0.00002060",
+    "mcap": 20602,
+    "addr": "0x1eFDA29De8e44BdeBD8e66543e2C173cdD961E18"
+   },
+   {
+    "sym": "GOONCOIN",
+    "liq": 20545.86,
+    "vol": 25848.87,
+    "chg": -5.92,
+    "price": "0.00002048",
+    "mcap": 20486,
+    "addr": "0xa91223Af5C0E1cD03763EE75F391c1d512A61E18"
+   },
+   {
+    "sym": "PONIS",
+    "liq": 15775.94,
+    "vol": 10628.92,
+    "chg": -37.81,
+    "price": "0.00002967",
+    "mcap": 29675,
+    "addr": "0x22EfE678E91FF29D60Ed287cba5D6A4B255B04aa"
+   },
+   {
+    "sym": "EVP",
+    "liq": 10696.67,
+    "vol": 587.26,
+    "chg": -16.9,
+    "price": "0.0005810",
+    "mcap": 581026,
+    "addr": "0x8dCb5663BC2149e001a0776585ad59A144dA1B2F"
+   },
+   {
+    "sym": "HIMOTHY",
+    "liq": 5361.31,
+    "vol": 59.61,
+    "chg": -3.17,
+    "price": "0.000003393",
+    "mcap": 3394,
+    "addr": "0x3aB003a98288a83bEdE126578741273B3E26D1b8"
+   }
+  ]
+ },
+ "MSTR": {
+  "ticker": "MSTR",
+  "liq": 1552302.5999999999,
+  "vol": 4699093.359999999,
+  "price": "124.25",
+  "addr": "0xec262a75e413fAfD0dF80480274532C79D42da09",
+  "memes": [
+   {
+    "sym": "SAYLORMOON",
+    "liq": 635786.99,
+    "vol": 3159911.86,
+    "chg": 15.05,
+    "price": "0.004064",
+    "mcap": 4064487,
+    "addr": "0xD18528b39dA6464B3662c331a52181ecB15b1E18"
+   },
+   {
+    "sym": "MIKEY",
+    "liq": 55910.82,
+    "vol": 141656.69,
+    "chg": -19.4,
+    "price": "0.00007296",
+    "mcap": 72967,
+    "addr": "0xbbb3D4bAF906E95218147B33fBC686417E2e1E18"
+   },
+   {
+    "sym": "MINR",
+    "liq": 33699.56,
+    "vol": 8081.31,
+    "chg": -15.04,
+    "price": "0.0000004106",
+    "mcap": 41070,
+    "addr": "0x0F6eB7e87fF40506491260F28ecFd100aAB4CBa3"
+   },
+   {
+    "sym": "SELLOR",
+    "liq": 32713.02,
+    "vol": 1980.96,
+    "chg": -6.22,
+    "price": "0.00003299",
+    "mcap": 32991,
+    "addr": "0xE5aD3aF8d46beB6A03226370479C8A11A64E1e18"
+   },
+   {
+    "sym": "ROCK",
+    "liq": 30805.6,
+    "vol": 10790.8,
+    "chg": -21.51,
+    "price": "0.00003091",
+    "mcap": 30914,
+    "addr": "0x149741187d45DBb0feF37CA27775708E7F7E1E18"
+   },
+   {
+    "sym": "OPCAT",
+    "liq": 25955.9,
+    "vol": 22.35,
+    "chg": -0.09,
+    "price": "0.00002595",
+    "mcap": 25956,
+    "addr": "0xe9C47c44319DEB5d4bDE3938A2F47A578C7E1E18"
+   },
+   {
+    "sym": "HODL",
+    "liq": 25408.37,
+    "vol": 23923.76,
+    "chg": 32.08,
+    "price": "0.00002593",
+    "mcap": 25936,
+    "addr": "0x431a2327Ad44f2284c2a7fCB7b33494a47F81E18"
+   },
+   {
+    "sym": "BTC",
+    "liq": 23070.95,
+    "vol": 56.17,
+    "chg": null,
+    "price": "0.0000002666",
+    "mcap": 26665,
+    "addr": "0xEb5e79262B9d96Dcdb2Ceb1A2b5b0eD26bFF2bA3"
+   },
+   {
+    "sym": "SAILOR",
+    "liq": 21047.32,
+    "vol": 1535.23,
+    "chg": -6.65,
+    "price": "0.00002104",
+    "mcap": 21043,
+    "addr": "0x53e393ee45CfA1f7209e2B5890E1f43e39741e18"
+   },
+   {
+    "sym": "DUNGEON",
+    "liq": 20638.11,
+    "vol": 7780.12,
+    "chg": -4.26,
+    "price": "0.00002061",
+    "mcap": 20618,
+    "addr": "0x9468Fa8aD756faAC989C89BC2b49CFAd51dC1E18"
+   },
+   {
+    "sym": "MPNS",
+    "liq": 20606.2,
+    "vol": 5112.5,
+    "chg": -4.08,
+    "price": "0.00002059",
+    "mcap": 20593,
+    "addr": "0x6A46977Ba87F6214AD2283998898612959AF1E18"
+   },
+   {
+    "sym": "TICKER",
+    "liq": 20447.45,
+    "vol": 5679.88,
+    "chg": 1.71,
+    "price": "0.00002043",
+    "mcap": 20433,
+    "addr": "0xc7dEE60021B51F16944328D0C29a3127eD181e18"
+   },
+   {
+    "sym": "MIM",
+    "liq": 20256.42,
+    "vol": 1029.04,
+    "chg": 2.82,
+    "price": "0.00002025",
+    "mcap": 20258,
+    "addr": "0x202F503213339EE2A53f25Fc5de03E52d10c1E18"
+   },
+   {
+    "sym": "MASTERSAYLOR",
+    "liq": 20098.01,
+    "vol": 10142.98,
+    "chg": -8.77,
+    "price": "0.00002007",
+    "mcap": 20073,
+    "addr": "0x7dDd49a809803023146FEA3A61E60295648B1e18"
+   },
+   {
+    "sym": "PONZI",
+    "liq": 9702.76,
+    "vol": 14485.85,
+    "chg": -63.69,
+    "price": "0.00001172",
+    "mcap": 11727,
+    "addr": "0xEa98cb2F45F75485DDD95187Bae9F623cf2d74aC"
+   },
+   {
+    "sym": "HA",
+    "liq": 8917.92,
+    "vol": 6919.33,
+    "chg": -34.47,
+    "price": "0.000009906",
+    "mcap": 9906,
+    "addr": "0x5Cf335344e245Cc0adda5B72E946051017C46f88"
+   },
+   {
+    "sym": "CEO",
+    "liq": 7487.18,
+    "vol": 4929.15,
+    "chg": -64.2,
+    "price": "0.000006982",
+    "mcap": 6983,
+    "addr": "0xA87159135eBFa535a2ADF29c74E5Fa904d694681"
+   },
+   {
+    "sym": "ORANGE",
+    "liq": 4527.47,
+    "vol": 57.01,
+    "chg": -11.32,
+    "price": "0.000002539",
+    "mcap": 2540,
+    "addr": "0xde6772a6A36AFA8D5B91d272C3AB6bDF70102Ed9"
+   }
+  ]
+ },
+ "RBLX": {
+  "ticker": "RBLX",
+  "liq": 497295.0,
+  "vol": 8108689.699999999,
+  "price": "40.56",
+  "addr": "0xF0C4BF4C582cb3836e98394b1d4e7B7281101bE8",
+  "memes": [
+   {
+    "sym": "OOF",
+    "liq": 320339.87,
+    "vol": 1568585.16,
+    "chg": -10.92,
+    "price": "0.0007125",
+    "mcap": 712534,
+    "addr": "0xeA3b282273E9ab901790694aDD171C2606D71e18"
+   },
+   {
+    "sym": "ROBUX",
+    "liq": 90514.02,
+    "vol": 52046.87,
+    "chg": 61.73,
+    "price": "0.00008275",
+    "mcap": 82758,
+    "addr": "0xE06A2e0B7cD91dB2323F976408eca45F37201E18"
+   },
+   {
+    "sym": "ROBLOXIANS",
+    "liq": 56396.409999999996,
+    "vol": 372673.34,
+    "chg": 154,
+    "price": "0.0001433",
+    "mcap": 143338,
+    "addr": "0xB528a38eA684eD26ea0Eee9de5d222DA6228c10D"
+   },
+   {
+    "sym": "gubby",
+    "liq": 50183.74,
+    "vol": 1244276.66,
+    "chg": 184,
+    "price": "0.00006047",
+    "mcap": 60471,
+    "addr": "0xEC6E5194610De2246Aa248a459DB910511901E18"
+   },
+   {
+    "sym": "BUILDERMANN",
+    "liq": 35582.81,
+    "vol": 416060.77,
+    "chg": 54.12,
+    "price": "0.00003032",
+    "mcap": 30323,
+    "addr": "0x10E374e8Aed32E5778868fFBE64Cb6a4e9001e18"
+   },
+   {
+    "sym": "BUILDER",
+    "liq": 29011.71,
+    "vol": 131939.8,
+    "chg": 48.46,
+    "price": "0.00002978",
+    "mcap": 29784,
+    "addr": "0x00d1dFAda98C6988C159C4C0c7B370b7967D1E18"
+   },
+   {
+    "sym": "BUILDERMAN",
+    "liq": 26089.55,
+    "vol": 898642.51,
+    "chg": 51.18,
+    "price": "0.00002552",
+    "mcap": 25521,
+    "addr": "0x71413973a39aA566A75971beE485e68864081E18"
+   },
+   {
+    "sym": "CHOMIK",
+    "liq": 24503.25,
+    "vol": 22747.85,
+    "chg": 14.71,
+    "price": "0.00002439",
+    "mcap": 24392,
+    "addr": "0x1E078D38905B759a97F5D2854ffC3Ea6E3111e18"
+   },
+   {
+    "sym": "NOOB",
+    "liq": 24187.42,
+    "vol": 89730.68,
+    "chg": 13.27,
+    "price": "0.00002409",
+    "mcap": 24096,
+    "addr": "0xe2057489f5039dCF1b56897acA44c0a41AD71E18"
+   },
+   {
+    "sym": "ROBLOXIAN",
+    "liq": 23837.24,
+    "vol": 14997.98,
+    "chg": 8.44,
+    "price": "0.00002384",
+    "mcap": 23849,
+    "addr": "0xbD4E84Ac700DE5E2A1e1354eD1840167e0b61E18"
+   },
+   {
+    "sym": "LEGOHOOD",
+    "liq": 21318.5,
+    "vol": 0.36,
+    "chg": null,
+    "price": "0.00002131",
+    "mcap": 21316,
+    "addr": "0x855A83e335b4A9faC79d798c77b39B7bD9F31e18"
+   },
+   {
+    "sym": "EPIKDUCK",
+    "liq": 21316.9,
+    "vol": 11069.01,
+    "chg": -0.89,
+    "price": "0.00002118",
+    "mcap": 21187,
+    "addr": "0x44FbD78B646f4C998B5d0e8AdC560cb9F3151e18"
+   },
+   {
+    "sym": "BUILDERS",
+    "liq": 21300.74,
+    "vol": 2566.56,
+    "chg": -0.55,
+    "price": "0.00002129",
+    "mcap": 21294,
+    "addr": "0x59F2426073CCB7D85f19AC6DF43E3a43C64f1E18"
+   },
+   {
+    "sym": "MONEY",
+    "liq": 21275.37,
+    "vol": 12813.54,
+    "chg": -1.47,
+    "price": "0.00002121",
+    "mcap": 21213,
+    "addr": "0x8ee1E51908eb4faC73e8521a65811748ACC71e18"
+   },
+   {
+    "sym": "GYATT",
+    "liq": 20299.82,
+    "vol": 25402.49,
+    "chg": -11.36,
+    "price": "0.00004776",
+    "mcap": 47764,
+    "addr": "0x411f1f31fDe5742dE52A19b3648206D872A899b3"
+   },
+   {
+    "sym": "ESOK",
+    "liq": 11263.49,
+    "vol": 159359.29,
+    "chg": -65.7,
+    "price": "0.00001470",
+    "mcap": 14705,
+    "addr": "0x40a333e74b1bd98011723d8031a0588fB1a68652"
+   }
+  ]
+ },
+ "FIG": {
+  "ticker": "FIG",
+  "liq": 272917.3300000001,
+  "vol": 6758484.0,
+  "price": "26.21",
+  "addr": "0x41F4267525a8AFf329540eF24fD83d9044758B33",
+  "memes": [
+   {
+    "sym": "LIGMA",
+    "liq": 214621.89,
+    "vol": 5522347.52,
+    "chg": 52483,
+    "price": "0.002734",
+    "mcap": 2734048,
+    "addr": "0x9F2C82a2b5C40472A3c6Aa3d678C5858345EC71e"
+   },
+   {
+    "sym": "FLIPPY",
+    "liq": 47991.63,
+    "vol": 108615.01,
+    "chg": 176,
+    "price": "0.00005693",
+    "mcap": 56937,
+    "addr": "0x8dDAfC5add5330ba340b68386Dc849132AE11e18"
+   },
+   {
+    "sym": "CON",
+    "liq": 21573.2,
+    "vol": 9850.06,
+    "chg": 5.63,
+    "price": "0.00002158",
+    "mcap": 21588,
+    "addr": "0x5bEe45938F296D797983269F6c7B9C123e5B1E18"
+   },
+   {
+    "sym": "LLGMA",
+    "liq": 20567.04,
+    "vol": 45031.59,
+    "chg": 0.68,
+    "price": "0.00002045",
+    "mcap": 20457,
+    "addr": "0x5D18458744926671089807Cb209348b9F64C1e18"
+   }
+  ]
+ },
+ "SPY": {
+  "ticker": "SPY",
+  "liq": 7916273.149999998,
+  "vol": 35065864.64999998,
+  "price": "764.86",
+  "addr": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+  "memes": [
+   {
+    "sym": "EARN",
+    "liq": 366664.87,
+    "vol": 404696.24,
+    "chg": -17.4,
+    "price": "0.00003449",
+    "mcap": 3449563,
+    "addr": "0xA3b6AEe90017b72c0812dC1e013De70eB2917ba3"
+   },
+   {
+    "sym": "PAIR",
+    "liq": 290651.02,
+    "vol": 1723414.06,
+    "chg": 8.42,
+    "price": "0.005330",
+    "mcap": 4950366,
+    "addr": "0x6b1d42927B1a84eC28Fa88d4fC6FA7AF404966be"
+   },
+   {
+    "sym": "BOW",
+    "liq": 190093.26,
+    "vol": 1221520.02,
+    "chg": -3.17,
+    "price": "0.005185",
+    "mcap": 5185610,
+    "addr": "0x451b42A15100C340CA12F7c66DE06fac5EA2D751"
+   },
+   {
+    "sym": "BB",
+    "liq": 121605.96,
+    "vol": 628199.63,
+    "chg": -1.03,
+    "price": "7.86",
+    "mcap": 338098,
+    "addr": "0x48E39E56aCdbA37b09020C0b734A613C9a2f100A"
+   },
+   {
+    "sym": "QUANT",
+    "liq": 113559.09,
+    "vol": 588425.66,
+    "chg": -86.6,
+    "price": "0.002183",
+    "mcap": 218339,
+    "addr": "0x29fFC36bcC7D857f325B435533041C3DD9Fa26e5"
+   },
+   {
+    "sym": "STONKS",
+    "liq": 105805.62,
+    "vol": 1485019.74,
+    "chg": 293,
+    "price": "0.001606",
+    "mcap": 1606512,
+    "addr": "0x238239d8Fbec75ebC08acA988447bC1926F615e0"
+   },
+   {
+    "sym": "SPXR",
+    "liq": 88391.84,
+    "vol": 1349.16,
+    "chg": 4.74,
+    "price": "0.00008901",
+    "mcap": 89010,
+    "addr": "0xEd0f8dE71b33D0644c0515A2ADCF7086797f1E18"
+   },
+   {
+    "sym": "INVEST",
+    "liq": 56957.93,
+    "vol": 65667.49,
+    "chg": 26.21,
+    "price": "0.0001566",
+    "mcap": 156608,
+    "addr": "0xee60097B23237Ce9D2d75227A1C1A776a1727777"
+   },
+   {
+    "sym": "NORMIE",
+    "liq": 54643.33,
+    "vol": 6656733.89,
+    "chg": 433,
+    "price": "0.0002394",
+    "mcap": 239456,
+    "addr": "0x92ef7CaA35F85f50311Fa5eD7ADE2D9786C61612"
+   },
+   {
+    "sym": "STARTUP",
+    "liq": 41572.98,
+    "vol": 416031.92,
+    "chg": 40.67,
+    "price": "0.0002480",
+    "mcap": 248020,
+    "addr": "0x14369612D61e638Be7bF3b0AC302728d579d33AC"
+   },
+   {
+    "sym": "CHINESE",
+    "liq": 31154.32,
+    "vol": 120919.6,
+    "chg": 56.26,
+    "price": "0.00003221",
+    "mcap": 32219,
+    "addr": "0x2fa1aEdF08D5A57A8d1B1d1249cEAd291C971E18"
+   },
+   {
+    "sym": "Stockcoin",
+    "liq": 18542.18,
+    "vol": 3685.97,
+    "chg": 23.04,
+    "price": "0.00001753",
+    "mcap": 17536,
+    "addr": "0xe52b60D7295e3757d05b763D7F67f5B04c207777"
+   },
+   {
+    "sym": "401K",
+    "liq": 17180.21,
+    "vol": 60788.26,
+    "chg": 144,
+    "price": "0.00004235",
+    "mcap": 42357,
+    "addr": "0x92663C3B9f7a27d736A67Fd10DF5416C5Dd5625a"
+   },
+   {
+    "sym": "MEMECOIN",
+    "liq": 16590.77,
+    "vol": 255755.79,
+    "chg": 111,
+    "price": "0.00003950",
+    "mcap": 39500,
+    "addr": "0x8A02af2CDC29317f2EB7570638De2651BaCa54Ab"
+   },
+   {
+    "sym": "BUDDY",
+    "liq": 16077.26,
+    "vol": 68723.88,
+    "chg": -61.35,
+    "price": "0.00003709",
+    "mcap": 37093,
+    "addr": "0x7D8a38c94BaAeAce8E3662D1ED33EaF6Fd581071"
+   },
+   {
+    "sym": "StockCoin",
+    "liq": 14462.97,
+    "vol": 33449.42,
+    "chg": -22.98,
+    "price": "0.00003001",
+    "mcap": 30018,
+    "addr": "0x3870Cedd0e2a8be448a9dFE6fc7b94c094ED5b58"
+   },
+   {
+    "sym": "ASS",
+    "liq": 14396.1,
+    "vol": 812434.79,
+    "chg": -32.51,
+    "price": "0.00002974",
+    "mcap": 29741,
+    "addr": "0x0aB145AFD3fB107d889E1c5cB898039886Cb70A7"
+   },
+   {
+    "sym": "SNCK",
+    "liq": 13691.62,
+    "vol": 79911.37,
+    "chg": 192,
+    "price": "0.00002690",
+    "mcap": 26901,
+    "addr": "0xAb6115265727ce2D28D74f4cAe7f13FFde4fE1f6"
+   },
+   {
+    "sym": "POPO",
+    "liq": 12122.65,
+    "vol": 44940.38,
+    "chg": -27.18,
+    "price": "0.00005810",
+    "mcap": 58103,
+    "addr": "0xaD4EE775920441D9555A3eD0AB24BcB3e34e9460"
+   },
+   {
+    "sym": "EVP",
+    "liq": 10854.11,
+    "vol": 586.71,
+    "chg": -0.94,
+    "price": "0.0005896",
+    "mcap": 589680,
+    "addr": "0x8dCb5663BC2149e001a0776585ad59A144dA1B2F"
+   },
+   {
+    "sym": "Finance",
+    "liq": 9612.45,
+    "vol": 27439.87,
+    "chg": -67.69,
+    "price": "0.00001325",
+    "mcap": 12995,
+    "addr": "0x447096437c7476413E752DF0b1db3E2c9169e341"
+   },
+   {
+    "sym": "SNP500",
+    "liq": 8349.58,
+    "vol": 137003.18,
+    "chg": 177,
+    "price": "0.00001000",
+    "mcap": 9854,
+    "addr": "0x0B8E6aBf527515343AB259A24225480525900DA4"
+   },
+   {
+    "sym": "LA",
+    "liq": 8263.2,
+    "vol": 114734.72,
+    "chg": 144,
+    "price": "0.000009497",
+    "mcap": 9498,
+    "addr": "0x6435c7Fef51013eE3D2e542354855280B5F49690"
+   },
+   {
+    "sym": "HORSY",
+    "liq": 4030.49,
+    "vol": 182622.97,
+    "chg": -95.59,
+    "price": "0.000002313",
+    "mcap": 2314,
+    "addr": "0x143bAC064663FC93d92b62836FCf2C7207eA969a"
+   },
+   {
+    "sym": "Erin",
+    "liq": 3966.51,
+    "vol": 224115.77,
+    "chg": 14.96,
+    "price": "0.000003978",
+    "mcap": 3979,
+    "addr": "0xc9ae09d2ed186c17227f19B70479a3D26657FAF0"
+   }
+  ]
+ },
+ "QQQ": {
+  "ticker": "QQQ",
+  "liq": 994205.57,
+  "vol": 13939156.620000001,
+  "price": "709.73",
+  "addr": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+  "memes": [
+   {
+    "sym": "QTIER",
+    "liq": 69166.95,
+    "vol": 9.64,
+    "chg": null,
+    "price": "0.00006916",
+    "mcap": 69167,
+    "addr": "0x8EB86C0c33BB8B85921DF2eB809B54263D361F2B"
+   },
+   {
+    "sym": "ASSDAQ",
+    "liq": 43831.64,
+    "vol": 488210.67,
+    "chg": 396,
+    "price": "0.0002016",
+    "mcap": 201637,
+    "addr": "0xF961eAC833E932CE49914a4C32AA3743156A88A9"
+   },
+   {
+    "sym": "NINJA",
+    "liq": 31799.87,
+    "vol": 2791787.45,
+    "chg": 270,
+    "price": "0.0001568",
+    "mcap": 156832,
+    "addr": "0x57C09A6E007db9BaE23Ec4213f490033a7299e5E"
+   },
+   {
+    "sym": "LOONG",
+    "liq": 30967.48,
+    "vol": 123666.03,
+    "chg": 49.63,
+    "price": "0.00003209",
+    "mcap": 32095,
+    "addr": "0x33C98506BFd6fd333f218B9295035B7Af80D1e18"
+   },
+   {
+    "sym": "PONSDAQ",
+    "liq": 30715.379999999997,
+    "vol": 70096.06,
+    "chg": -91.73,
+    "price": "0.00001058",
+    "mcap": 78195,
+    "addr": "0x844FD586514fA776411728aea92f64e305a07238"
+   },
+   {
+    "sym": "CUMCOIN",
+    "liq": 24167.39,
+    "vol": 154654.98,
+    "chg": 15.69,
+    "price": "0.00002402",
+    "mcap": 24020,
+    "addr": "0x547eA6c3c5d3115810Ee97614Ea03ec006861E18"
+   },
+   {
+    "sym": "NORMIE",
+    "liq": 18661.97,
+    "vol": 400369.91,
+    "chg": 37.06,
+    "price": "0.00005401",
+    "mcap": 50104,
+    "addr": "0xAd765F9D0ed5BF3F19AFa3bd526346b872Fc120C"
+   },
+   {
+    "sym": "PIG",
+    "liq": 16562.82,
+    "vol": 3529012.2,
+    "chg": 7.51,
+    "price": "0.00004254",
+    "mcap": 42545,
+    "addr": "0xEaA86c0F9ee8a83Ad303AbE2d3170d223C22C522"
+   },
+   {
+    "sym": "BIAO",
+    "liq": 14464.69,
+    "vol": 845613.34,
+    "chg": -94.88,
+    "price": "0.00003244",
+    "mcap": 32449,
+    "addr": "0x46B982C0bC6D3e6155b156217acAb1d84A9aCdB6"
+   },
+   {
+    "sym": "POPO",
+    "liq": 11867.16,
+    "vol": 37851.44,
+    "chg": -32.18,
+    "price": "0.00005681",
+    "mcap": 56811,
+    "addr": "0xaD4EE775920441D9555A3eD0AB24BcB3e34e9460"
+   },
+   {
+    "sym": "KIRK",
+    "liq": 9831.77,
+    "vol": 34416.92,
+    "chg": -61.84,
+    "price": "0.00001499",
+    "mcap": 14992,
+    "addr": "0xc7860a9ADEf4A610C86DaFbfb189F94F4032f44c"
+   },
+   {
+    "sym": "TRASH",
+    "liq": 8604.46,
+    "vol": 102038.66,
+    "chg": -70.99,
+    "price": "0.00001148",
+    "mcap": 11482,
+    "addr": "0x5547cf00e865e604d2FdA8Fa2Bc21302359A6D88"
+   },
+   {
+    "sym": "Kimchi",
+    "liq": 5828.7,
+    "vol": 202222.76,
+    "chg": -86.89,
+    "price": "0.000005269",
+    "mcap": 5269,
+    "addr": "0xeC027c17896B873f39369ffF1c17E99F31100268"
+   },
+   {
+    "sym": "MEME",
+    "liq": 5709.32,
+    "vol": 157219.58,
+    "chg": -86.86,
+    "price": "0.000005055",
+    "mcap": 5055,
+    "addr": "0x1A481b778C2C606fceB77C4772DA4DAFaC510F89"
+   },
+   {
+    "sym": "CUM",
+    "liq": 5559.09,
+    "vol": 1024829.29,
+    "chg": -87.37,
+    "price": "0.000004792",
+    "mcap": 4793,
+    "addr": "0x1731b892C7FbC7784Dc0116D2741C6e42E4F68Fa"
+   },
+   {
+    "sym": "NYSE",
+    "liq": 4824.97,
+    "vol": 10193.19,
+    "chg": 22.06,
+    "price": "0.000003636",
+    "mcap": 3637,
+    "addr": "0xb0c4Da9215Ea26Fa4404B3A253eFb8A4f72c75b8"
+   }
+  ]
+ },
+ "TSLA": {
+  "ticker": "TSLA",
+  "liq": 558383.65,
+  "vol": 2428327.17,
+  "price": "354.48",
+  "addr": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+  "memes": [
+   {
+    "sym": "DOGGIE",
+    "liq": 412153.09,
+    "vol": 634031.6,
+    "chg": 165,
+    "price": "0.002143",
+    "mcap": 2143701,
+    "addr": "0xa9eFe2Fc94dE79734C03051515F48f254Ce61e18"
+   },
+   {
+    "sym": "OPTIMUS",
+    "liq": 281769.7,
+    "vol": 2344341.69,
+    "chg": 167,
+    "price": "0.001172",
+    "mcap": 1172897,
+    "addr": "0xB5D553Cc06F9b3569731b7a74fc269B939841E18"
+   },
+   {
+    "sym": "LONGDOG",
+    "liq": 175768.31,
+    "vol": 658378.56,
+    "chg": 3.11,
+    "price": "0.0004157",
+    "mcap": 412884,
+    "addr": "0xfe7E4b4850979BA7920ce786493B7371761F1e18"
+   },
+   {
+    "sym": "DOGECOIN",
+    "liq": 80060.6,
+    "vol": 2338325.21,
+    "chg": 483,
+    "price": "0.0001171",
+    "mcap": 117126,
+    "addr": "0x51d3bBe1ab7467F71E06029e46Ef9044BF551E18"
+   },
+   {
+    "sym": "USEDTESLA",
+    "liq": 57654.21000000001,
+    "vol": 176641.99,
+    "chg": -58.7,
+    "price": "0.0002185",
+    "mcap": 217708,
+    "addr": "0x4d18f32E41EF549456CdE6543c1CEDb3c2C818C2"
+   },
+   {
+    "sym": "TSLR",
+    "liq": 42731.55,
+    "vol": 1054.35,
+    "chg": -0.43,
+    "price": "0.0000005258",
+    "mcap": 52585,
+    "addr": "0x24117e8e9312223e8fE02078c1EF8077e9b66Ba3"
+   },
+   {
+    "sym": "ATOMS",
+    "liq": 41931.06,
+    "vol": 331914.16,
+    "chg": 131,
+    "price": "0.00004684",
+    "mcap": 46841,
+    "addr": "0xBf37922ba6D3a1A082F5E31a811F123bfFA71E18"
+   },
+   {
+    "sym": "FTR",
+    "liq": 36168.44,
+    "vol": 78811.37000000001,
+    "chg": 48.63,
+    "price": "0.00005265",
+    "mcap": 52659,
+    "addr": "0x27E79Eae7524D817Ea242e11E76f54dB33EeAcdD"
+   },
+   {
+    "sym": "HEDGE",
+    "liq": 23217.7,
+    "vol": 603.61,
+    "chg": -5.61,
+    "price": "0.00002351",
+    "mcap": 23516,
+    "addr": "0xeFfB7652f53B5F121C810cC801af889DD4491E18"
+   },
+   {
+    "sym": "SHRUB",
+    "liq": 14722.71,
+    "vol": 26007.56,
+    "chg": -30.15,
+    "price": "0.00002884",
+    "mcap": 28842,
+    "addr": "0xA97005324d607EeF70aC8CB7d864B0Cd0A1B446D"
+   },
+   {
+    "sym": "ELON",
+    "liq": 12173.52,
+    "vol": 32956.57,
+    "chg": 22.72,
+    "price": "0.00005827",
+    "mcap": 58272,
+    "addr": "0x38c4d77938821037D3A42C7Da0519ee5A9158cAD"
+   },
+   {
+    "sym": "SPARKY",
+    "liq": 11193.42,
+    "vol": 5400.54,
+    "chg": -15.73,
+    "price": "0.00001631",
+    "mcap": 16319,
+    "addr": "0x51e43478Ae0EdcCEd92C057BdcaF6Eca8Ea7E059"
+   },
+   {
+    "sym": "RIZO",
+    "liq": 10178.43,
+    "vol": 16474.79,
+    "chg": -14.04,
+    "price": "0.00001382",
+    "mcap": 13824,
+    "addr": "0x0361696E7A6d140571D3f53Eff73af15236ab7E8"
+   },
+   {
+    "sym": "$BITBOTS",
+    "liq": 5784.02,
+    "vol": 134435.41,
+    "chg": 1053,
+    "price": "0.00003981",
+    "mcap": 31850,
+    "addr": "0x6D8C0c5045F0c4cDb7Ca8900C1D95B4E95eCb453"
+   },
+   {
+    "sym": "SAY",
+    "liq": 5426.07,
+    "vol": 1546.82,
+    "chg": -13.77,
+    "price": "0.000005441",
+    "mcap": 5381,
+    "addr": "0x52F58C30b7Ea55C8fA1524a5bf74FaeAE416b4CD"
+   },
+   {
+    "sym": "BUSK",
+    "liq": 4889.43,
+    "vol": 289.22,
+    "chg": -4.66,
+    "price": "0.00001299",
+    "mcap": 12998,
+    "addr": "0xa3E51e45047c2e3675558d291F9963D5D2bE1BFe"
+   },
+   {
+    "sym": "X",
+    "liq": 4885.09,
+    "vol": 1997.39,
+    "chg": -10.29,
+    "price": "0.00001291",
+    "mcap": 12910,
+    "addr": "0x3701B015260C6735C3861f248c70B878dA097689"
+   },
+   {
+    "sym": "ELONDOGE",
+    "liq": 4725.12,
+    "vol": 16.33,
+    "chg": null,
+    "price": "0.00001239",
+    "mcap": 7734,
+    "addr": "0xD5cc30a415547dA7cBF1ec506102a1824C095dDD"
+   },
+   {
+    "sym": "UNIFART",
+    "liq": 4414.61,
+    "vol": 14.88,
+    "chg": -2.2,
+    "price": "0.000002579",
+    "mcap": 2580,
+    "addr": "0xd1Ae43Be878a59284AB006E044A21a5312c74B63"
+   },
+   {
+    "sym": "FU",
+    "liq": 4407.55,
+    "vol": 7.54,
+    "chg": -1.72,
+    "price": "0.000002574",
+    "mcap": 2575,
+    "addr": "0x5f61a7A74645963d056918a671AF7225D9513E5e"
+   },
+   {
+    "sym": "S3XY",
+    "liq": 4211.7,
+    "vol": 46.5,
+    "chg": 2.44,
+    "price": "0.000002347",
+    "mcap": 2348,
+    "addr": "0x2A8A6879cD136f5A6632b0fF786b88A717B54e67"
+   },
+   {
+    "sym": "DOGE",
+    "liq": 1794.88,
+    "vol": 1409.96,
+    "chg": -32.58,
+    "price": "0.000003603",
+    "mcap": 3604,
+    "addr": "0xC3F56661ffD7A902DA8C9ef767c5415C79484bc1"
+   }
+  ]
+ },
+ "AAPL": {
+  "ticker": "AAPL",
+  "liq": 1350523.1400000001,
+  "vol": 12496674.25,
+  "price": "324.81",
+  "addr": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+  "memes": [
+   {
+    "sym": "AP",
+    "liq": 378824.82,
+    "vol": 924939.98,
+    "chg": 153,
+    "price": "0.001937",
+    "mcap": 1937437,
+    "addr": "0x69c68e4C00C6F6e4Ac027300293a879Be1E11E18"
+   },
+   {
+    "sym": "AAPLCAT",
+    "liq": 321664.89,
+    "vol": 1184445.98,
+    "chg": 44.45,
+    "price": "0.001298",
+    "mcap": 1277637,
+    "addr": "0x73A9999f6e9Db138E1aE4595fde049A401161E18"
+   },
+   {
+    "sym": "CLARUS",
+    "liq": 147132.44,
+    "vol": 173166.36,
+    "chg": -2.51,
+    "price": "0.0003269",
+    "mcap": 326904,
+    "addr": "0x22ea949763dB855880264A8FB689E07021661e18"
+   },
+   {
+    "sym": "AAPLDOG",
+    "liq": 121652.17,
+    "vol": 807810.11,
+    "chg": 1023,
+    "price": "0.0002412",
+    "mcap": 241238,
+    "addr": "0x06e52E5fdDF0D8A6d10B963c753A8eF3E1161e18"
+   },
+   {
+    "sym": "ICOIN",
+    "liq": 110040.44,
+    "vol": 159940.12,
+    "chg": 89.56,
+    "price": "0.0002174",
+    "mcap": 217416,
+    "addr": "0x5d6EF090a1461B11c9427aC319260122D1C61e18"
+   },
+   {
+    "sym": "FINDER",
+    "liq": 72420.25,
+    "vol": 556664.5,
+    "chg": 86.72,
+    "price": "0.0001092",
+    "mcap": 109230,
+    "addr": "0x9b9933B948719DeDC323F0ac3e81542dE2Bf1e18"
+   },
+   {
+    "sym": "BELIEVE",
+    "liq": 64775.62,
+    "vol": 133083.76,
+    "chg": -21.29,
+    "price": "0.00008416",
+    "mcap": 84169,
+    "addr": "0x1513f8aFE7Ef4889e961e26dCaE9f644e9591E18"
+   },
+   {
+    "sym": "AAPLHOOD",
+    "liq": 49216.65,
+    "vol": 24320.01,
+    "chg": 58.17,
+    "price": "0.00006002",
+    "mcap": 60023,
+    "addr": "0xA7130E125D0efEaf49936358fA81B2d674e71e18"
+   },
+   {
+    "sym": "JOBS",
+    "liq": 48336.420000000006,
+    "vol": 435119.12,
+    "chg": -53.54,
+    "price": "0.0003414",
+    "mcap": 341495,
+    "addr": "0x88952E52cDF3BB14015D9A6499eA3c7F0bEd6453"
+   },
+   {
+    "sym": "GREEN",
+    "liq": 40114.95,
+    "vol": 4001.72,
+    "chg": -11.56,
+    "price": "0.00004339",
+    "mcap": 43399,
+    "addr": "0x6aE4cddA8F637e1273494928ab171b5f094d1E18"
+   },
+   {
+    "sym": "CAT",
+    "liq": 28885.19,
+    "vol": 8423.1,
+    "chg": 17.6,
+    "price": "0.00005913",
+    "mcap": 56909,
+    "addr": "0xCeba75c4D1BCF24452040E98Eb3b2107A2877F36"
+   },
+   {
+    "sym": "HELLO",
+    "liq": 23565.5,
+    "vol": 45963.19,
+    "chg": 24.4,
+    "price": "0.00002369",
+    "mcap": 23693,
+    "addr": "0x1a50Dc2EF4939036ac99a316A5ce905683401E18"
+   },
+   {
+    "sym": "INITIAL",
+    "liq": 22261.62,
+    "vol": 27341.04,
+    "chg": -21.94,
+    "price": "0.00008065",
+    "mcap": 80655,
+    "addr": "0x91C4B7A5C655c2fCD7bC173c1E8e2469352695c2"
+   },
+   {
+    "sym": "Applecoin",
+    "liq": 19908.72,
+    "vol": 1041554.31,
+    "chg": 66.75,
+    "price": "0.00006450",
+    "mcap": 64507,
+    "addr": "0x5513eccCE3991FFf0741361e3dF13915D72aa890"
+   },
+   {
+    "sym": "COOK",
+    "liq": 19710.38,
+    "vol": 139.38,
+    "chg": -0.02,
+    "price": "0.00001971",
+    "mcap": 19715,
+    "addr": "0x01f9C310D73BcE51740E3262D9c256C26Fc31e18"
+   },
+   {
+    "sym": "TOHSENO",
+    "liq": 17855.35,
+    "vol": 51.09,
+    "chg": 0.54,
+    "price": "0.0000002087",
+    "mcap": 20879,
+    "addr": "0x364415F884FC93775A4C1825c1a3Af1f0c2D8bA3"
+   },
+   {
+    "sym": "CRASH",
+    "liq": 17202.94,
+    "vol": 205335.5,
+    "chg": 21.3,
+    "price": "0.00004816",
+    "mcap": 48164,
+    "addr": "0xa6ef6B4a929F945CfCFB57E76F74A7f28e1CCaf8"
+   },
+   {
+    "sym": "PACK",
+    "liq": 13194.51,
+    "vol": 9919.22,
+    "chg": -29.22,
+    "price": "0.0004975",
+    "mcap": 462780,
+    "addr": "0x0145AcbcceFbEd6F303C420bEeaaAc72E905430b"
+   },
+   {
+    "sym": "Termus",
+    "liq": 7991.72,
+    "vol": 1461439.22,
+    "chg": -72.66,
+    "price": "0.00001039",
+    "mcap": 10394,
+    "addr": "0xBaBFE66211aB9c8DD757b58489359A2eDB473897"
+   },
+   {
+    "sym": "APPLE",
+    "liq": 5521.01,
+    "vol": 173204.08,
+    "chg": -86.98,
+    "price": "0.000004960",
+    "mcap": 4961,
+    "addr": "0x040D96D951beb6dFC97385D8Fe43C8d289d42B1e"
+   },
+   {
+    "sym": "CHOCO",
+    "liq": 4045.88,
+    "vol": 461.32,
+    "chg": -11.33,
+    "price": "0.000009904",
+    "mcap": 9905,
+    "addr": "0x5fCC4580f66378867F5408156932A1627184FB88"
+   },
+   {
+    "sym": "finder",
+    "liq": 4000.41,
+    "vol": 8093.33,
+    "chg": -4.37,
+    "price": "0.000002604",
+    "mcap": 2605,
+    "addr": "0x081948D7fAA1dDCBb572f8bD4E77841a0a1FbD1c"
+   },
+   {
+    "sym": "DOG",
+    "liq": 3663.25,
+    "vol": 43182.99,
+    "chg": -94.86,
+    "price": "0.000002183",
+    "mcap": 2184,
+    "addr": "0xf08bC78645FA4ee3D3EF96006BBddD15EC466072"
+   }
+  ]
+ },
+ "MSFT": {
+  "ticker": "MSFT",
+  "liq": 350215.24,
+  "vol": 1812924.66,
+  "price": "498.68",
+  "addr": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+  "memes": [
+   {
+    "sym": "CLIPPY",
+    "liq": 535484.66,
+    "vol": 1540985.8399999999,
+    "chg": 34.72,
+    "price": "0.002905",
+    "mcap": 2905961,
+    "addr": "0x85856F025BF13b8Fd2aaE2F6DA458318744F1E18"
+   },
+   {
+    "sym": "SPY",
+    "liq": 367776.91,
+    "vol": 1337719.73,
+    "chg": 1.11,
+    "price": "769.79",
+    "mcap": 12066027,
+    "addr": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+   },
+   {
+    "sym": "MACROHARD",
+    "liq": 101532.29999999999,
+    "vol": 65489.22,
+    "chg": 7.63,
+    "price": "0.00002116",
+    "mcap": 65139,
+    "addr": "0xEb462a9215e3FAbbA3d06062F9B5E9fBf53D5207"
+   },
+   {
+    "sym": "SOFTWARE.ai",
+    "liq": 46497.15,
+    "vol": 4.81,
+    "chg": 0.67,
+    "price": "0.2941",
+    "mcap": 29410,
+    "addr": "0xa100000000000d6E18bc155F425685E4BadfE11c"
+   },
+   {
+    "sym": "DROYD",
+    "liq": 38360.67,
+    "vol": 272636.05,
+    "chg": 99.37,
+    "price": "0.00004095",
+    "mcap": 40957,
+    "addr": "0x8d02c2a969F8b54332D5ed453B150082BCB51E18"
+   },
+   {
+    "sym": "STEVE",
+    "liq": 37470.68,
+    "vol": 8749.09,
+    "chg": 36.31,
+    "price": "0.000005253",
+    "mcap": 31887,
+    "addr": "0x4Adb43DAad04439EfF802768682798654444ACF6"
+   },
+   {
+    "sym": "ROCKY",
+    "liq": 31609.83,
+    "vol": 23697.6,
+    "chg": -14.55,
+    "price": "0.00003316",
+    "mcap": 33165,
+    "addr": "0xda1e90f20e903aC2e709cF9b64346eC4B5761e18"
+   },
+   {
+    "sym": "ROVER",
+    "liq": 30934.36,
+    "vol": 1451.19,
+    "chg": 2.12,
+    "price": "0.00003130",
+    "mcap": 31303,
+    "addr": "0xD140F8FF4e3946d7E2EE53Bd3D07cBc20A241E18"
+   },
+   {
+    "sym": "LINKS",
+    "liq": 30431.41,
+    "vol": 23285.57,
+    "chg": -0.1,
+    "price": "0.00003062",
+    "mcap": 30629,
+    "addr": "0x60FC24F10819D09649dA013cb45ea6aA13181e18"
+   },
+   {
+    "sym": "WIZARD",
+    "liq": 29937.01,
+    "vol": 10480.44,
+    "chg": -0.02,
+    "price": "0.00003007",
+    "mcap": 30074,
+    "addr": "0x60F52315A6c420C72028D0FBA0f423Df57531E18"
+   },
+   {
+    "sym": "DEVS",
+    "liq": 27380.17,
+    "vol": 1347.76,
+    "chg": -3.44,
+    "price": "0.0000003190",
+    "mcap": 31909,
+    "addr": "0x80Db362eAB104Ec378E19D0a3dCD5E84Bafd4bA3"
+   },
+   {
+    "sym": "MAGE",
+    "liq": 27228.94,
+    "vol": 46.25,
+    "chg": null,
+    "price": "0.00002689",
+    "mcap": 26868,
+    "addr": "0x32C144f9C9F11bE7c1a07B1B01c8128ab5ec1E18"
+   },
+   {
+    "sym": "LUMI",
+    "liq": 27219.07,
+    "vol": 2167.99,
+    "chg": -16.46,
+    "price": "0.00002722",
+    "mcap": 27230,
+    "addr": "0x422cdAA139733943AEBab8bb2fd90c91311F1e18"
+   },
+   {
+    "sym": "MHARD",
+    "liq": 22391.57,
+    "vol": 2702.26,
+    "chg": -18.68,
+    "price": "0.00002177",
+    "mcap": 21778,
+    "addr": "0x4c1B7948b49A064Aed793CE82f392d86c2c31e18"
+   },
+   {
+    "sym": "FLACCID",
+    "liq": 21648.74,
+    "vol": 1.9,
+    "chg": -0.01,
+    "price": "0.00002146",
+    "mcap": 21463,
+    "addr": "0x67B34450D1797240737a3B1fF68f98bA5ba11E18"
+   },
+   {
+    "sym": "CREEPER",
+    "liq": 21559.19,
+    "vol": 100534.91,
+    "chg": 5.53,
+    "price": "0.00002136",
+    "mcap": 21369,
+    "addr": "0x9A734f1683f25D23245e20Fdc26aD5D0Cb861e18"
+   },
+   {
+    "sym": "ZEROCOIN",
+    "liq": 20425.73,
+    "vol": 112627.7,
+    "chg": -0.59,
+    "price": "0.00002020",
+    "mcap": 20209,
+    "addr": "0x307c9E07d659F61481e93906DB1012dB97631E18"
+   },
+   {
+    "sym": "PACK",
+    "liq": 11822.4,
+    "vol": 6391.4,
+    "chg": -26.94,
+    "price": "0.0005241",
+    "mcap": 487481,
+    "addr": "0x0145AcbcceFbEd6F303C420bEeaaAc72E905430b"
+   },
+   {
+    "sym": "EVP",
+    "liq": 10671.89,
+    "vol": 525.26,
+    "chg": -16.55,
+    "price": "0.0005798",
+    "mcap": 579810,
+    "addr": "0x8dCb5663BC2149e001a0776585ad59A144dA1B2F"
+   },
+   {
+    "sym": "PEAR",
+    "liq": 9980.85,
+    "vol": 16133.35,
+    "chg": -33.8,
+    "price": "0.00008376",
+    "mcap": 83763,
+    "addr": "0x3567C5D0aE5c5933920bbD6db982Aa463A203bb2"
+   },
+   {
+    "sym": "MONA",
+    "liq": 6128.5,
+    "vol": 8620.79,
+    "chg": 85.42,
+    "price": "0.000005685",
+    "mcap": 5685,
+    "addr": "0xDA6e3aFEAcb1dCa3e0C627c97CA1d6ca7DE75F14"
+   },
+   {
+    "sym": "NINJACAT",
+    "liq": 5557.01,
+    "vol": 81540.98,
+    "chg": -83.36,
+    "price": "0.000004674",
+    "mcap": 4674,
+    "addr": "0x39a9597aF47f98cC3Fea797895334e44E819B4bD"
+   },
+   {
+    "sym": "microslop",
+    "liq": 3908.68,
+    "vol": 902.5,
+    "chg": -44.32,
+    "price": "0.000002320",
+    "mcap": 2321,
+    "addr": "0x9C5d0998A3a9b80Ee08f63497771e75C93E2fa47"
+   },
+   {
+    "sym": "COMPUTER",
+    "liq": 1545.82,
+    "vol": 149.93,
+    "chg": -1.8,
+    "price": "0.000009216",
+    "mcap": 9217,
+    "addr": "0x7f4C8449beeD4244432Add41ab8C86088b8dbF08"
+   }
+  ]
+ },
+ "AMZN": {
+  "ticker": "AMZN",
+  "liq": 454157.86000000004,
+  "vol": 2205589.2600000002,
+  "price": "255.21",
+  "addr": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+  "memes": [
+   {
+    "sym": "SENDER",
+    "liq": 189541.08,
+    "vol": 1016324.76,
+    "chg": 191,
+    "price": "0.0004192",
+    "mcap": 419212,
+    "addr": "0x4d41CcAa0eeB95C6EBC56d53adf637198c901e18"
+   },
+   {
+    "sym": "WADDLES",
+    "liq": 76129.03,
+    "vol": 534351.36,
+    "chg": 4.43,
+    "price": "0.0009839",
+    "mcap": 983914,
+    "addr": "0xbB6Ee7aa6D56266CCEf3B1c0706bCCCE2F9a0CdD"
+   },
+   {
+    "sym": "PECCY",
+    "liq": 64847.71,
+    "vol": 60717.37,
+    "chg": -13.62,
+    "price": "0.00008993",
+    "mcap": 89931,
+    "addr": "0xdA2CB743A44c360561187eef805b343E79081E18"
+   },
+   {
+    "sym": "RUFUS",
+    "liq": 62079.56,
+    "vol": 256786.98,
+    "chg": 160,
+    "price": "0.00005124",
+    "mcap": 51241,
+    "addr": "0x218D84Bdd20982bD7c3CdBf2E6d8bb7FD6fe1E18"
+   },
+   {
+    "sym": "TOUCAN",
+    "liq": 50706.99,
+    "vol": 47.49,
+    "chg": 1.77,
+    "price": "0.00005070",
+    "mcap": 50707,
+    "addr": "0x70dDDe7897AD1F6e2B8598FD7dFD198EE0A81e18"
+   },
+   {
+    "sym": "DATACENTER",
+    "liq": 44629.61,
+    "vol": 29528.85,
+    "chg": 10.96,
+    "price": "0.00005241",
+    "mcap": 52414,
+    "addr": "0x52A1A90b63b47D01B2395C7cE9EE8D8aBb331e18"
+   },
+   {
+    "sym": "PRIME",
+    "liq": 32039.64,
+    "vol": 35947.01,
+    "chg": 8.7,
+    "price": "0.00003326",
+    "mcap": 33263,
+    "addr": "0xCC8de3c6a912F98397448e5Ecac80e220C1E1e18"
+   },
+   {
+    "sym": "BEEFZOS",
+    "liq": 29423.57,
+    "vol": 5167.46,
+    "chg": -25.12,
+    "price": "0.00003027",
+    "mcap": 30279,
+    "addr": "0x79780aD873C3f5F23C0C6FC68CD5EA8aF26C1E18"
+   },
+   {
+    "sym": "AMAZONHOOD",
+    "liq": 29122.72,
+    "vol": 756.26,
+    "chg": 1.48,
+    "price": "0.00002995",
+    "mcap": 29951,
+    "addr": "0xCd27eDFe07D710716aBF037aB1a0018F40881E18"
+   },
+   {
+    "sym": "AAI",
+    "liq": 23110.02,
+    "vol": 80697.65,
+    "chg": 13.86,
+    "price": "0.00002290",
+    "mcap": 22907,
+    "addr": "0x1e5731bE5b0517C6195F88b2B669ff73066b1E18"
+   },
+   {
+    "sym": "PUSSYCOIN",
+    "liq": 21065.93,
+    "vol": 1392.55,
+    "chg": -1.37,
+    "price": "0.00002106",
+    "mcap": 21062,
+    "addr": "0x2d63680E8a24990a76489dE8752CeB7710Fd1e18"
+   },
+   {
+    "sym": "SNIPER",
+    "liq": 20778.82,
+    "vol": 247.88,
+    "chg": -0.42,
+    "price": "0.00002077",
+    "mcap": 20778,
+    "addr": "0x1CE67C5365735754C5fECd5571E9f24ac5981E18"
+   },
+   {
+    "sym": "AURUS",
+    "liq": 20665.81,
+    "vol": 1399.03,
+    "chg": -0.41,
+    "price": "0.00002066",
+    "mcap": 20666,
+    "addr": "0x0c057304A63ac8574E70508ECf33Dd3126C41E18"
+   },
+   {
+    "sym": "SPARROW",
+    "liq": 20616.45,
+    "vol": 0.27,
+    "chg": null,
+    "price": "0.00002061",
+    "mcap": 20616,
+    "addr": "0x601688B339b7c6A1a3f5eb13fbCF15016e021E18"
+   },
+   {
+    "sym": "MONITORING",
+    "liq": 20482.75,
+    "vol": 29150.74,
+    "chg": 1.91,
+    "price": "0.00002033",
+    "mcap": 20335,
+    "addr": "0x47D6778B37F8fe823f0CB9DF671A1e8582d81E18"
+   },
+   {
+    "sym": "DANCEDOG",
+    "liq": 20302.58,
+    "vol": 33471.85,
+    "chg": -2.66,
+    "price": "0.00002022",
+    "mcap": 20223,
+    "addr": "0xcE5d0D586586Cc7B003De02fdEC58f43649c1e18"
+   },
+   {
+    "sym": "SHOPKR",
+    "liq": 17194.44,
+    "vol": 257.13,
+    "chg": -2.97,
+    "price": "0.0000002019",
+    "mcap": 20192,
+    "addr": "0x98AB711720F6fDC635455c52b03C7A8e17BC1BA3"
+   },
+   {
+    "sym": "Dancedog",
+    "liq": 10210.76,
+    "vol": 861052.05,
+    "chg": -64.05,
+    "price": "0.00001750",
+    "mcap": 17506,
+    "addr": "0x4500eD8FB0465A164fF567347C0738d9F3E404E1"
+   },
+   {
+    "sym": "CADABRA",
+    "liq": 7565.43,
+    "vol": 8569.1,
+    "chg": -75.32,
+    "price": "0.000009716",
+    "mcap": 9717,
+    "addr": "0x451F83EDc5e7bE5c849dE7E0377Df9c68d281bbD"
+   },
+   {
+    "sym": "CRIME",
+    "liq": 5431.1,
+    "vol": 1944.91,
+    "chg": -42.14,
+    "price": "0.000005007",
+    "mcap": 5008,
+    "addr": "0xF9e6D90Cde065A1fc4a74D7603Bb3cE88E870Cf9"
+   },
+   {
+    "sym": "SPOTDOG",
+    "liq": 5172.65,
+    "vol": 473.35,
+    "chg": -17.62,
+    "price": "0.000004542",
+    "mcap": 4520,
+    "addr": "0xcF4B1cF16Eacd79315C2C12bB39F5F2d6A439048"
+   },
+   {
+    "sym": "BUSK",
+    "liq": 4942.11,
+    "vol": 118.19,
+    "chg": -3.02,
+    "price": "0.00001325",
+    "mcap": 13252,
+    "addr": "0xa3E51e45047c2e3675558d291F9963D5D2bE1BFe"
+   },
+   {
+    "sym": "RELENTLESS",
+    "liq": 3692.68,
+    "vol": 222.56,
+    "chg": -11.17,
+    "price": "0.000002225",
+    "mcap": 2225,
+    "addr": "0x07443c1f24627cfAB71Cbbdd1B8648b1690C01af"
+   },
+   {
+    "sym": "$BITBOTS",
+    "liq": 2829.09,
+    "vol": 31675.23,
+    "chg": 783,
+    "price": "0.00003941",
+    "mcap": 31533,
+    "addr": "0x6D8C0c5045F0c4cDb7Ca8900C1D95B4E95eCb453"
+   }
+  ]
+ },
+ "GOOGL": {
+  "ticker": "GOOGL",
+  "liq": 597428.5499999999,
+  "vol": 5009504.899999999,
+  "price": "338.81",
+  "addr": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+  "memes": [
+   {
+    "sym": "QUBIT",
+    "liq": 193388.05,
+    "vol": 300254.33,
+    "chg": -28.14,
+    "price": "0.0005226",
+    "mcap": 521334,
+    "addr": "0xd1E92BA7c7355c2698addD894919Cba198601E18"
+   },
+   {
+    "sym": "TREX",
+    "liq": 140385.63,
+    "vol": 281259.19,
+    "chg": 24.13,
+    "price": "0.0003075",
+    "mcap": 307579,
+    "addr": "0xd981ed1E59244105b037334A937a83d695aB1E18"
+   },
+   {
+    "sym": "DINO",
+    "liq": 70721.15,
+    "vol": 3159309.42,
+    "chg": 1687,
+    "price": "0.0007455",
+    "mcap": 745506,
+    "addr": "0x000b2164a76560323163343431Db8bE550F164B8"
+   },
+   {
+    "sym": "ANDROID",
+    "liq": 39690.44,
+    "vol": 7584.69,
+    "chg": -26.79,
+    "price": "0.00004496",
+    "mcap": 44967,
+    "addr": "0x5D2B017b30fF9ADc2aafD159b82fdCF044eC1e18"
+   },
+   {
+    "sym": "TEAPOT",
+    "liq": 27305.12,
+    "vol": 2834.29,
+    "chg": -7.55,
+    "price": "0.00002809",
+    "mcap": 28096,
+    "addr": "0x30f962CA937655138708E4188f116bbd5cBB1E18"
+   },
+   {
+    "sym": "GOOGLHOOD",
+    "liq": 26964.75,
+    "vol": 757.9,
+    "chg": -2.96,
+    "price": "0.00002780",
+    "mcap": 27801,
+    "addr": "0x3193f95693096A9bbE412AD1Fd6311ED505E1e18"
+   },
+   {
+    "sym": "MEATTHEZOO",
+    "liq": 21119.16,
+    "vol": 1215.82,
+    "chg": 1.29,
+    "price": "0.00002112",
+    "mcap": 21127,
+    "addr": "0xCD046017E49656531f3Cd1318828A54F63881E18"
+   },
+   {
+    "sym": "ASTRONAUT",
+    "liq": 20492.63,
+    "vol": 1688.75,
+    "chg": -0.42,
+    "price": "0.00002031",
+    "mcap": 20317,
+    "addr": "0x90B41ba24167D0bdD1d260b6DA1CFf0210381e18"
+   },
+   {
+    "sym": "BLOB",
+    "liq": 20286.72,
+    "vol": 727.84,
+    "chg": -3.49,
+    "price": "0.00002028",
+    "mcap": 20285,
+    "addr": "0x6841ED2379B4FE10634665985F9090CaF8201E18"
+   },
+   {
+    "sym": "TPU",
+    "liq": 20265.87,
+    "vol": 13179.1,
+    "chg": -1.3,
+    "price": "0.00002022",
+    "mcap": 20222,
+    "addr": "0xC4121Dce315053fBad5400E596B9ecf1AF701e18"
+   },
+   {
+    "sym": "BUGDROID",
+    "liq": 20006.89,
+    "vol": 988.78,
+    "chg": -1.11,
+    "price": "0.00002000",
+    "mcap": 20004,
+    "addr": "0xeF55B3790dE459eA68C2a3f1036d1c93F5111e18"
+   },
+   {
+    "sym": "RUNNER",
+    "liq": 19942.41,
+    "vol": 5116.46,
+    "chg": -3.94,
+    "price": "0.00001992",
+    "mcap": 19929,
+    "addr": "0x924027F8155720C41d119aD3640f26e270361E18"
+   },
+   {
+    "sym": "OPENDUCK",
+    "liq": 14248.54,
+    "vol": 20027.47,
+    "chg": 119,
+    "price": "0.00003037",
+    "mcap": 29886,
+    "addr": "0x2c307aabC861A2107b5A8f287E8f08BA41A54375"
+   },
+   {
+    "sym": "GOOGOL",
+    "liq": 9305.58,
+    "vol": 47847.17,
+    "chg": -91.94,
+    "price": "0.00001295",
+    "mcap": 12954,
+    "addr": "0x451785193ca157F3a28E9a14f105F362001496Fb"
+   },
+   {
+    "sym": "BACKRUB",
+    "liq": 7648.55,
+    "vol": 7678.26,
+    "chg": -35.99,
+    "price": "0.000008741",
+    "mcap": 8742,
+    "addr": "0x468594b2B41B1387d38DAB1768c3Ce550F23B06b"
+   },
+   {
+    "sym": "RVH",
+    "liq": 4466.05,
+    "vol": 3769.73,
+    "chg": -52.84,
+    "price": "0.008814",
+    "mcap": 697781,
+    "addr": "0x96765066f6a040a21EB027167D2315B707c82633"
+   },
+   {
+    "sym": "HTTPS",
+    "liq": 4057.59,
+    "vol": 143558.2,
+    "chg": -94.76,
+    "price": "0.000002463",
+    "mcap": 2463,
+    "addr": "0xfcBA0956907270E7a7181E517061F7e2191dD9bF"
+   },
+   {
+    "sym": "$BITBOTS",
+    "liq": 1901.13,
+    "vol": 19373.41,
+    "chg": 811,
+    "price": "0.00003869",
+    "mcap": 30953,
+    "addr": "0x6D8C0c5045F0c4cDb7Ca8900C1D95B4E95eCb453"
+   }
+  ]
+ },
+ "META": {
+  "ticker": "META",
+  "liq": 177640.47999999998,
+  "vol": 1083671.51,
+  "price": "595.32",
+  "addr": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+  "memes": [
+   {
+    "sym": "ZUCC",
+    "liq": 102699.83,
+    "vol": 142803.01,
+    "chg": 114,
+    "price": "0.0001998",
+    "mcap": 199840,
+    "addr": "0x3b6d5c97AF1dde394d955bfA677716a199d71e18"
+   },
+   {
+    "sym": "SLOP",
+    "liq": 80264.39,
+    "vol": 144198.4,
+    "chg": 4.5,
+    "price": "0.0001143",
+    "mcap": 114321,
+    "addr": "0xB7c12854c5d12aC5E2Ace6A145CCD4F0AA401E18"
+   },
+   {
+    "sym": "HATCH",
+    "liq": 45187.47,
+    "vol": 11198.73,
+    "chg": 2.36,
+    "price": "0.00005006",
+    "mcap": 50069,
+    "addr": "0x51dD115F87Cf64D15F7A7B1FE348e7b97d1F1E18"
+   },
+   {
+    "sym": "METAHOOD",
+    "liq": 34156.69,
+    "vol": 15570.3,
+    "chg": 3.67,
+    "price": "0.00003774",
+    "mcap": 37750,
+    "addr": "0x393376dA6b949b342e3DadA6cD23A8a5ABF01e18"
+   },
+   {
+    "sym": "ZUCK",
+    "liq": 26730.72,
+    "vol": 446.27,
+    "chg": -0.8,
+    "price": "0.00002679",
+    "mcap": 26793,
+    "addr": "0x0ca608e07f3bD556e1e187beB4B1146a143b1e18"
+   },
+   {
+    "sym": "ASTRACAT",
+    "liq": 24385.15,
+    "vol": 75770.77,
+    "chg": 14.38,
+    "price": "0.00002430",
+    "mcap": 24307,
+    "addr": "0xA6c789Ca83192F3943559A621Cc9A7c830371E18"
+   },
+   {
+    "sym": "fone",
+    "liq": 22175.23,
+    "vol": 140584.2,
+    "chg": 108,
+    "price": "0.00007411",
+    "mcap": 74114,
+    "addr": "0x06C0afbBa575e0bD6Fe206197324BA41e57b10fF"
+   },
+   {
+    "sym": "BBQ",
+    "liq": 21073.54,
+    "vol": 19737.56,
+    "chg": -4.7,
+    "price": "0.00002096",
+    "mcap": 20962,
+    "addr": "0x71feEB49DaC27B32016a0aa723e51C874F251e18"
+   },
+   {
+    "sym": "BOOOMER",
+    "liq": 20988.02,
+    "vol": 1658.47,
+    "chg": -1.17,
+    "price": "0.00002098",
+    "mcap": 20984,
+    "addr": "0x89e0564B7d0FF90d5793D7275F71F8B9f8291E18"
+   },
+   {
+    "sym": "LIBRA",
+    "liq": 20978.55,
+    "vol": 144.96,
+    "chg": -0.01,
+    "price": "0.00002097",
+    "mcap": 20979,
+    "addr": "0x297a3750CcE3894f4240C77C4c6f16B1759f1e18"
+   },
+   {
+    "sym": "SHRIMPJESUS",
+    "liq": 20852.93,
+    "vol": 16977.5,
+    "chg": -0.81,
+    "price": "0.00002081",
+    "mcap": 20810,
+    "addr": "0xA4c38Dc5c2222BbF1131642CFBe5c277160E1E18"
+   },
+   {
+    "sym": "LZRD",
+    "liq": 20815.18,
+    "vol": 9303.33,
+    "chg": -2.08,
+    "price": "0.00002079",
+    "mcap": 20791,
+    "addr": "0x05130DDD276c7CfAEE869c40f2B22fc332231e18"
+   },
+   {
+    "sym": "FACEMASH",
+    "liq": 20802.21,
+    "vol": 8952.68,
+    "chg": -1.61,
+    "price": "0.00002077",
+    "mcap": 20778,
+    "addr": "0x31FB5f91151BBba558f3Dbf9bfd3dE68EAB51E18"
+   },
+   {
+    "sym": "PULI",
+    "liq": 20781.55,
+    "vol": 5766.06,
+    "chg": -1.62,
+    "price": "0.00002076",
+    "mcap": 20766,
+    "addr": "0x7C9d5d54902D0383844ed5BB607AC6d482621E18"
+   },
+   {
+    "sym": "BENNY",
+    "liq": 11363.55,
+    "vol": 21965.13,
+    "chg": -42.66,
+    "price": "0.00001946",
+    "mcap": 19462,
+    "addr": "0x1674aD3C2222ab3983D140E72227b2Ce5DB4E6C6"
+   },
+   {
+    "sym": "DMS",
+    "liq": 10421.06,
+    "vol": 91204.14,
+    "chg": 203,
+    "price": "0.00001296",
+    "mcap": 12966,
+    "addr": "0x3790a47646DE58866b9C42c13C913531B6cC9b01"
+   },
+   {
+    "sym": "Astracat",
+    "liq": 7794.62,
+    "vol": 57967.24,
+    "chg": -79.11,
+    "price": "0.000009157",
+    "mcap": 8685,
+    "addr": "0xE6F37Ef76D7bD478a88412fA0515407Bc3C8B49D"
+   },
+   {
+    "sym": "DATA",
+    "liq": 5594.21,
+    "vol": 132067.52,
+    "chg": -93.14,
+    "price": "0.000004716",
+    "mcap": 4663,
+    "addr": "0xa9CfDE81993b5A5Cf425560Ffb923816eBAac655"
+   },
+   {
+    "sym": "FAME",
+    "liq": 3867.43,
+    "vol": 148309.45,
+    "chg": -94.43,
+    "price": "0.000002254",
+    "mcap": 2254,
+    "addr": "0xe591E9503734E378F388bC6aD56C08d95aE88686"
+   },
+   {
+    "sym": "METALLAMA",
+    "liq": 3865.87,
+    "vol": 9609.75,
+    "chg": -80.3,
+    "price": "0.000002252",
+    "mcap": 2252,
+    "addr": "0x281ABc574220A83Cd5C64F5f86525c1F39FFBc02"
+   }
+  ]
+ },
+ "NFLX": {
+  "ticker": "NFLX",
+  "liq": 177479.44,
+  "vol": 768261.1299999999,
+  "price": "82.37",
+  "addr": "0xE0444EF8BF4eD74f74FD73686e2ddF4C1c5591E8",
+  "memes": [
+   {
+    "sym": "CHILL",
+    "liq": 109526.88,
+    "vol": 268224.36,
+    "chg": -69.04,
+    "price": "0.00008502",
+    "mcap": 142879,
+    "addr": "0xF699AEA8a333202A7Dc610aBc664c213c9dc4111"
+   },
+   {
+    "sym": "RATRACE",
+    "liq": 50592.08,
+    "vol": 4241.7300000000005,
+    "chg": -20.25,
+    "price": "0.00003034",
+    "mcap": 30348,
+    "addr": "0x12966F9c6046484e52F3EaeF28C109C83Bc81e18"
+   },
+   {
+    "sym": "CHILLZ",
+    "liq": 44916.85,
+    "vol": 184497.63,
+    "chg": 26.13,
+    "price": "0.0002203",
+    "mcap": 213501,
+    "addr": "0x5B6Ef408c4eBb166788C0cA4cB644f12AC757777"
+   },
+   {
+    "sym": "BLOCKBUSTER",
+    "liq": 39949.16,
+    "vol": 25184.77,
+    "chg": -3.56,
+    "price": "0.00002016",
+    "mcap": 20163,
+    "addr": "0xb7FE9e9394080e1c1b7681Efa212081a2f5d1e18"
+   },
+   {
+    "sym": "THEINVESTOR",
+    "liq": 28713.54,
+    "vol": 86942.59,
+    "chg": 47.58,
+    "price": "0.00002955",
+    "mcap": 29550,
+    "addr": "0xaC292FDa653018e459d69Db1c88f11565e551E18"
+   },
+   {
+    "sym": "SADIE",
+    "liq": 19624.86,
+    "vol": 187.2,
+    "chg": -1.09,
+    "price": "0.00001962",
+    "mcap": 19624,
+    "addr": "0x7bbB40058baee2acbceb8B6Ac81af76D2Ed61E18"
+   },
+   {
+    "sym": "BUDDY",
+    "liq": 19614.18,
+    "vol": 352.14,
+    "chg": 0.01,
+    "price": "0.00001961",
+    "mcap": 19612,
+    "addr": "0x814C05eE0C711EF138f5E37a9C0C2664583D1e18"
+   },
+   {
+    "sym": "PASSWORD",
+    "liq": 19495.88,
+    "vol": 4143.82,
+    "chg": -2.23,
+    "price": "0.00001948",
+    "mcap": 19485,
+    "addr": "0xcE653f2aD8908c202F413Ab61a882E2f95201e18"
+   },
+   {
+    "sym": "ANDCHILL",
+    "liq": 19430.32,
+    "vol": 2533.76,
+    "chg": -4.53,
+    "price": "0.00001942",
+    "mcap": 19423,
+    "addr": "0xC33B013B83bf9cA2A69914a8eec801123E411E18"
+   },
+   {
+    "sym": "NUTFLIX",
+    "liq": 19414.43,
+    "vol": 441.67,
+    "chg": -0.22,
+    "price": "0.00001941",
+    "mcap": 19413,
+    "addr": "0xCfeEC78e82597f7119b6f7Ffa01Aa9c236ab1E18"
+   },
+   {
+    "sym": "SOCKS",
+    "liq": 18984.04,
+    "vol": 1619.6,
+    "chg": -1.52,
+    "price": "0.00001897",
+    "mcap": 18980,
+    "addr": "0x36eC92ecF078B5e1903e8bFc7a5f2DD9405D1E18"
+   },
+   {
+    "sym": "REHANFAL",
+    "liq": 18940.71,
+    "vol": 5.87,
+    "chg": null,
+    "price": "0.00001894",
+    "mcap": 18941,
+    "addr": "0xa4d05B1D6831e557fAA806f6555191Ae952E1E18"
+   },
+   {
+    "sym": "INTRDIMENSIONAL",
+    "liq": 18940.71,
+    "vol": 5.66,
+    "chg": null,
+    "price": "0.00001894",
+    "mcap": 18941,
+    "addr": "0x91A0f7f0C492Ce5e6fF2191A666B31CcF95B1E18"
+   },
+   {
+    "sym": "CNRY",
+    "liq": 6380.51,
+    "vol": 0.0,
+    "chg": null,
+    "price": "0.0006380",
+    "mcap": 7657,
+    "addr": "0x1D1CD70a2855c483eE74837ca116D7b06F7e3797"
+   }
+  ]
+ },
+ "AMD": {
+  "ticker": "AMD",
+  "liq": 150310.58,
+  "vol": 869302.23,
+  "price": "459.63",
+  "addr": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
+  "memes": [
+   {
+    "sym": "MD",
+    "liq": 138453.21,
+    "vol": 262631.22000000003,
+    "chg": 72.07,
+    "price": "0.0002259",
+    "mcap": 225942,
+    "addr": "0x3abb8d686dF6e538bb0887917d14f04f705f1e18"
+   },
+   {
+    "sym": "MEOW",
+    "liq": 110091.86,
+    "vol": 259694.88,
+    "chg": 846,
+    "price": "0.0002006",
+    "mcap": 200530,
+    "addr": "0x7235Cf5eA4674FE09531706954B5f1aD6E0A1e18"
+   },
+   {
+    "sym": "GB",
+    "liq": 70667.71,
+    "vol": 1794992.14,
+    "chg": 1861,
+    "price": "0.0007791",
+    "mcap": 779162,
+    "addr": "0xD78650f3A96e55e0710282c4f459AC556ef3517E"
+   },
+   {
+    "sym": "CHIP",
+    "liq": 68453.03,
+    "vol": 879934.8,
+    "chg": 1383,
+    "price": "0.0003547",
+    "mcap": 354704,
+    "addr": "0xE38B1C963Afc21f06b9E82A2de36A84FbB9C6E59"
+   },
+   {
+    "sym": "CHANXIN",
+    "liq": 45560.04,
+    "vol": 32341.100000000002,
+    "chg": 0.73,
+    "price": "0.00001786",
+    "mcap": 29348,
+    "addr": "0x52c8b018570E4F07774dc635c6F419eBb4B71e18"
+   },
+   {
+    "sym": "PROGR",
+    "liq": 24868.0,
+    "vol": 15739.11,
+    "chg": -5.27,
+    "price": "0.00002501",
+    "mcap": 25014,
+    "addr": "0x2A582EEf381AE964fa83A317aBE1E16021901E18"
+   },
+   {
+    "sym": "AMDOG",
+    "liq": 21969.44,
+    "vol": 1093.38,
+    "chg": 4.81,
+    "price": "0.00002221",
+    "mcap": 22213,
+    "addr": "0x2c7e0AbB103FbFA79CEEB612e2718D5f15701E18"
+   },
+   {
+    "sym": "DEEZ",
+    "liq": 21707.24,
+    "vol": 75503.32,
+    "chg": -4.44,
+    "price": "0.00002156",
+    "mcap": 21560,
+    "addr": "0x1952e23d0755a59899b528934159A41287b31e18"
+   },
+   {
+    "sym": "AMDIH",
+    "liq": 21202.29,
+    "vol": 6343.39,
+    "chg": 0.14,
+    "price": "0.00002111",
+    "mcap": 21113,
+    "addr": "0x04D39488Bf6Be47C016Ca8763fA9F957C4C91e18"
+   },
+   {
+    "sym": "AYY",
+    "liq": 21134.0,
+    "vol": 25483.87,
+    "chg": -0.38,
+    "price": "0.00002106",
+    "mcap": 21070,
+    "addr": "0x42DAc7873aF0a9f87e65dA532d6D9A4DD9711E18"
+   },
+   {
+    "sym": "CHAN",
+    "liq": 21066.33,
+    "vol": 2720.6,
+    "chg": -3.37,
+    "price": "0.00002105",
+    "mcap": 21059,
+    "addr": "0x79E4357cA64a5100859f3bed6Bf7315Dc3E51E18"
+   },
+   {
+    "sym": "RUBY",
+    "liq": 18365.44,
+    "vol": 37590.2,
+    "chg": -69.37,
+    "price": "0.00005001",
+    "mcap": 50020,
+    "addr": "0x27956daeE2F9fF8Dfd1CBAAbF8120bd449c300d5"
+   },
+   {
+    "sym": "GPU",
+    "liq": 16657.4,
+    "vol": 479994.94,
+    "chg": 10.08,
+    "price": "0.00004316",
+    "mcap": 43169,
+    "addr": "0xF71cDD6cfD9E7Ff827b5513de79555815D4295d9"
+   },
+   {
+    "sym": "RYZEN",
+    "liq": 14283.4,
+    "vol": 24970.75,
+    "chg": 61.63,
+    "price": "0.00003183",
+    "mcap": 31831,
+    "addr": "0x50d0d0da00FfD195d2d1d2448617ad039855ad2B"
+   },
+   {
+    "sym": "CHIPS",
+    "liq": 13444.56,
+    "vol": 58614.49,
+    "chg": 7.51,
+    "price": "0.0002602",
+    "mcap": 260201,
+    "addr": "0xbcd09284dFfe06f868a4650546233e3E9AbE4d97"
+   },
+   {
+    "sym": "PACK",
+    "liq": 11768.87,
+    "vol": 11906.59,
+    "chg": -28.14,
+    "price": "0.0005415",
+    "mcap": 503725,
+    "addr": "0x0145AcbcceFbEd6F303C420bEeaaAc72E905430b"
+   },
+   {
+    "sym": "MEMESTOCK",
+    "liq": 4133.97,
+    "vol": 523.88,
+    "chg": 15.27,
+    "price": "0.000002622",
+    "mcap": 2622,
+    "addr": "0x5FbC0E0cc7DcC7759C2C152B9AEB070a5D9be17b"
+   },
+   {
+    "sym": "REPAIR",
+    "liq": 3640.16,
+    "vol": 40599.13,
+    "chg": 122,
+    "price": "0.000008553",
+    "mcap": 8553,
+    "addr": "0x4Ed3D050973BcAa92e580d2B716B1faCeeCB8E9E"
+   },
+   {
+    "sym": "COMPUTER",
+    "liq": 1559.99,
+    "vol": 80.14,
+    "chg": -2.71,
+    "price": "0.000009432",
+    "mcap": 9433,
+    "addr": "0x7f4C8449beeD4244432Add41ab8C86088b8dbF08"
+   }
+  ]
+ },
+ "INTC": {
+  "ticker": "INTC",
+  "liq": 189113.32,
+  "vol": 433118.72000000003,
+  "price": "89.14",
+  "addr": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+  "memes": [
+   {
+    "sym": "INCEL",
+    "liq": 272936.64,
+    "vol": 849708.35,
+    "chg": 21.3,
+    "price": "0.001132",
+    "mcap": 1123910,
+    "addr": "0x12d834F0780c367909319c73f42310Dc0b201E18"
+   },
+   {
+    "sym": "BLUECHIP",
+    "liq": 46437.41,
+    "vol": 3645.3,
+    "chg": 12.69,
+    "price": "0.00002467",
+    "mcap": 24673,
+    "addr": "0x85Bdf25122C1536Ff2a05597C6E273FFcba01E18"
+   },
+   {
+    "sym": "GRANNY",
+    "liq": 28857.62,
+    "vol": 3157.76,
+    "chg": 7.26,
+    "price": "0.00002730",
+    "mcap": 27309,
+    "addr": "0x1A838D48f67387377618b13BA438E6Af15441e18"
+   },
+   {
+    "sym": "CHIP",
+    "liq": 21456.33,
+    "vol": 245.29,
+    "chg": -1.67,
+    "price": "0.00002130",
+    "mcap": 21302,
+    "addr": "0x214a1C9c3aae98858E10234a5fA65A2b5edA1E18"
+   },
+   {
+    "sym": "BLACKPILL",
+    "liq": 21086.52,
+    "vol": 1.18,
+    "chg": null,
+    "price": "0.00002107",
+    "mcap": 21075,
+    "addr": "0xAd6AC8b2e61D137C2e95aD1255b046824fc91e18"
+   },
+   {
+    "sym": "NANA",
+    "liq": 20770.5,
+    "vol": 3410.59,
+    "chg": 1.24,
+    "price": "0.00002076",
+    "mcap": 20762,
+    "addr": "0x9EaeEA3c2AB617b53b9DfcF30B61352f4fdD1e18"
+   },
+   {
+    "sym": "RHAI",
+    "liq": 20731.15,
+    "vol": 1052.39,
+    "chg": -1.12,
+    "price": "0.00002072",
+    "mcap": 20728,
+    "addr": "0x5f610A4e3756E5c09dE02369184CFf6Bf9C51E18"
+   },
+   {
+    "sym": "INTEL",
+    "liq": 20721.53,
+    "vol": 4.59,
+    "chg": -0.02,
+    "price": "0.00002072",
+    "mcap": 20722,
+    "addr": "0x4bE19Ffe219e4f9f4D1d341BaEf902Ec37521e18"
+   },
+   {
+    "sym": "BUNNY",
+    "liq": 17966.53,
+    "vol": 95.38,
+    "chg": null,
+    "price": "0.00001797",
+    "mcap": 17976,
+    "addr": "0xA8F3a9DfaeA1BF0aD20aC999854CD2ee18401e18"
+   },
+   {
+    "sym": "CHIPS",
+    "liq": 14011.39,
+    "vol": 89696.58,
+    "chg": 6.63,
+    "price": "0.0002601",
+    "mcap": 260127,
+    "addr": "0xbcd09284dFfe06f868a4650546233e3E9AbE4d97"
+   },
+   {
+    "sym": "GRANDMA",
+    "liq": 4392.07,
+    "vol": 11750.83,
+    "chg": 0.37,
+    "price": "0.000004392",
+    "mcap": 4392,
+    "addr": "0x1d855400CdDD748E65F3BB3Fb0E55542FCD9D701"
+   },
+   {
+    "sym": "COMPUTER",
+    "liq": 1534.62,
+    "vol": 343.56,
+    "chg": -18.83,
+    "price": "0.000009163",
+    "mcap": 9164,
+    "addr": "0x7f4C8449beeD4244432Add41ab8C86088b8dbF08"
+   },
+   {
+    "sym": "NIGGA",
+    "liq": 710.61,
+    "vol": 295.68,
+    "chg": -12.55,
+    "price": "0.000003562",
+    "mcap": 3563,
+    "addr": "0xc800D8600DfcFEdc963F889Eb59C426584192Fa4"
+   },
+   {
+    "sym": "SIGMA",
+    "liq": 705.17,
+    "vol": 19.24,
+    "chg": null,
+    "price": "0.000003531",
+    "mcap": 3532,
+    "addr": "0x7aAd9Faa5Ee27bDEeb17D5A8c1870278824C4C59"
+   },
+   {
+    "sym": "PC",
+    "liq": 697.96,
+    "vol": 60.43,
+    "chg": 4.87,
+    "price": "0.000003496",
+    "mcap": 3496,
+    "addr": "0x1d735172F29359E0D8F131E43F8121CaFf1afE3E"
+   }
+  ]
+ },
+ "MU": {
+  "ticker": "MU",
+  "liq": 1045930.6,
+  "vol": 4166013.62,
+  "price": "945.85",
+  "addr": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
+  "memes": [
+   {
+    "sym": "MOO",
+    "liq": 1503047.94,
+    "vol": 9815461.93,
+    "chg": 121,
+    "price": "0.02312",
+    "mcap": 22884171,
+    "addr": "0xD9dB30BB0D2b8d2eae3826A1372117E058791e18"
+   },
+   {
+    "sym": "SEMI",
+    "liq": 526255.07,
+    "vol": 596014.79,
+    "chg": 314,
+    "price": "0.04004",
+    "mcap": 1646727,
+    "addr": "0x5F038759F6DE38fD3A85C0440daff1240238BaC8"
+   },
+   {
+    "sym": "SPY",
+    "liq": 279183.98,
+    "vol": 5478621.25,
+    "chg": -1.14,
+    "price": "759.98",
+    "mcap": 11912146,
+    "addr": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+   },
+   {
+    "sym": "MUMU",
+    "liq": 48199.27,
+    "vol": 67324.28,
+    "chg": 140,
+    "price": "0.00005759",
+    "mcap": 57592,
+    "addr": "0x8C804359ba98319D94bF46b6E3cc455E7b3f1e18"
+   },
+   {
+    "sym": "DATAINU",
+    "liq": 45063.59,
+    "vol": 123177.1,
+    "chg": -52.12,
+    "price": "0.00004984",
+    "mcap": 49843,
+    "addr": "0x0cb61dC5b8F468Ca5F2A568491317a71C51b1e18"
+   },
+   {
+    "sym": "RAM",
+    "liq": 43464.600000000006,
+    "vol": 79329.16,
+    "chg": -35.18,
+    "price": "0.00001509",
+    "mcap": 34547,
+    "addr": "0xC0Cc17ccC81830A3C22A3d06B013914762E5C812"
+   },
+   {
+    "sym": "TE",
+    "liq": 31766.28,
+    "vol": 16195.11,
+    "chg": 12.49,
+    "price": "0.00003277",
+    "mcap": 32777,
+    "addr": "0x83177880230459e854F5fB5e84aDe27974871e18"
+   },
+   {
+    "sym": "HARDWARE",
+    "liq": 27995.69,
+    "vol": 71646.18,
+    "chg": 38.11,
+    "price": "0.00002841",
+    "mcap": 28419,
+    "addr": "0xdC0792ea312194b57976d74198A885f46E451E18"
+   },
+   {
+    "sym": "AIBO",
+    "liq": 21112.55,
+    "vol": 809.02,
+    "chg": -6.7,
+    "price": "0.00002111",
+    "mcap": 21115,
+    "addr": "0x338D69E82Cab5Ffb341AF6931e7963d8A4f31e18"
+   },
+   {
+    "sym": "CHIPS",
+    "liq": 13572.54,
+    "vol": 136006.37,
+    "chg": 9.63,
+    "price": "0.0002529",
+    "mcap": 252945,
+    "addr": "0xbcd09284dFfe06f868a4650546233e3E9AbE4d97"
+   },
+   {
+    "sym": "PACK",
+    "liq": 12165.33,
+    "vol": 6056.61,
+    "chg": -29.4,
+    "price": "0.0005169",
+    "mcap": 480787,
+    "addr": "0x0145AcbcceFbEd6F303C420bEeaaAc72E905430b"
+   },
+   {
+    "sym": "EVP",
+    "liq": 10500.4,
+    "vol": 577.47,
+    "chg": -18.89,
+    "price": "0.0005698",
+    "mcap": 569851,
+    "addr": "0x8dCb5663BC2149e001a0776585ad59A144dA1B2F"
+   },
+   {
+    "sym": "COMPUTER",
+    "liq": 1522.63,
+    "vol": 232.56,
+    "chg": -14.6,
+    "price": "0.000009029",
+    "mcap": 9029,
+    "addr": "0x7f4C8449beeD4244432Add41ab8C86088b8dbF08"
+   }
+  ]
+ },
+ "AVGO": {
+  "ticker": "AVGO",
+  "liq": 12981.59,
+  "vol": 3197.2700000000004,
+  "price": "393.32",
+  "addr": "0x156E175DD063a8cE274C50654eF40e0032b3fbcF",
+  "memes": [
+   {
+    "sym": "VMware",
+    "liq": 0.0,
+    "vol": 839.92,
+    "chg": -0.54,
+    "price": "0.000004183",
+    "mcap": 4183,
+    "addr": "0xC94ACDaFFbCcbea78935BD1261766E9783085A01"
+   }
+  ]
+ },
+ "TSM": {
+  "ticker": "TSM",
+  "liq": 820221.4,
+  "vol": 2577534.0600000005,
+  "price": "410.82",
+  "addr": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+  "memes": [
+   {
+    "sym": "AU",
+    "liq": 624158.46,
+    "vol": 2704211.9,
+    "chg": 20.93,
+    "price": "0.003791",
+    "mcap": 3779306,
+    "addr": "0xd4aAe326dDd1a2537A92C00E6576E4605e5D1e18"
+   },
+   {
+    "sym": "SPY",
+    "liq": 507356.29,
+    "vol": 3558807.72,
+    "chg": -0.92,
+    "price": "795.061",
+    "mcap": 12462019,
+    "addr": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+   },
+   {
+    "sym": "TAIWAN",
+    "liq": 210427.7,
+    "vol": 1039399.99,
+    "chg": -64.24,
+    "price": "0.0005297",
+    "mcap": 529773,
+    "addr": "0xaA0b48DEFDE440B8445bA45DB88cb076Cf261E18"
+   },
+   {
+    "sym": "KUMAMON",
+    "liq": 22800.29,
+    "vol": 921.7,
+    "chg": -7.25,
+    "price": "0.00002282",
+    "mcap": 22821,
+    "addr": "0x6c9558774b91FB8f79f61075551f9d6EFb251e18"
+   },
+   {
+    "sym": "CHIPCOIN",
+    "liq": 22611.22,
+    "vol": 715.75,
+    "chg": -4.25,
+    "price": "0.00002247",
+    "mcap": 22474,
+    "addr": "0xe430e70F9C4564CD61Ba6d05cE6FC10C7df31e18"
+   },
+   {
+    "sym": "PATRIOT",
+    "liq": 22150.69,
+    "vol": 520.12,
+    "chg": -5.12,
+    "price": "0.00002205",
+    "mcap": 22054,
+    "addr": "0xfE05B88b06fBbc42503B2890Bf585EFED2621e18"
+   },
+   {
+    "sym": "LIVER",
+    "liq": 21380.42,
+    "vol": 23889.08,
+    "chg": 1.13,
+    "price": "0.00002132",
+    "mcap": 21323,
+    "addr": "0xF8F9218A877a8789ae7A7aC39d217d0a99061E18"
+   },
+   {
+    "sym": "CAPITALI",
+    "liq": 21368.02,
+    "vol": 1.99,
+    "chg": -0.01,
+    "price": "0.00002124",
+    "mcap": 21250,
+    "addr": "0x7073edAEef09242d423118a17598AF696Aeb1e18"
+   },
+   {
+    "sym": "TSMC",
+    "liq": 21214.04,
+    "vol": 75.36,
+    "chg": 0.69,
+    "price": "0.00002121",
+    "mcap": 21214,
+    "addr": "0xDa41429C39229C34155a1dE63280851bd92B1E18"
+   },
+   {
+    "sym": "SEMI",
+    "liq": 21144.55,
+    "vol": 2.0,
+    "chg": -0.01,
+    "price": "0.00002112",
+    "mcap": 21129,
+    "addr": "0x6DC43eeB40548fB34BD6Cf04A6f5b2f1e9501e18"
+   },
+   {
+    "sym": "GINNY",
+    "liq": 21106.85,
+    "vol": 3246.11,
+    "chg": -1.76,
+    "price": "0.00002109",
+    "mcap": 21098,
+    "addr": "0xCFf157701FE85479620eBf2B20C6bc9296e31E18"
+   },
+   {
+    "sym": "TISMPORT",
+    "liq": 20998.3,
+    "vol": 2.0,
+    "chg": -0.01,
+    "price": "0.00002099",
+    "mcap": 20996,
+    "addr": "0x76D28488766d26e6DcA2a6232BaD0978a4821E18"
+   },
+   {
+    "sym": "TAIWAI",
+    "liq": 20982.96,
+    "vol": 7810.39,
+    "chg": -5.77,
+    "price": "0.00002096",
+    "mcap": 20963,
+    "addr": "0x9d3A6d839377da7fc404860BbA8988060E691e18"
+   },
+   {
+    "sym": "SUNNY",
+    "liq": 20953.61,
+    "vol": 345.66,
+    "chg": 0.01,
+    "price": "0.00002081",
+    "mcap": 20815,
+    "addr": "0xE437d2aeC13F2925C29d52C72111Bd520fa11E18"
+   },
+   {
+    "sym": "TAI",
+    "liq": 20950.63,
+    "vol": 1240.43,
+    "chg": -0.11,
+    "price": "0.00002094",
+    "mcap": 20947,
+    "addr": "0x72534396cfD66880B104C41842c7B299D6511e18"
+   },
+   {
+    "sym": "AIRCOIN",
+    "liq": 20935.63,
+    "vol": 746.88,
+    "chg": 0.02,
+    "price": "0.00002093",
+    "mcap": 20934,
+    "addr": "0xe10321D76367a0fDb8F3e1483D308D011F5E9E18"
+   },
+   {
+    "sym": "TISM",
+    "liq": 20884.94,
+    "vol": 2.0,
+    "chg": -0.01,
+    "price": "0.00002088",
+    "mcap": 20885,
+    "addr": "0x77c4b38d5668dA69D2a4D96B58aEdc9A1D1E1E18"
+   },
+   {
+    "sym": "NASSY",
+    "liq": 20861.53,
+    "vol": 964.09,
+    "chg": -2.2,
+    "price": "0.00002084",
+    "mcap": 20846,
+    "addr": "0xa2a49F976f19462574F2F575FAd8188BE9011e18"
+   },
+   {
+    "sym": "AUTSM",
+    "liq": 20063.49,
+    "vol": 167.49,
+    "chg": null,
+    "price": "0.00001999",
+    "mcap": 19996,
+    "addr": "0xf673D73FFaEb0bF88eA45cCecD83751a572f1E18"
+   }
+  ]
+ },
+ "ASML": {
+  "ticker": "ASML",
+  "liq": 130849.56,
+  "vol": 768308.8,
+  "price": "1678.37",
+  "addr": "0x47F93d52cBeC7C6D2CfC080e154002370a60dAEA",
+  "memes": [
+   {
+    "sym": "ORG",
+    "liq": 136449.33,
+    "vol": 285585.39,
+    "chg": 13.65,
+    "price": "0.0002856",
+    "mcap": 285191,
+    "addr": "0xb8b8069eafA5b469531D60a08E6f532D150b1E18"
+   },
+   {
+    "sym": "ASMR",
+    "liq": 62809.96,
+    "vol": 113095.44,
+    "chg": 271,
+    "price": "0.00008213",
+    "mcap": 82136,
+    "addr": "0x80759AB3BC6b370A76D425f2217C6993Eb891E18"
+   },
+   {
+    "sym": "AICHIP",
+    "liq": 43737.81,
+    "vol": 35519.42,
+    "chg": 147,
+    "price": "0.00004953",
+    "mcap": 49539,
+    "addr": "0xB7733Da97202985ec84bf7e96e835A7466f81E18"
+   },
+   {
+    "sym": "LKLKL",
+    "liq": 21160.25,
+    "vol": 1622.66,
+    "chg": -2.25,
+    "price": "0.00002115",
+    "mcap": 21156,
+    "addr": "0xA3983310b16f6389D533f7250ae73ee264631E18"
+   },
+   {
+    "sym": "EUV",
+    "liq": 20859.16,
+    "vol": 5226.62,
+    "chg": -2.08,
+    "price": "0.00002083",
+    "mcap": 20838,
+    "addr": "0x95bB8faf8fbf624cc2d9E566F09FA77a51ee1E18"
+   },
+   {
+    "sym": "SARC",
+    "liq": 20802.82,
+    "vol": 3714.52,
+    "chg": -1.45,
+    "price": "0.00002079",
+    "mcap": 20793,
+    "addr": "0xedFFC25f4457e8dfbc22Bf176F71425B046e1E18"
+   },
+   {
+    "sym": "NERDG",
+    "liq": 20767.43,
+    "vol": 198.86,
+    "chg": null,
+    "price": "0.00002076",
+    "mcap": 20767,
+    "addr": "0x853069677c41D898DCac581C9a43C4DC8dfc1E18"
+   },
+   {
+    "sym": "NETHERLANDS",
+    "liq": 20627.7,
+    "vol": 715.09,
+    "chg": -2.67,
+    "price": "0.00002052",
+    "mcap": 20527,
+    "addr": "0xafdF359E36a1372820A3d9A9d069CCE993201e18"
+   },
+   {
+    "sym": "DAMN",
+    "liq": 20603.96,
+    "vol": 1486.1,
+    "chg": -0.19,
+    "price": "0.00002060",
+    "mcap": 20600,
+    "addr": "0xe4656535c129D0Ed01d1920F3294108666551e18"
+   },
+   {
+    "sym": "MONALISA",
+    "liq": 20420.89,
+    "vol": 1342.09,
+    "chg": -0.17,
+    "price": "0.00002041",
+    "mcap": 20413,
+    "addr": "0xbC228E61D4ad1375559984B482E227A3C6301e18"
+   },
+   {
+    "sym": "SEMICONDUCTOR",
+    "liq": 19868.85,
+    "vol": 119.27,
+    "chg": -0.6,
+    "price": "0.00001986",
+    "mcap": 19869,
+    "addr": "0x592B79D328C2e50FD2ee50c0693476999a991E18"
+   },
+   {
+    "sym": "IPHONE",
+    "liq": 677.0,
+    "vol": 23.67,
+    "chg": null,
+    "price": "0.000003389",
+    "mcap": 3389,
+    "addr": "0x9caa3A31EB4280D18C7144822e24d95eDe2B43e1"
+   },
+   {
+    "sym": "EQN",
+    "liq": 59.38,
+    "vol": 38548.14,
+    "chg": -99.51,
+    "price": "0.0000001049",
+    "mcap": 105,
+    "addr": "0x05E77c8aC5c1E7538c04F9756391Ac232F9b1E18"
+   },
+   {
+    "sym": "EQNX",
+    "liq": 55.88,
+    "vol": 71650.69,
+    "chg": -99.55,
+    "price": "0.00000009113",
+    "mcap": 91,
+    "addr": "0x26906EbC16ccbFdeb5Bf356e18405A013713aEe2"
+   },
+   {
+    "sym": "PHANT",
+    "liq": 0.0,
+    "vol": 98.84,
+    "chg": -2.23,
+    "price": "0.000004366",
+    "mcap": 4366,
+    "addr": "0xa0f3BE3046A3738f8d0Daac38d4bdA98C72ef101"
+   }
+  ]
+ },
+ "PLTR": {
+  "ticker": "PLTR",
+  "liq": 338966.07,
+  "vol": 2296466.6199999996,
+  "price": "174.083",
+  "addr": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+  "memes": [
+   {
+    "sym": "GOYBEAM",
+    "liq": 387864.82,
+    "vol": 1138730.28,
+    "chg": 80.37,
+    "price": "0.001538",
+    "mcap": 1538984,
+    "addr": "0x1Fe2Abf68aad1d5b7A0339fBbFdbAd8E2b1d1E18"
+   },
+   {
+    "sym": "SPY",
+    "liq": 173109.42,
+    "vol": 1559294.17,
+    "chg": 1.87,
+    "price": "799.21",
+    "mcap": 12527081,
+    "addr": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+   },
+   {
+    "sym": "BOMBA",
+    "liq": 144580.32,
+    "vol": 1448732.94,
+    "chg": 623,
+    "price": "0.0003162",
+    "mcap": 314768,
+    "addr": "0x525F24BF41F178174788C3297Af9c0Af1bA01E18"
+   },
+   {
+    "sym": "PLTITS",
+    "liq": 94950.79,
+    "vol": 535238.63,
+    "chg": 659,
+    "price": "0.0001582",
+    "mcap": 158287,
+    "addr": "0x5c9F9a42310541A24Dc5cEE4CC96345FeaeA1E18"
+   },
+   {
+    "sym": "MONITOR",
+    "liq": 86866.8,
+    "vol": 292461.86,
+    "chg": 568,
+    "price": "0.0001381",
+    "mcap": 138116,
+    "addr": "0x1a911bb954dAA9CB38513423075bE74450351e18"
+   },
+   {
+    "sym": "GOY",
+    "liq": 38770.229999999996,
+    "vol": 12644.57,
+    "chg": -11.6,
+    "price": "0.000005980",
+    "mcap": 33192,
+    "addr": "0xD99167c707e81e89822B2480cA9F7CE54dF906dd"
+   },
+   {
+    "sym": "HI",
+    "liq": 36150.72,
+    "vol": 447445.64,
+    "chg": -39.33,
+    "price": "0.0001873",
+    "mcap": 187340,
+    "addr": "0xFE33976B064Eb945446Ec1B1c5Dba65Ce7B3dDE3"
+   },
+   {
+    "sym": "TEAL",
+    "liq": 31701.21,
+    "vol": 26382.41,
+    "chg": -1.84,
+    "price": "0.00003170",
+    "mcap": 31702,
+    "addr": "0x19DE5750a18be80BdCA80714DF20a58DB8195d7F"
+   },
+   {
+    "sym": "ANALTIR",
+    "liq": 30011.05,
+    "vol": 10.88,
+    "chg": null,
+    "price": "0.00003001",
+    "mcap": 30011,
+    "addr": "0x657a64277980104e4b39eBCd6Be5ca00Ba311e18"
+   },
+   {
+    "sym": "MOSSAD",
+    "liq": 29442.27,
+    "vol": 1735.21,
+    "chg": -3.72,
+    "price": "0.00002912",
+    "mcap": 29126,
+    "addr": "0x3Df502a7De87aC7C5fc32899E0A21C82FC781E18"
+   },
+   {
+    "sym": "ICU",
+    "liq": 27875.19,
+    "vol": 2241.2,
+    "chg": 18.65,
+    "price": "0.00002839",
+    "mcap": 28394,
+    "addr": "0x4Ff0C7bDE850fA3219F13C2EE122825e4cba1e18"
+   },
+   {
+    "sym": "ORB",
+    "liq": 23397.37,
+    "vol": 862.88,
+    "chg": -1.91,
+    "price": "0.00002342",
+    "mcap": 23426,
+    "addr": "0x083B9E707FC7988dBbCe4F2780e91e803e711e18"
+   },
+   {
+    "sym": "SKYNET",
+    "liq": 23173.13,
+    "vol": 9290.31,
+    "chg": 11.78,
+    "price": "0.00002321",
+    "mcap": 23216,
+    "addr": "0x23778CAe19527D554f75b29542b981af672C1e18"
+   },
+   {
+    "sym": "FENT",
+    "liq": 22095.24,
+    "vol": 6394.1,
+    "chg": 5.36,
+    "price": "0.00002209",
+    "mcap": 22094,
+    "addr": "0x04841B9F4FE6a0AAFF5DD038924762e2ccF91e18"
+   },
+   {
+    "sym": "EYE",
+    "liq": 21035.21,
+    "vol": 49552.03,
+    "chg": -1.47,
+    "price": "0.00002090",
+    "mcap": 20909,
+    "addr": "0x4f01a42Ef21335D87Abe1a9251A3CC598b491e18"
+   },
+   {
+    "sym": "FLOCK",
+    "liq": 20942.36,
+    "vol": 79741.29,
+    "chg": -78.3,
+    "price": "0.00006287",
+    "mcap": 62871,
+    "addr": "0x9D07DB5c2394d8e3eC59c3eEdC9735b2BE4fD523"
+   },
+   {
+    "sym": "BoomBoom",
+    "liq": 17965.84,
+    "vol": 1.94,
+    "chg": -0.12,
+    "price": "0.0000002115",
+    "mcap": 21160,
+    "addr": "0x766dB3436d4fA88A7e307a9B20fD2F3dB8D2EBA3"
+   },
+   {
+    "sym": "PI",
+    "liq": 13158.58,
+    "vol": 10.86,
+    "chg": -0.82,
+    "price": "0.000006390",
+    "mcap": 6390,
+    "addr": "0x3D6B254Bd8a591D8B337ccEA2AA621DCAa047777"
+   },
+   {
+    "sym": "DIVERGENT",
+    "liq": 12206.02,
+    "vol": 287767.24,
+    "chg": -53.22,
+    "price": "0.00002135",
+    "mcap": 21357,
+    "addr": "0x2eB0de9821d0eC5418f63F533A3F7a7213d97E3C"
+   },
+   {
+    "sym": "Aether",
+    "liq": 7636.43,
+    "vol": 13.95,
+    "chg": -1.69,
+    "price": "0.000004296",
+    "mcap": 4258,
+    "addr": "0x1Fa967180D5bb3427e9945f8Db220aDa2b947777"
+   },
+   {
+    "sym": "Analtir",
+    "liq": 4025.41,
+    "vol": 53127.8,
+    "chg": -95.18,
+    "price": "0.000002282",
+    "mcap": 2283,
+    "addr": "0x625c138cC513Ef3826dC1248Da1430b1a6976C65"
+   },
+   {
+    "sym": "RVH",
+    "liq": 3426.31,
+    "vol": 3811.29,
+    "chg": -51.91,
+    "price": "0.008988",
+    "mcap": 711560,
+    "addr": "0x96765066f6a040a21EB027167D2315B707c82633"
+   },
+   {
+    "sym": "$BITBOTS",
+    "liq": 2916.21,
+    "vol": 38684.07,
+    "chg": 1026,
+    "price": "0.00004019",
+    "mcap": 32157,
+    "addr": "0x6D8C0c5045F0c4cDb7Ca8900C1D95B4E95eCb453"
+   },
+   {
+    "sym": "PALANCAT",
+    "liq": 2277.53,
+    "vol": 6850.47,
+    "chg": 36.73,
+    "price": "0.000004708",
+    "mcap": 4709,
+    "addr": "0x920563206ee911f0ae7065cDeD902f58C8496c4C"
+   }
+  ]
+ },
+ "COIN": {
+  "ticker": "COIN",
+  "liq": 0.0,
+  "vol": 0.0,
+  "price": null,
+  "addr": null,
+  "memes": [
+   {
+    "sym": "MEME",
+    "liq": 99557.24,
+    "vol": 133482.03,
+    "chg": 3.62,
+    "price": "0.0001700",
+    "mcap": 170057,
+    "addr": "0xDfe5F1A87dceC095D5Ed7Bd378913D1453371E18"
+   },
+   {
+    "sym": "BALD",
+    "liq": 96721.13,
+    "vol": 2952599.42,
+    "chg": 568,
+    "price": "0.0001474",
+    "mcap": 147433,
+    "addr": "0x7ccC7e87ca902Ab764cF359eDeF0Fb0386221E18"
+   },
+   {
+    "sym": "SHIT",
+    "liq": 25087.22,
+    "vol": 51574.25,
+    "chg": -38.58,
+    "price": "0.00008026",
+    "mcap": 80268,
+    "addr": "0xE45CDDdF1AC5715F7e596912e184af0ec93a0fCE"
+   },
+   {
+    "sym": "HC",
+    "liq": 21997.32,
+    "vol": 17817.02,
+    "chg": -3.12,
+    "price": "0.00002194",
+    "mcap": 21950,
+    "addr": "0xf73C9F4f6570274aF9127a7c4B082aeBf0021E18"
+   }
+  ]
+ },
+ "GME": {
+  "ticker": "GME",
+  "liq": 1086968.3199999998,
+  "vol": 6168671.989999999,
+  "price": "0.00003284",
+  "addr": "0xc2362AfF2A2a4CC1f48cF3Dab2C4e2605eb94BA3",
+  "memes": [
+   {
+    "sym": "ZAIBATSU",
+    "liq": 99633.43,
+    "vol": 8022.0,
+    "chg": -3.77,
+    "price": "0.000002305",
+    "mcap": 154516,
+    "addr": "0x5DBaCA8327B0bAA57eB6C872a333Bf8D6F642BA3"
+   },
+   {
+    "sym": "BUCK",
+    "liq": 81435.54,
+    "vol": 506951.42,
+    "chg": -23.34,
+    "price": "0.0006087",
+    "mcap": 608726,
+    "addr": "0x5aCB54868D292443cAFC3Ce88496589F6b4F1E18"
+   },
+   {
+    "sym": "KITTY",
+    "liq": 74508.61,
+    "vol": 897897.75,
+    "chg": 2883,
+    "price": "0.001022",
+    "mcap": 919614,
+    "addr": "0x96F10D7A43639B9c7e09aee5304C406670289aB4"
+   },
+   {
+    "sym": "GAMESTONK",
+    "liq": 33304.55,
+    "vol": 74788.12,
+    "chg": -34.75,
+    "price": "0.0003202",
+    "mcap": 281962,
+    "addr": "0x57548740AE9D73EF4B1bFA35651d5e91eD0F6666"
+   },
+   {
+    "sym": "NOTACAT",
+    "liq": 28956.16,
+    "vol": 53.86,
+    "chg": 0.31,
+    "price": "0.00002972",
+    "mcap": 29727,
+    "addr": "0x285A19f1AC1a02bAc5e9Fd5EeD24b54CaE891E18"
+   },
+   {
+    "sym": "DUMBMONEY",
+    "liq": 25945.98,
+    "vol": 122707.75,
+    "chg": 20.6,
+    "price": "0.0001239",
+    "mcap": 123944,
+    "addr": "0x1ad402D38F843b4cDa741754531B0DAAe1d71067"
+   },
+   {
+    "sym": "LOCKIN",
+    "liq": 23620.4,
+    "vol": 187947.25,
+    "chg": -39.72,
+    "price": "0.0001027",
+    "mcap": 102721,
+    "addr": "0xbADA1D162baCBEf87eb166014f2b0fAC506dB18e"
+   },
+   {
+    "sym": "MEMESTOCK",
+    "liq": 18470.89,
+    "vol": 117305.53,
+    "chg": -7.49,
+    "price": "0.00006281",
+    "mcap": 62815,
+    "addr": "0x41A2B71415d04B045ED9e7928eb3262CC8e18e7e"
+   },
+   {
+    "sym": "CHUNGUS",
+    "liq": 17536.75,
+    "vol": 111145.75,
+    "chg": 50.39,
+    "price": "0.00005662",
+    "mcap": 56622,
+    "addr": "0x7eC9f84DC5B921Ad5b7eE83C9436575126AA3CBa"
+   },
+   {
+    "sym": "SHORT",
+    "liq": 16019.8,
+    "vol": 62247.47,
+    "chg": -63.82,
+    "price": "0.00004724",
+    "mcap": 47250,
+    "addr": "0x64dC70Cee2D6D649DEC9F5f6fD0F8c6c586D8d13"
+   },
+   {
+    "sym": "WSB",
+    "liq": 12933.41,
+    "vol": 101004.14,
+    "chg": 1.23,
+    "price": "0.00003079",
+    "mcap": 30797,
+    "addr": "0x173E8C47bdABf66190c1b5F15907e1A54B47845A"
+   },
+   {
+    "sym": "HODL",
+    "liq": 12417.69,
+    "vol": 8722.83,
+    "chg": -51.11,
+    "price": "0.00002839",
+    "mcap": 28390,
+    "addr": "0xC98Cbd8a936b979B66Db58A4858C96308F40F784"
+   },
+   {
+    "sym": "RETAIL",
+    "liq": 9832.59,
+    "vol": 44012.89,
+    "chg": -54.26,
+    "price": "0.00001780",
+    "mcap": 17800,
+    "addr": "0xFf89D5Ca203f5665002e44B34E36299Ca343C49B"
+   },
+   {
+    "sym": "EBAY",
+    "liq": 9609.53,
+    "vol": 11.68,
+    "chg": null,
+    "price": "0.00000009192",
+    "mcap": 9193,
+    "addr": "0xcF7aD49e9f1D2759b30E715435DB671C7F91dBa3"
+   },
+   {
+    "sym": "AMC",
+    "liq": 8810.69,
+    "vol": 1410.96,
+    "chg": 13.53,
+    "price": "0.0000001343",
+    "mcap": 13437,
+    "addr": "0x6999485F40C9162a8a2cfcB51132Fc2675E59Ba3"
+   },
+   {
+    "sym": "ROAR",
+    "liq": 7702.92,
+    "vol": 6246.21,
+    "chg": -13.85,
+    "price": "0.00001092",
+    "mcap": 10924,
+    "addr": "0xaF309e85AfBFFA54a82B99468B23f490054A0420"
+   },
+   {
+    "sym": "RKITTY",
+    "liq": 6653.36,
+    "vol": 53416.68,
+    "chg": -60.2,
+    "price": "0.000008150",
+    "mcap": 8150,
+    "addr": "0x670B86E88A9B88054Fcf5564593A99EaC43a47d5"
+   },
+   {
+    "sym": "chimp",
+    "liq": 5083.4,
+    "vol": 2259.85,
+    "chg": -56.04,
+    "price": "0.000004757",
+    "mcap": 4758,
+    "addr": "0x3e036B6557ddE11EBF131cfbE49b682008A03Be8"
+   },
+   {
+    "sym": "RKT",
+    "liq": 4497.51,
+    "vol": 4.71,
+    "chg": 0.6,
+    "price": "0.00000004415",
+    "mcap": 4416,
+    "addr": "0x68685E9dC6dcfE17962450399aA2d84a54AdcbA3"
+   }
+  ]
+ },
+ "AMC": {
+  "ticker": "AMC",
+  "liq": 110653.47,
+  "vol": 1503196.1500000001,
+  "price": "2.64",
+  "addr": "0x05a3d1Cd21d0C88145E82600E62e7E496e0F222B",
+  "memes": [
+   {
+    "sym": "CINEMA",
+    "liq": 89132.38,
+    "vol": 695895.31,
+    "chg": -55.95,
+    "price": "0.0003911",
+    "mcap": 391174,
+    "addr": "0x9936403A9cc72CF306063E3496EA387428A3aeCd"
+   },
+   {
+    "sym": "APES",
+    "liq": 57502.770000000004,
+    "vol": 216703.96,
+    "chg": 37.7,
+    "price": "0.000005383",
+    "mcap": 63870,
+    "addr": "0x21d26f6e55De5e6afabc005D51eD654Ab7547101"
+   },
+   {
+    "sym": "MOVIE",
+    "liq": 42990.83,
+    "vol": 13584.89,
+    "chg": 120,
+    "price": "0.00004277",
+    "mcap": 42699,
+    "addr": "0x1dD85C5259D551B61DF45bD7d70Cca244aC82D72"
+   },
+   {
+    "sym": "MEMESTOCK",
+    "liq": 24244.559999999998,
+    "vol": 1103.79,
+    "chg": 1.71,
+    "price": "0.000003405",
+    "mcap": 20837,
+    "addr": "0x06b594B07df7d9f87B94156ff7ac2033F68B200d"
+   },
+   {
+    "sym": "AC",
+    "liq": 23515.84,
+    "vol": 85098.44,
+    "chg": 14.99,
+    "price": "0.00002347",
+    "mcap": 23479,
+    "addr": "0xf690dbB1228c9B65Aaf8c31E379B00D3401A1e18"
+   },
+   {
+    "sym": "SHOEBILL",
+    "liq": 21455.89,
+    "vol": 4487.44,
+    "chg": -0.16,
+    "price": "0.00002144",
+    "mcap": 21443,
+    "addr": "0x4F0a2aA00f5ae580d288B822Eba13f80D0671E18"
+   },
+   {
+    "sym": "BIGSHORT",
+    "liq": 21008.0,
+    "vol": 7429.07,
+    "chg": -0.83,
+    "price": "0.00002096",
+    "mcap": 20969,
+    "addr": "0xeacad66F0712A47787781A5Da1a1f06b5c611e18"
+   },
+   {
+    "sym": "TWDD",
+    "liq": 20848.49,
+    "vol": 9857.78,
+    "chg": -0.55,
+    "price": "0.00002076",
+    "mcap": 20762,
+    "addr": "0x77cd6308aa5d0Ced2d7fd0d2Ddc847a4Cc5a1E18"
+   },
+   {
+    "sym": "QUICKIE",
+    "liq": 20798.39,
+    "vol": 98.58,
+    "chg": -0.47,
+    "price": "0.00002079",
+    "mcap": 20798,
+    "addr": "0xf9048d064f0b4eF91477566AE33849cB585a1E18"
+   },
+   {
+    "sym": "AMCULT",
+    "liq": 20792.86,
+    "vol": 6890.85,
+    "chg": -2.64,
+    "price": "0.00002077",
+    "mcap": 20775,
+    "addr": "0xA99e59eDF93DfBFC892aE5d299bCDce716101E18"
+   },
+   {
+    "sym": "AMCC",
+    "liq": 20749.31,
+    "vol": 2218.81,
+    "chg": -1.14,
+    "price": "0.00002074",
+    "mcap": 20743,
+    "addr": "0xFb6055Ac7Ec832d8A2b970FC1643d8c784D21e18"
+   },
+   {
+    "sym": "GORILLAZ",
+    "liq": 20719.21,
+    "vol": 14163.26,
+    "chg": -0.07,
+    "price": "0.00002065",
+    "mcap": 20656,
+    "addr": "0x415540Bd49f7E32d6225f7a96CAfE7172Cb41E18"
+   },
+   {
+    "sym": "RICK",
+    "liq": 20633.87,
+    "vol": 390.57,
+    "chg": -0.93,
+    "price": "0.00002063",
+    "mcap": 20633,
+    "addr": "0x3A420fE1E957951b3Ae669beD133D87f2a141E18"
+   },
+   {
+    "sym": "AMEMEC",
+    "liq": 20633.43,
+    "vol": 341.83,
+    "chg": -0.46,
+    "price": "0.00002063",
+    "mcap": 20632,
+    "addr": "0x9c8583CfF9e38B393C47139E8996F639A3aF1e18"
+   },
+   {
+    "sym": "PEAK",
+    "liq": 20484.79,
+    "vol": 113.28,
+    "chg": -0.46,
+    "price": "0.00002048",
+    "mcap": 20484,
+    "addr": "0x8eF3D815f5E14aEa78f686B87dd12E0D96eC1e18"
+   },
+   {
+    "sym": "memestonk",
+    "liq": 20150.21,
+    "vol": 73212.88,
+    "chg": 1.23,
+    "price": "0.00002001",
+    "mcap": 20010,
+    "addr": "0x35E46899614353C0BE9A525Df1CbE5303f041e18"
+   },
+   {
+    "sym": "APE",
+    "liq": 5689.53,
+    "vol": 1231.78,
+    "chg": -25.77,
+    "price": "0.000005892",
+    "mcap": 5893,
+    "addr": "0x1E1C16d8e4B3cc3Bfe9E3543D7CfeF0B778C0101"
+   }
+  ]
+ },
+ "LLY": {
+  "ticker": "LLY",
+  "liq": 976313.86,
+  "vol": 17845195.64,
+  "price": "1180.25",
+  "addr": "0x8005d266423c7ea827372c9c864491e5786600ea",
+  "memes": [
+   {
+    "sym": "PEPTIDES",
+    "liq": 456147.64,
+    "vol": 2247741.12,
+    "chg": 11978,
+    "price": "0.002532",
+    "mcap": 2532989,
+    "addr": "0x52F380A513112428723abF8AFED125824E4A1e18"
+   },
+   {
+    "sym": "LOOKSMAXX",
+    "liq": 207329.65,
+    "vol": 35431.18,
+    "chg": 0.05,
+    "price": "0.0002073",
+    "mcap": 207330,
+    "addr": "0xE7b18733B39C56ca9B23ECEa70b7fc0858243850"
+   },
+   {
+    "sym": "FATCOIN",
+    "liq": 113737.92,
+    "vol": 9511431.4,
+    "chg": 22940,
+    "price": "0.0008929",
+    "mcap": 892974,
+    "addr": "0x12D5ee7917cA430073C3A638ee1e6f0648A98a01"
+   },
+   {
+    "sym": "LOOKSMAX",
+    "liq": 40528.32,
+    "vol": 135757.93,
+    "chg": 115,
+    "price": "0.00004462",
+    "mcap": 44622,
+    "addr": "0x4043742F30c673F0e55585c9f056Add365e61E18"
+   },
+   {
+    "sym": "WOO",
+    "liq": 32007.93,
+    "vol": 150038.17,
+    "chg": 57.9,
+    "price": "0.00003305",
+    "mcap": 33051,
+    "addr": "0x70458E50C7520C9494D2E20b9Be632aF667F1E18"
+   },
+   {
+    "sym": "RETA",
+    "liq": 28481.32,
+    "vol": 471250.11,
+    "chg": -52.93,
+    "price": "0.00006757",
+    "mcap": 67577,
+    "addr": "0x65EEaf07B545c9560dCbD8a72f239FA1AB961501"
+   },
+   {
+    "sym": "RETATRUTIDE",
+    "liq": 28284.99,
+    "vol": 104880.39,
+    "chg": 38.32,
+    "price": "0.00002869",
+    "mcap": 28690,
+    "addr": "0x2571f6697c247E547bf22FBC86EcF787952E1e18"
+   },
+   {
+    "sym": "RETARD",
+    "liq": 25594.82,
+    "vol": 1085943.0,
+    "chg": 1347,
+    "price": "0.00005605",
+    "mcap": 56057,
+    "addr": "0xEF455BEE1E4Fa2974A7111d0DC9a1E53660A4501"
+   },
+   {
+    "sym": "ILLY",
+    "liq": 7048.46,
+    "vol": 285578.74,
+    "chg": 98.05,
+    "price": "0.000007699",
+    "mcap": 7700,
+    "addr": "0x75E7eBcE48cC611Cc299dD079dE7352693020501"
+   },
+   {
+    "sym": "BELLY",
+    "liq": 5021.5,
+    "vol": 7895.85,
+    "chg": 22.45,
+    "price": "0.000005106",
+    "mcap": 4921,
+    "addr": "0x282c271Cb1e3820097aaE9a56a4cD25f3d38Eb01"
+   }
+  ]
+ },
+ "MRNA": {
+  "ticker": "MRNA",
+  "liq": 374095.01,
+  "vol": 3079309.42,
+  "price": "149.62",
+  "addr": "0x43B07D15cE533bEc5476d70C22a78a1B2B662155",
+  "memes": [
+   {
+    "sym": "VACCINU",
+    "liq": 303665.33,
+    "vol": 1704126.45,
+    "chg": 5764,
+    "price": "0.001208",
+    "mcap": 1208733,
+    "addr": "0xcF1968747bC573294e468FD0cDaB0Dc61B971E18"
+   },
+   {
+    "sym": "NUBTC",
+    "liq": 74682.68,
+    "vol": 131196.29,
+    "chg": -10.16,
+    "price": "0.00009556",
+    "mcap": 95564,
+    "addr": "0xb6263a8D8D418af67f8bBfA6D86888d5B91b1e18"
+   },
+   {
+    "sym": "INTISMERAN",
+    "liq": 48451.82,
+    "vol": 10938.55,
+    "chg": 7.44,
+    "price": "0.00003127",
+    "mcap": 31778,
+    "addr": "0xC12a72D5Be9709Ab0c27a034759f765026F51e18"
+   },
+   {
+    "sym": "VACCINE",
+    "liq": 45107.75,
+    "vol": 71181.23,
+    "chg": 143,
+    "price": "0.00005153",
+    "mcap": 51538,
+    "addr": "0xFF83ca75DDc95F82717FE11e60c4C26DF8481e18"
+   },
+   {
+    "sym": "BOOSTER",
+    "liq": 36355.51,
+    "vol": 8416.49,
+    "chg": 6.21,
+    "price": "0.00003735",
+    "mcap": 37360,
+    "addr": "0xC9fF53Ac5965c0A27f91d9bE00aADba2750d1e18"
+   },
+   {
+    "sym": "BIOACC",
+    "liq": 30318.38,
+    "vol": 1807.68,
+    "chg": -1.79,
+    "price": "0.00003032",
+    "mcap": 30324,
+    "addr": "0x4402e44666A48396a7860358fbc4DA62714A1e18"
+   },
+   {
+    "sym": "PHARMA",
+    "liq": 30133.39,
+    "vol": 1204.46,
+    "chg": 20.99,
+    "price": "0.00003021",
+    "mcap": 30213,
+    "addr": "0x64d040f3f58fb44BC194997C24EDC13527621e18"
+   },
+   {
+    "sym": "BAND",
+    "liq": 27614.8,
+    "vol": 3009.46,
+    "chg": -7.47,
+    "price": "0.00002758",
+    "mcap": 27589,
+    "addr": "0xc315fBF5CC5435d386BBe1518131aF7514F11E18"
+   },
+   {
+    "sym": "PLACEBO",
+    "liq": 25346.81,
+    "vol": 65283.65,
+    "chg": 27.58,
+    "price": "0.00002505",
+    "mcap": 25055,
+    "addr": "0x7B127a7B861032673BA08e546a3561ea8De71E18"
+   },
+   {
+    "sym": "HELIX",
+    "liq": 24628.85,
+    "vol": 191587.57,
+    "chg": 23.28,
+    "price": "0.00002428",
+    "mcap": 24280,
+    "addr": "0x641f7f684a8d7519C13520c15dA6c4D8A8721e18"
+   },
+   {
+    "sym": "GCH",
+    "liq": 21093.02,
+    "vol": 6194.31,
+    "chg": 1.41,
+    "price": "0.00002107",
+    "mcap": 21076,
+    "addr": "0x4B688252F4e5424cc38C707De1c64d346B431e18"
+   },
+   {
+    "sym": "FAUCI",
+    "liq": 21011.5,
+    "vol": 1467.58,
+    "chg": -0.9,
+    "price": "0.00002100",
+    "mcap": 21007,
+    "addr": "0x8CA8993736cd4281d11e6F85d510B80dbf661e18"
+   },
+   {
+    "sym": "MUGI",
+    "liq": 20978.27,
+    "vol": 5284.05,
+    "chg": -3.82,
+    "price": "0.00002096",
+    "mcap": 20964,
+    "addr": "0xD52B04607555aD35B7f9a25a1d1b3C6DE8861e18"
+   },
+   {
+    "sym": "FUCKSLANDER",
+    "liq": 20939.36,
+    "vol": 4.94,
+    "chg": -0.02,
+    "price": "0.00002093",
+    "mcap": 20939,
+    "addr": "0x4BCDa451bf97Ca1ee440Af12Cb9FcAb34FA81e18"
+   },
+   {
+    "sym": "GUCCIGUY",
+    "liq": 20923.93,
+    "vol": 390.99,
+    "chg": -1.84,
+    "price": "0.00002092",
+    "mcap": 20923,
+    "addr": "0x4aA0A84d3df02b74E5dcb8648E0568c66b971e18"
+   },
+   {
+    "sym": "LABRAT",
+    "liq": 20808.15,
+    "vol": 292.39,
+    "chg": -1.08,
+    "price": "0.00002080",
+    "mcap": 20807,
+    "addr": "0xF7802f2059aD5EB0A08599e52B55dc2D78EA1e18"
+   },
+   {
+    "sym": "WCAT",
+    "liq": 20802.57,
+    "vol": 49.04,
+    "chg": 0.13,
+    "price": "0.00002080",
+    "mcap": 20802,
+    "addr": "0xB1aef3701515C72ffB786174DDaD7EB7c29e1e18"
+   },
+   {
+    "sym": "DNA",
+    "liq": 20802.56,
+    "vol": 48.57,
+    "chg": 0.25,
+    "price": "0.00002080",
+    "mcap": 20802,
+    "addr": "0xb557485B7F762270240d9418E31C22aE3A2C1E18"
+   },
+   {
+    "sym": "MED",
+    "liq": 20702.21,
+    "vol": 7312.78,
+    "chg": -2.31,
+    "price": "0.00002067",
+    "mcap": 20670,
+    "addr": "0xeFc951e113eAbbEeDc85146C8Fa4E9741d321e18"
+   },
+   {
+    "sym": "HOODERNA",
+    "liq": 20199.95,
+    "vol": 16703.72,
+    "chg": -1,
+    "price": "0.00002015",
+    "mcap": 20158,
+    "addr": "0x48a0e54d875eebc1398b83E3D4C931E889ec1e18"
+   },
+   {
+    "sym": "AIDS",
+    "liq": 19794.0,
+    "vol": 16991.39,
+    "chg": -2.16,
+    "price": "0.00001975",
+    "mcap": 19752,
+    "addr": "0x5704F02548d14c6B58aDe6b7501C0cf8D5701E18"
+   }
+  ]
+ },
+ "PFE": {
+  "ticker": "PFE",
+  "liq": 29290478.160000004,
+  "vol": 1281463.4600000002,
+  "price": "29.16",
+  "addr": "0x98779875157711be109aC5087126f94FB3ce9C0c",
+  "memes": [
+   {
+    "sym": "HARDFORK",
+    "liq": 20267.97,
+    "vol": 494.57,
+    "chg": -9.3,
+    "price": "0.00002026",
+    "mcap": 20267,
+    "addr": "0xAb885E87A67571e6Dc8D68A765E0bf5D5c7d1E18"
+   },
+   {
+    "sym": "Viagra",
+    "liq": 18593.38,
+    "vol": 642757.64,
+    "chg": 162,
+    "price": "0.00001314",
+    "mcap": 13147,
+    "addr": "0xa7410c61Da6956Ed2e9a00f818BcA8B0B161F101"
+   },
+   {
+    "sym": "VIAGRA",
+    "liq": 7068.3099999999995,
+    "vol": 28021.18,
+    "chg": -18.71,
+    "price": "0.000004281",
+    "mcap": 4281,
+    "addr": "0x269dbD992a9D373ea7C6138430b1D72e66399201"
+   },
+   {
+    "sym": "Covid 19",
+    "liq": 4683.9,
+    "vol": 13587.32,
+    "chg": -43.4,
+    "price": "0.000004689",
+    "mcap": 4690,
+    "addr": "0x8f796eAea92079C061d60E7Df88A0203308Ad301"
+   },
+   {
+    "sym": "BLUECHEW",
+    "liq": 4592.92,
+    "vol": 12456.32,
+    "chg": 4.12,
+    "price": "0.000004605",
+    "mcap": 4606,
+    "addr": "0x5d76e70FEf60Fc518670f5Ed8486303A1a9Ba601"
+   },
+   {
+    "sym": "BONER",
+    "liq": 4425.67,
+    "vol": 9984.73,
+    "chg": -8.59,
+    "price": "0.000004433",
+    "mcap": 4433,
+    "addr": "0x89A22BcA60948CD0f5aD4FA915a712f506F10001"
+   },
+   {
+    "sym": "mask",
+    "liq": 4368.45,
+    "vol": 8489.88,
+    "chg": -14.27,
+    "price": "0.000004368",
+    "mcap": 4369,
+    "addr": "0x4D4A6109ba1D9d2fCACc68b0d7Ac9e810a210601"
+   }
+  ]
+ },
+ "JNJ": {
+  "ticker": "JNJ",
+  "liq": 165221.57,
+  "vol": 1317045.42,
+  "price": "275.46",
+  "addr": "0x03DfbBE0AC4E7bCDaFd08eD41A400326B77D8c80",
+  "memes": [
+   {
+    "sym": "DIDDY",
+    "liq": 72582.75,
+    "vol": 758581.27,
+    "chg": 814,
+    "price": "0.0003057",
+    "mcap": 305714,
+    "addr": "0x1409f68D7A63F2222741E632f78100887043f001"
+   },
+   {
+    "sym": "BABYOIL",
+    "liq": 24507.51,
+    "vol": 2796.9900000000002,
+    "chg": null,
+    "price": "0.00002025",
+    "mcap": 20256,
+    "addr": "0x76Ff036D9B064B5dF8764Edf3B478433a4111e18"
+   },
+   {
+    "sym": "POOPIE",
+    "liq": 23319.79,
+    "vol": 242894.18,
+    "chg": -90.57,
+    "price": "0.00004483",
+    "mcap": 44834,
+    "addr": "0x5071627Df2734EE73FCbD7aAB8A3b579AF3C3901"
+   },
+   {
+    "sym": "JNJND",
+    "liq": 22644.72,
+    "vol": 34737.14,
+    "chg": -69.81,
+    "price": "0.0000002719",
+    "mcap": 27198,
+    "addr": "0x5F11D06B97f98d34b57C64d2934BE23c6FeBFbA3"
+   },
+   {
+    "sym": "JOHNSON",
+    "liq": 4162.15,
+    "vol": 10608.62,
+    "chg": 18.93,
+    "price": "0.000004366",
+    "mcap": 4366,
+    "addr": "0xAB589474960493b5d56221BF69FDeFf5AbBa0123"
+   },
+   {
+    "sym": "VACCINE",
+    "liq": 2696.86,
+    "vol": 93.92,
+    "chg": -1.64,
+    "price": "0.000002696",
+    "mcap": 2697,
+    "addr": "0x542E8CE05507662826e34938E09a9C361e3df01d"
+   },
+   {
+    "sym": "BABY OIL",
+    "liq": 0.0,
+    "vol": 983.83,
+    "chg": -0.45,
+    "price": "0.000004248",
+    "mcap": 4249,
+    "addr": "0xb2CF3965229B7a17EF41232E72c1F00e9e908f01"
+   }
+  ]
+ },
+ "UNH": {
+  "ticker": "UNH",
+  "liq": 50561.079999999994,
+  "vol": 431210.39999999997,
+  "price": "414.033",
+  "addr": "0xcF364ea52787e289De6F32077834056E3E70D6A8",
+  "memes": [
+   {
+    "sym": "LUIGI",
+    "liq": 32817.87,
+    "vol": 342817.33,
+    "chg": 1961,
+    "price": "0.00008237",
+    "mcap": 82373,
+    "addr": "0x0bA2bbB25850Ad1005a28Bf71d19bcE11dfCfa01"
+   },
+   {
+    "sym": "INS",
+    "liq": 4714.65,
+    "vol": 1957.23,
+    "chg": -5.19,
+    "price": "0.000004726",
+    "mcap": 4727,
+    "addr": "0x40b371e4fe74b077257FECFDE31df0d5Cc153101"
+   },
+   {
+    "sym": "Luigi",
+    "liq": 0.0,
+    "vol": 676.0,
+    "chg": -5.32,
+    "price": "0.000004186",
+    "mcap": 4186,
+    "addr": "0x3a915049817384C71e60a2cbB356480660984101"
+   }
+  ]
+ },
+ "CRCL": {
+  "ticker": "CRCL",
+  "liq": 543970.4600000001,
+  "vol": 1956924.0899999999,
+  "price": "88.91",
+  "addr": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+  "memes": [
+   {
+    "sym": "OUROBOROS",
+    "liq": 132046.19,
+    "vol": 59165359.2,
+    "chg": 36106,
+    "price": "1.28",
+    "mcap": 1637967,
+    "addr": "0x87aF913718f73168D4566bBF51683792aC2680eB"
+   },
+   {
+    "sym": "JERK",
+    "liq": 58297.86000000001,
+    "vol": 227557.8,
+    "chg": 164,
+    "price": "0.0001400",
+    "mcap": 140084,
+    "addr": "0xb240214Ed38A215Ce3D1a105E4D0D4e84602361C"
+   },
+   {
+    "sym": "USDC",
+    "liq": 51938.91,
+    "vol": 4960.5,
+    "chg": -20.66,
+    "price": "0.000003661",
+    "mcap": 41885,
+    "addr": "0x7eCca74AB958900EBBeD1b258cAb50Ae69409550"
+   },
+   {
+    "sym": "DEPEG",
+    "liq": 19989.21,
+    "vol": 100.48,
+    "chg": 0.68,
+    "price": "0.00001985",
+    "mcap": 19859,
+    "addr": "0x6A428582B25800B2e0191aaa6917387b83a91E18"
+   },
+   {
+    "sym": "rUSDC",
+    "liq": 8139.24,
+    "vol": 1.58,
+    "chg": 0.34,
+    "price": "0.00000008139",
+    "mcap": 8140,
+    "addr": "0x05fB7316d600edC32c184e6987563faD153fCBa3"
+   },
+   {
+    "sym": "PEG",
+    "liq": 6975.67,
+    "vol": 1584.39,
+    "chg": 0.47,
+    "price": "0.000005412",
+    "mcap": 5412,
+    "addr": "0x4B23f6c983A7225C12206200F955E0Af62CD8fC3"
+   },
+   {
+    "sym": "DAWG",
+    "liq": 5878.78,
+    "vol": 3536.8,
+    "chg": -0.03,
+    "price": "0.000005878",
+    "mcap": 5879,
+    "addr": "0x1f274b9139Ab8bB6a52626F2185a75D2524dBF01"
+   },
+   {
+    "sym": "peg",
+    "liq": 5813.06,
+    "vol": 34.46,
+    "chg": null,
+    "price": "0.000005813",
+    "mcap": 5813,
+    "addr": "0x0B56b56c87C9E34e11970FC643df6581cCa06601"
+   },
+   {
+    "sym": "UNSTABLE",
+    "liq": 5785.32,
+    "vol": 275.87,
+    "chg": -2.27,
+    "price": "0.000003769",
+    "mcap": 3770,
+    "addr": "0xC93842cfBbc4B9a3dDED3389f448F6f3c6c34884"
+   },
+   {
+    "sym": "BILL",
+    "liq": 5763.25,
+    "vol": 565.25,
+    "chg": -25.31,
+    "price": "0.000003694",
+    "mcap": 3694,
+    "addr": "0x131491E890EB32E22D5Fa3f23000F185E7398cAc"
+   },
+   {
+    "sym": "Mocat",
+    "liq": 829.66,
+    "vol": 24.77,
+    "chg": -5.41,
+    "price": "0.000004198",
+    "mcap": 4198,
+    "addr": "0x44E454753421e93244a2879EB141a8b11e8D7904"
+   },
+   {
+    "sym": "DIEGO",
+    "liq": 826.94,
+    "vol": 12.27,
+    "chg": 2.02,
+    "price": "0.000003308",
+    "mcap": 3309,
+    "addr": "0xdc7d117c74b43Dad1997F88b3e77a1bC145A7475"
+   }
+  ]
+ },
+ "SPCX": {
+  "ticker": "SPCX",
+  "liq": 4440487.939999999,
+  "vol": 20848556.12,
+  "price": "140.10",
+  "addr": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+  "memes": [
+   {
+    "sym": "SPACEHOOD",
+    "liq": 924428.85,
+    "vol": 4191603.26,
+    "chg": -27.61,
+    "price": "0.01002",
+    "mcap": 10023523,
+    "addr": "0xFe7E19CbCe2f896C6C528BC355bAF5a768291E18"
+   },
+   {
+    "sym": "MARSCOIN",
+    "liq": 127977.32,
+    "vol": 62423.95,
+    "chg": 32.79,
+    "price": "0.0001164",
+    "mcap": 116492,
+    "addr": "0x5A02ff1Fa21055E40753Fb039B3589781a361e18"
+   },
+   {
+    "sym": "STARMAN",
+    "liq": 77544.54,
+    "vol": 98901.91,
+    "chg": -51.82,
+    "price": "0.0001102",
+    "mcap": 109676,
+    "addr": "0xA5839ec14251c6D18330340a4E62e062e4A51E18"
+   },
+   {
+    "sym": "DOGE-1",
+    "liq": 68389.93,
+    "vol": 173758.18,
+    "chg": 176,
+    "price": "0.0001483",
+    "mcap": 148309,
+    "addr": "0x3eC8A8174129D5cBeCef67eE2AF8621319c34c03"
+   },
+   {
+    "sym": "MARTIANS",
+    "liq": 61915.68,
+    "vol": 145194.01,
+    "chg": -13.9,
+    "price": "0.0004631",
+    "mcap": 463179,
+    "addr": "0xAc77646bcff9d52e99800534192E0290933F4094"
+   },
+   {
+    "sym": "\ud83d\ude80",
+    "liq": 56957.39,
+    "vol": 99433.1,
+    "chg": -45.15,
+    "price": "0.0003823",
+    "mcap": 382335,
+    "addr": "0x6B12ec435f15F823ee3C550e9013123e4187429B"
+   },
+   {
+    "sym": "DOGE1",
+    "liq": 46454.05,
+    "vol": 2914.84,
+    "chg": 3.28,
+    "price": "0.0000004644",
+    "mcap": 46442,
+    "addr": "0x3582C0Ed4324cb742266401E56C68d026118EbA3"
+   },
+   {
+    "sym": "PROMETHEUS",
+    "liq": 44118.85,
+    "vol": 49605.44,
+    "chg": 25.64,
+    "price": "0.0002351",
+    "mcap": 235189,
+    "addr": "0x20f24b8D2BCaD7cd252fC60EE5f2Db27C2f2f261"
+   },
+   {
+    "sym": "EARTHCOIN",
+    "liq": 37624.23,
+    "vol": 42574.61,
+    "chg": -28.29,
+    "price": "0.0001710",
+    "mcap": 85519,
+    "addr": "0x320D9B0F1B438567D28452B715f8766a7617043E"
+   },
+   {
+    "sym": "MANCER",
+    "liq": 37585.37,
+    "vol": 79073.74,
+    "chg": -31.15,
+    "price": "0.004256",
+    "mcap": 4520886,
+    "addr": "0xc72F232a6869e6CF34dC06129AfFD07F8a2a246A"
+   },
+   {
+    "sym": "CUMMIES",
+    "liq": 35537.42,
+    "vol": 492503.65,
+    "chg": 1954,
+    "price": "0.0001525",
+    "mcap": 152595,
+    "addr": "0xD6172940c21d60DD37C9ceAeA1A231816746b8a4"
+   },
+   {
+    "sym": "SPCSEX",
+    "liq": 25779.51,
+    "vol": 84545.1,
+    "chg": -42.1,
+    "price": "0.00008055",
+    "mcap": 80559,
+    "addr": "0x0AE2e697692767D12f9c592FE0C41842CDDf6eac"
+   },
+   {
+    "sym": "DICKBUTT",
+    "liq": 22179.74,
+    "vol": 70986.25,
+    "chg": 25.63,
+    "price": "0.00005968",
+    "mcap": 59685,
+    "addr": "0x8c894913E6A82DD98771c9D5407B95B1C1C29e89"
+   },
+   {
+    "sym": "SPCE",
+    "liq": 15851.65,
+    "vol": 785599.69,
+    "chg": -37.75,
+    "price": "0.00003036",
+    "mcap": 30360,
+    "addr": "0x90F626a2c475cDFe0BdF5E805Be6E2df990EDd84"
+   },
+   {
+    "sym": "Vlad",
+    "liq": 15589.96,
+    "vol": 4170.3,
+    "chg": -26.9,
+    "price": "0.00002945",
+    "mcap": 29458,
+    "addr": "0x133698A17B7b5c2b981555C56c2B00824f517C1b"
+   },
+   {
+    "sym": "LM",
+    "liq": 12827.36,
+    "vol": 19027.08,
+    "chg": 1.16,
+    "price": "0.00001988",
+    "mcap": 19881,
+    "addr": "0x6F086c5bd71de7D80625a21b6973ae411acf64a7"
+   },
+   {
+    "sym": "ELON",
+    "liq": 12079.52,
+    "vol": 32743.0,
+    "chg": 29.26,
+    "price": "0.00005857",
+    "mcap": 58572,
+    "addr": "0x38c4d77938821037D3A42C7Da0519ee5A9158cAD"
+   },
+   {
+    "sym": "stockfish",
+    "liq": 11097.42,
+    "vol": 244484.47,
+    "chg": -72.16,
+    "price": "0.00001483",
+    "mcap": 14837,
+    "addr": "0xCecAb11891891A4184e1B93DDd5060715f5E8D3e"
+   },
+   {
+    "sym": "PACK",
+    "liq": 11046.93,
+    "vol": 5269.7,
+    "chg": -25.38,
+    "price": "0.0005201",
+    "mcap": 483792,
+    "addr": "0x0145AcbcceFbEd6F303C420bEeaaAc72E905430b"
+   },
+   {
+    "sym": "BOT",
+    "liq": 10575.11,
+    "vol": 7094.36,
+    "chg": -27.23,
+    "price": "0.00001347",
+    "mcap": 13473,
+    "addr": "0x6353C68b76113D845114bBa712882a53685E3325"
+   },
+   {
+    "sym": "EVP",
+    "liq": 10555.77,
+    "vol": 613.65,
+    "chg": -13.57,
+    "price": "0.0005742",
+    "mcap": 574299,
+    "addr": "0x8dCb5663BC2149e001a0776585ad59A144dA1B2F"
+   },
+   {
+    "sym": "URMOM",
+    "liq": 8290.76,
+    "vol": 9964.58,
+    "chg": -42.92,
+    "price": "0.000008305",
+    "mcap": 8305,
+    "addr": "0x0423bEd328942Cb8bF79726b986893E1Eb863CBa"
+   },
+   {
+    "sym": "FLOKI",
+    "liq": 4931.71,
+    "vol": 21372.49,
+    "chg": -94.08,
+    "price": "0.000003004",
+    "mcap": 3005,
+    "addr": "0xf2B343F55cbA5BbF4C60903D39e0a7143A282bCd"
+   },
+   {
+    "sym": "ALEIAH",
+    "liq": 4526.24,
+    "vol": 36755.96,
+    "chg": -94.79,
+    "price": "0.000002530",
+    "mcap": 2531,
+    "addr": "0x09D64667fF7a74c58F7022A25727a673006C17Bb"
+   },
+   {
+    "sym": "PDEX",
+    "liq": 1775.98,
+    "vol": 73.9,
+    "chg": -7.18,
+    "price": "0.001845",
+    "mcap": 1845086,
+    "addr": "0x5C9A6a0353f1EDC67B22f2cdcfE9294f5A889B60"
+   }
+  ]
+ },
+ "QUBT": {
+  "ticker": "QUBT",
+  "liq": 286668.70999999996,
+  "vol": 5179183.85,
+  "price": "7.90",
+  "addr": "0x59818904ab4cE163b3cE4FfB64f2D6Ca02c434B4",
+  "memes": [
+   {
+    "sym": "QC",
+    "liq": 88539.47,
+    "vol": 404682.77999999997,
+    "chg": -35.86,
+    "price": "0.0002781",
+    "mcap": 278180,
+    "addr": "0xa802332f6c9daf2146A61C51876d180b1a4a9901"
+   },
+   {
+    "sym": "QI",
+    "liq": 81791.13999999998,
+    "vol": 2529566.83,
+    "chg": 512,
+    "price": "0.0003244",
+    "mcap": 324500,
+    "addr": "0x518ABf0972da8E13b25D1dDA06e8092C25577C01"
+   },
+   {
+    "sym": "QUANTUMCAT",
+    "liq": 45300.51,
+    "vol": 331549.45,
+    "chg": 131,
+    "price": "0.00004806",
+    "mcap": 48070,
+    "addr": "0x5edF59a6a6F207Aaaf0FC60B0c972c6D044E1e18"
+   },
+   {
+    "sym": "QTARD",
+    "liq": 40312.85,
+    "vol": 215721.2,
+    "chg": -32.6,
+    "price": "0.00002673",
+    "mcap": 26730,
+    "addr": "0x4Aa5e58c73eBb268A8A97A441A8eF674e0bd9301"
+   },
+   {
+    "sym": "QUANT",
+    "liq": 26008.19,
+    "vol": 121515.49,
+    "chg": 24.17,
+    "price": "0.00002585",
+    "mcap": 25856,
+    "addr": "0xb64FA65b12d52Dd3eEc96764B3915F0E47a71E18"
+   },
+   {
+    "sym": "SCAT",
+    "liq": 23063.25,
+    "vol": 65740.64,
+    "chg": 12.99,
+    "price": "0.00002293",
+    "mcap": 22940,
+    "addr": "0xee61933d0c099B42D2f27b9B0e238100a7b81e18"
+   },
+   {
+    "sym": "QUANTUM",
+    "liq": 22808.72,
+    "vol": 37312.75,
+    "chg": -6.79,
+    "price": "0.00002221",
+    "mcap": 22218,
+    "addr": "0xA7F6777631D3EE774b836654f461bEb3c8C61e18"
+   },
+   {
+    "sym": "QINU",
+    "liq": 21788.77,
+    "vol": 14357.9,
+    "chg": 2.83,
+    "price": "0.00002172",
+    "mcap": 21727,
+    "addr": "0xC5041E625f400183c5bA8575F37Ab256a5351E18"
+   },
+   {
+    "sym": "QA",
+    "liq": 21651.41,
+    "vol": 945.3,
+    "chg": -4.22,
+    "price": "0.00002164",
+    "mcap": 21649,
+    "addr": "0xbb2bF096f7d931Df48041C17F9B7767D01291e18"
+   },
+   {
+    "sym": "TARD",
+    "liq": 21644.52,
+    "vol": 2092.78,
+    "chg": -3.43,
+    "price": "0.00002163",
+    "mcap": 21639,
+    "addr": "0xD5bde83843785908b13D521dA23B357596751e18"
+   },
+   {
+    "sym": "QUBYT",
+    "liq": 21537.04,
+    "vol": 3590.38,
+    "chg": 0.1,
+    "price": "0.00002152",
+    "mcap": 21527,
+    "addr": "0x66C3C26bF523B7888992CC440A39B1812Ece1E18"
+   },
+   {
+    "sym": "CHAOS",
+    "liq": 21505.1,
+    "vol": 0.28,
+    "chg": null,
+    "price": "0.00002150",
+    "mcap": 21505,
+    "addr": "0xB2d7F66e4cEDb55B9B208FbdBB99206882841e18"
+   },
+   {
+    "sym": "CUMPUTE",
+    "liq": 21440.65,
+    "vol": 513.66,
+    "chg": -1.18,
+    "price": "0.00002143",
+    "mcap": 21439,
+    "addr": "0xB9feA260d740fA89C1CbF8AfF81FFc4A77681e18"
+   },
+   {
+    "sym": "QUANTUMCOMPUTER",
+    "liq": 21424.49,
+    "vol": 12523.1,
+    "chg": -5.35,
+    "price": "0.00002139",
+    "mcap": 21392,
+    "addr": "0x9a99a97292c91B678F6CC3c94d4338f063191E18"
+   },
+   {
+    "sym": "SCHRODINGERS",
+    "liq": 21414.6,
+    "vol": 1424.96,
+    "chg": -0.43,
+    "price": "0.00002141",
+    "mcap": 21411,
+    "addr": "0xa1597ab70920956A5a9D08423719F9fBbDD31E18"
+   },
+   {
+    "sym": "YOYO",
+    "liq": 21387.56,
+    "vol": 12425.89,
+    "chg": 4.9,
+    "price": "0.00002128",
+    "mcap": 21289,
+    "addr": "0xAc26b5cA9BB418837f1812edeAF2A39826091e18"
+   },
+   {
+    "sym": "QCHIP",
+    "liq": 21311.21,
+    "vol": 1587.01,
+    "chg": -2.39,
+    "price": "0.00002129",
+    "mcap": 21294,
+    "addr": "0xA8E146A07111b7DEB5B30114B4acA7d9B6D01e18"
+   },
+   {
+    "sym": "QUBY",
+    "liq": 21255.8,
+    "vol": 4660.19,
+    "chg": -2.54,
+    "price": "0.00002124",
+    "mcap": 21243,
+    "addr": "0xfc4b97A1E0306e2f8396fB0486b592413D621E18"
+   },
+   {
+    "sym": "RABBIT",
+    "liq": 20641.37,
+    "vol": 32096.52,
+    "chg": -0.29,
+    "price": "0.00002054",
+    "mcap": 20544,
+    "addr": "0x964AFC9EefDa0FbeC1eD8745F4F6bD35d2e01E18"
+   },
+   {
+    "sym": "QCAT",
+    "liq": 15107.26,
+    "vol": 219542.83,
+    "chg": -27.03,
+    "price": "0.00002130",
+    "mcap": 21309,
+    "addr": "0x97737986245C3A9fD61C40424aC98C816451d301"
+   }
+  ]
+ },
+ "WYFI": {
+  "ticker": "WYFI",
+  "liq": 528280.1999999998,
+  "vol": 5597145.81,
+  "price": "17.076",
+  "addr": "0x9e7ABD3C9139D14E4c86DcE0e455AAB7A0C2FB3E",
+  "memes": [
+   {
+    "sym": "Rabbit",
+    "liq": 27608.63,
+    "vol": 351181.67,
+    "chg": -81.13,
+    "price": "0.000009581",
+    "mcap": 15545840,
+    "addr": "0x73822CC9f04820d9b846E36CB354567CB08a17af"
+   },
+   {
+    "sym": "WIFI",
+    "liq": 20143.05,
+    "vol": 16020.59,
+    "chg": -5.01,
+    "price": "0.00002010",
+    "mcap": 20103,
+    "addr": "0x6D3E7c88431f82b4E0D54ABC6a30f8f12d671E18"
+   },
+   {
+    "sym": "RABBIT",
+    "liq": 1094.34,
+    "vol": 37.05,
+    "chg": -60.29,
+    "price": "0.000001109",
+    "mcap": 1109,
+    "addr": "0x444d666Cc0727F3472b907c47b68bF44D8021e18"
+   },
+   {
+    "sym": "WIFEY",
+    "liq": 1016.22,
+    "vol": 1338.23,
+    "chg": 28.69,
+    "price": "0.000003811",
+    "mcap": 3812,
+    "addr": "0xf0d34983a9a08914A55ee5b3f518dc92D255083D"
+   }
+  ]
+ },
+ "SNDK": {
+  "ticker": "SNDK",
+  "liq": 443183.5599999999,
+  "vol": 2892120.0200000005,
+  "price": "1526.24",
+  "addr": "0xB90A19fF0Af67f7779afF50A882A9CfF42446400",
+  "memes": [
+   {
+    "sym": "CACHE",
+    "liq": 553942.97,
+    "vol": 2834660.21,
+    "chg": 89.76,
+    "price": "0.003113",
+    "mcap": 3113318,
+    "addr": "0xAfe41f4356c24f716111DE1fbbC84e061D291E18"
+   },
+   {
+    "sym": "MEMORYMAN",
+    "liq": 84774.9,
+    "vol": 221454.53,
+    "chg": -70.31,
+    "price": "0.00001422",
+    "mcap": 26553,
+    "addr": "0xa1817524cb925D3468760613435600f233Ff8b5e"
+   },
+   {
+    "sym": "HDD",
+    "liq": 82372.77,
+    "vol": 42041.6,
+    "chg": -12.59,
+    "price": "0.00007835",
+    "mcap": 78350,
+    "addr": "0xAE9b7D708270491aC4d046C1D25dF73d62791E18"
+   },
+   {
+    "sym": "SANDICK",
+    "liq": 75282.74,
+    "vol": 189647.62,
+    "chg": 145,
+    "price": "0.00006566",
+    "mcap": 65543,
+    "addr": "0x37a027a719CaC2d42d3Ef1aDBe7865A705e01e18"
+   },
+   {
+    "sym": "OP",
+    "liq": 44772.57,
+    "vol": 173168.94,
+    "chg": 36.57,
+    "price": "0.0002323",
+    "mcap": 232307,
+    "addr": "0xF25Ccb1036C41e953F84eC9F3cC72f8d73953214"
+   },
+   {
+    "sym": "CARD",
+    "liq": 29040.53,
+    "vol": 91050.45,
+    "chg": 46.26,
+    "price": "0.00002960",
+    "mcap": 29606,
+    "addr": "0xB4Ba5B179709169Ef917ea8D1a37633315ad1E18"
+   },
+   {
+    "sym": "FLOCK",
+    "liq": 24299.42,
+    "vol": 33142.28,
+    "chg": -11.1,
+    "price": "0.03826",
+    "mcap": 5168700,
+    "addr": "0x5aB3D4c385B400F3aBB49e80DE2fAF6a88A7B691"
+   },
+   {
+    "sym": "SUNCAT",
+    "liq": 21160.48,
+    "vol": 30849.72,
+    "chg": -1.26,
+    "price": "0.00002108",
+    "mcap": 21089,
+    "addr": "0x8aAAde1b3f9FB50520Fa2d1547F9158a398b1e18"
+   },
+   {
+    "sym": "SANDUSKY",
+    "liq": 21065.71,
+    "vol": 2.49,
+    "chg": null,
+    "price": "0.00002106",
+    "mcap": 21066,
+    "addr": "0x552c120685B04D8FA9E67EdAfD4c4C5cbA071E18"
+   },
+   {
+    "sym": "SDCARD",
+    "liq": 21040.68,
+    "vol": 0.24,
+    "chg": null,
+    "price": "0.00002104",
+    "mcap": 21041,
+    "addr": "0x9911AFb37825c62C42d0D8332fFe2bf73E2F1E18"
+   },
+   {
+    "sym": "AIRAT",
+    "liq": 19997.0,
+    "vol": 13234.2,
+    "chg": -5.01,
+    "price": "0.00001996",
+    "mcap": 19963,
+    "addr": "0x5C74Cb145DEEDF1d99EAc3883D3810EBEB9D1e18"
+   }
+  ]
+ },
+ "GLD": {
+  "ticker": "GLD",
+  "liq": 4375711.46,
+  "vol": 31453057.2,
+  "price": "401.50",
+  "addr": "0xC9a981FEE1F9DEc688bb123ccDeCc63D0deBFC4e",
+  "memes": [
+   {
+    "sym": "UBIK",
+    "liq": 272220.52,
+    "vol": 15757795.18,
+    "chg": 17293,
+    "price": "0.009202",
+    "mcap": 9202281,
+    "addr": "0x812486EAea648819853F8E372dc9f1516C7868Bd"
+   },
+   {
+    "sym": "SCHIFFY",
+    "liq": 245383.18,
+    "vol": 885730.68,
+    "chg": 57.9,
+    "price": "0.001164",
+    "mcap": 1157088,
+    "addr": "0x42aFA2124ca5a2B83898E46B2dA9a190995b1E18"
+   },
+   {
+    "sym": "GG",
+    "liq": 231469.65,
+    "vol": 1193401.22,
+    "chg": 27.51,
+    "price": "0.006653",
+    "mcap": 6653708,
+    "addr": "0xcaCB0e9caCcee63ec4d82952E561a291c68Bcb68"
+   },
+   {
+    "sym": "CASHBIRD",
+    "liq": 185466.4,
+    "vol": 4259473.74,
+    "chg": 1877,
+    "price": "0.0004218",
+    "mcap": 421821,
+    "addr": "0x38C8f642A04FEaC9899990276b4207fE4F621e18"
+   },
+   {
+    "sym": "ROCK",
+    "liq": 100270.32,
+    "vol": 635210.01,
+    "chg": -71.42,
+    "price": "0.0001679",
+    "mcap": 167747,
+    "addr": "0xB6b5D146d89cDceD2E304389D08448E327c71E18"
+   },
+   {
+    "sym": "BASEMENT",
+    "liq": 56472.32,
+    "vol": 8628.95,
+    "chg": -15.44,
+    "price": "0.00007180",
+    "mcap": 71810,
+    "addr": "0x544092A0De16225e12B3e7F8aFa4a713751C1e18"
+   },
+   {
+    "sym": "GOLDINU",
+    "liq": 40185.35,
+    "vol": 9754.17,
+    "chg": 6.22,
+    "price": "0.00004377",
+    "mcap": 43778,
+    "addr": "0x4306Bacd4a3F462dE82502F1a748c02DaEBA1e18"
+   },
+   {
+    "sym": "SCHIFF",
+    "liq": 32627.35,
+    "vol": 297.72,
+    "chg": -5.53,
+    "price": "0.00003455",
+    "mcap": 34557,
+    "addr": "0x7b799F6274E672Fc324f714880c489BC09591e18"
+   },
+   {
+    "sym": "METALSINU",
+    "liq": 20852.24,
+    "vol": 408.88,
+    "chg": -4.25,
+    "price": "0.00002085",
+    "mcap": 20857,
+    "addr": "0x03Cd77198A31BA35fcD122A7092755fdC87b1E18"
+   },
+   {
+    "sym": "CUM",
+    "liq": 17923.37,
+    "vol": 616366.64,
+    "chg": 117,
+    "price": "0.00003989",
+    "mcap": 39895,
+    "addr": "0xCBF2c93a338E806Ada15003d12451bBdFFb103A8"
+   },
+   {
+    "sym": "MIDAS",
+    "liq": 16727.99,
+    "vol": 409463.33,
+    "chg": -28.22,
+    "price": "0.00003475",
+    "mcap": 34751,
+    "addr": "0x23112642A224DCc5A285E7C72FdAD1409A149F0c"
+   },
+   {
+    "sym": "RAD",
+    "liq": 13203.52,
+    "vol": 1257.55,
+    "chg": -3,
+    "price": "0.02385",
+    "mcap": 20266,
+    "addr": "0xa3B3F710F5572D176C65d6883844a108fE9E3a9c"
+   },
+   {
+    "sym": "HAVEN",
+    "liq": 12952.65,
+    "vol": 666.6,
+    "chg": -20.08,
+    "price": "0.0002161",
+    "mcap": 12006,
+    "addr": "0x9334ef5943ED225E413B45Ce85a9a1f68a1eEC52"
+   },
+   {
+    "sym": "GOLDFISH",
+    "liq": 9279.88,
+    "vol": 735765.18,
+    "chg": -78.28,
+    "price": "0.00001069",
+    "mcap": 10695,
+    "addr": "0x54eb1d415CD1fB8DdDFeC708C55aE700C944e20D"
+   },
+   {
+    "sym": "NUGGET",
+    "liq": 7642.65,
+    "vol": 234998.51,
+    "chg": -29.93,
+    "price": "0.000007253",
+    "mcap": 7254,
+    "addr": "0xBba3F8831a4e2d4502E495f09a3F21dEbc7a3cb7"
+   },
+   {
+    "sym": "VGOLD",
+    "liq": 6113.58,
+    "vol": 19705.42,
+    "chg": -11.66,
+    "price": "0.000004686",
+    "mcap": 4664,
+    "addr": "0xfa542Fe8F13b1e4646e9E5226E31e2d1D0bdD234"
+   },
+   {
+    "sym": "GS",
+    "liq": 4806.16,
+    "vol": 139.0,
+    "chg": -13.8,
+    "price": "0.000002896",
+    "mcap": 2897,
+    "addr": "0x72F90F1091d1bc64787Ef39021FF1774699B17BC"
+   },
+   {
+    "sym": "\u91d1\u72d7",
+    "liq": 4791.12,
+    "vol": 716.03,
+    "chg": -42.82,
+    "price": "0.000002878",
+    "mcap": 2879,
+    "addr": "0x4E0305ed8600F1b710231b249C1764d280df7EFB"
+   },
+   {
+    "sym": "PHAT",
+    "liq": 4517.44,
+    "vol": 51188.74,
+    "chg": -94.95,
+    "price": "0.000002559",
+    "mcap": 2559,
+    "addr": "0x508Aab754119EE9B184C9c11248Dc730a78E7ce3"
+   },
+   {
+    "sym": "OSRS",
+    "liq": 4467.67,
+    "vol": 2535.06,
+    "chg": -14.7,
+    "price": "0.000002526",
+    "mcap": 2527,
+    "addr": "0x1d2a8974cDDD480104F424d450f7b152bCfc682a"
+   }
+  ]
+ },
+ "SLV": {
+  "ticker": "SLV",
+  "liq": 245652.42,
+  "vol": 958905.2499999999,
+  "price": "59.12",
+  "addr": "0x411eFb0E7f985935DAec3D4C3ebaEa0d0AD7D89f",
+  "memes": [
+   {
+    "sym": "SPOON",
+    "liq": 79368.55,
+    "vol": 102005.45999999999,
+    "chg": -56.64,
+    "price": "0.00006016",
+    "mcap": 60166,
+    "addr": "0x3b7729EDCd5e899F5A0688cC6ff91c503acd324f"
+   },
+   {
+    "sym": "SURFER",
+    "liq": 38492.85,
+    "vol": 313382.53,
+    "chg": 95.9,
+    "price": "0.00004110",
+    "mcap": 41108,
+    "addr": "0xE0fFbBf1Fa3bcFF77cF7A03f95351b4Eb1361e18"
+   },
+   {
+    "sym": "SILVERINU",
+    "liq": 31055.84,
+    "vol": 110536.95,
+    "chg": 58.55,
+    "price": "0.00003248",
+    "mcap": 32488,
+    "addr": "0xC1799868A300F71553c675be44A1bb94AF161E18"
+   },
+   {
+    "sym": "SILVERBACK",
+    "liq": 27060.23,
+    "vol": 293058.63,
+    "chg": 25.01,
+    "price": "0.00002596",
+    "mcap": 25962,
+    "addr": "0xd993405f0bAD48BF7C58090d45f8045cC3291E18"
+   },
+   {
+    "sym": "CEGS",
+    "liq": 24892.42,
+    "vol": 209340.62,
+    "chg": 16.91,
+    "price": "0.00002457",
+    "mcap": 24571,
+    "addr": "0xd7278257A1Bc641dC85C4CC767053A03F95B1e18"
+   },
+   {
+    "sym": "GIN",
+    "liq": 22402.64,
+    "vol": 32325.57,
+    "chg": 4.58,
+    "price": "0.00002236",
+    "mcap": 22369,
+    "addr": "0xf8feEEB0C0805c35df81ec50a164Eab999131e18"
+   },
+   {
+    "sym": "SLVINU",
+    "liq": 21775.63,
+    "vol": 4273.96,
+    "chg": 4.95,
+    "price": "0.00002176",
+    "mcap": 21764,
+    "addr": "0x42ADAce52c87FF19f34342232448027645E41E18"
+   },
+   {
+    "sym": "LAYOOO",
+    "liq": 21525.94,
+    "vol": 95673.75,
+    "chg": -1.26,
+    "price": "0.00002107",
+    "mcap": 21079,
+    "addr": "0x6C9548bFCa7b49BcdB0e26ad3Aa34a93FC7c1e18"
+   },
+   {
+    "sym": "HARAMBE",
+    "liq": 21424.38,
+    "vol": 51071.74,
+    "chg": -0.27,
+    "price": "0.00002128",
+    "mcap": 21288,
+    "addr": "0x999eD84038fc2ecAC4Dc79cf2BF5f181a0BC1e18"
+   },
+   {
+    "sym": "SI",
+    "liq": 20894.19,
+    "vol": 53811.74,
+    "chg": 0.97,
+    "price": "0.00002075",
+    "mcap": 20757,
+    "addr": "0x57682baa893b64778Bd77d93879683477Aa01e18"
+   },
+   {
+    "sym": "LAYOOOO",
+    "liq": 20719.92,
+    "vol": 18678.4,
+    "chg": 0.27,
+    "price": "0.00002066",
+    "mcap": 20665,
+    "addr": "0x84B3EfFCf61c7cfD8B27037Eb163759d7b241E18"
+   },
+   {
+    "sym": "KANYE",
+    "liq": 20555.53,
+    "vol": 17131.65,
+    "chg": -1.18,
+    "price": "0.00002041",
+    "mcap": 20420,
+    "addr": "0x75b5463d80D8Fc5B9cD7a364391635f92C261E18"
+   },
+   {
+    "sym": "GINGA",
+    "liq": 20527.79,
+    "vol": 19.35,
+    "chg": -0.05,
+    "price": "0.00002052",
+    "mcap": 20528,
+    "addr": "0x7BA56D77621D69C867B99b3a38EfD0216AAE1E18"
+   },
+   {
+    "sym": "SHEKEL",
+    "liq": 20453.01,
+    "vol": 10185.53,
+    "chg": -0.17,
+    "price": "0.00002042",
+    "mcap": 20425,
+    "addr": "0x6F78F3463295d3514e4501F5Db638DB1C98A1e18"
+   },
+   {
+    "sym": "STER",
+    "liq": 20447.7,
+    "vol": 21770.85,
+    "chg": -5.05,
+    "price": "0.00002039",
+    "mcap": 20395,
+    "addr": "0xb9f766d5Ec36A711e96389DBec37c1cAC8c41e18"
+   },
+   {
+    "sym": "SILVERSURFER",
+    "liq": 20427.3,
+    "vol": 1579.5,
+    "chg": -0.42,
+    "price": "0.00002042",
+    "mcap": 20423,
+    "addr": "0x8d40AdD0F57B71E057b132D3460B1EC120B11E18"
+   },
+   {
+    "sym": "POKESILVER",
+    "liq": 20393.21,
+    "vol": 3295.21,
+    "chg": -1.08,
+    "price": "0.00002038",
+    "mcap": 20384,
+    "addr": "0x59168Be7C91D1BeB69b1673CC0eb943D2aa51e18"
+   },
+   {
+    "sym": "TRADECAT",
+    "liq": 20370.73,
+    "vol": 722.38,
+    "chg": -2.31,
+    "price": "0.00002036",
+    "mcap": 20369,
+    "addr": "0x69e2F22fb994D58455231FC036D6c02b55551E18"
+   },
+   {
+    "sym": "AG",
+    "liq": 20361.26,
+    "vol": 7947.74,
+    "chg": -0.24,
+    "price": "0.00002032",
+    "mcap": 20322,
+    "addr": "0x7d8F0d2dC191B86C2B6D214ff19245ceDECb1E18"
+   },
+   {
+    "sym": "SKARMORY",
+    "liq": 20320.1,
+    "vol": 8404.45,
+    "chg": -0.48,
+    "price": "0.00002029",
+    "mcap": 20298,
+    "addr": "0xED4Cda08347E67cBF77b0169167a7B3721971e18"
+   },
+   {
+    "sym": "SF",
+    "liq": 6387.07,
+    "vol": 102092.34,
+    "chg": 39.11,
+    "price": "0.000006578",
+    "mcap": 6578,
+    "addr": "0x0c07f65E4893EBEE25183D5d41715ea04eCd6701"
+   },
+   {
+    "sym": "Silver",
+    "liq": 4680.87,
+    "vol": 7.02,
+    "chg": -0.2,
+    "price": "0.000002947",
+    "mcap": 2942,
+    "addr": "0x34a09FDa62783e72b6D7F104696d6dB208302C6e"
+   },
+   {
+    "sym": "RVH",
+    "liq": 3541.34,
+    "vol": 3529.34,
+    "chg": -53.27,
+    "price": "0.008867",
+    "mcap": 702018,
+    "addr": "0x96765066f6a040a21EB027167D2315B707c82633"
+   }
+  ]
+ },
+ "SMCI": {
+  "ticker": "SMCI",
+  "liq": 18998.490000000005,
+  "vol": 2847.5699999999997,
+  "price": "37.32",
+  "addr": "0xc01aA1fECeC0605b13bc84874ff7256C0f5F562a",
+  "memes": []
+ },
+ "RIVN": {
+  "ticker": "RIVN",
+  "liq": 127818.09000000001,
+  "vol": 2430055.0300000003,
+  "price": "15.57",
+  "addr": "0xB1BF26c1D20ff267A4f93550d1E0d06ac40a114B",
+  "memes": [
+   {
+    "sym": "GARY",
+    "liq": 30314.12,
+    "vol": 411733.44,
+    "chg": 1647,
+    "price": "0.00007499",
+    "mcap": 74991,
+    "addr": "0x401923511EC7356AeC6b7717207394feA97CEa01"
+   },
+   {
+    "sym": "CULT",
+    "liq": 3966.88,
+    "vol": 924.0999999999999,
+    "chg": null,
+    "price": "0.000003966",
+    "mcap": 3967,
+    "addr": "0xfb6e593cF9E8520028BA976A94aF3FFE3Ac17901"
+   },
+   {
+    "sym": "KICK",
+    "liq": 3932.69,
+    "vol": 19.38,
+    "chg": -1.29,
+    "price": "0.000003932",
+    "mcap": 3933,
+    "addr": "0x7E5dd7D79471F6031aD045Ae3CB5406A07646b01"
+   },
+   {
+    "sym": "Riven",
+    "liq": 3223.61,
+    "vol": 4.66,
+    "chg": null,
+    "price": "0.000003223",
+    "mcap": 3224,
+    "addr": "0x34674Db1b1C61c03ceAbc4AF6B32c823CB464cA5"
+   }
+  ]
+ },
+ "COST": {
+  "ticker": "COST",
+  "liq": 367594.04000000004,
+  "vol": 1394258.6800000002,
+  "price": "938.063",
+  "addr": "0x4EA005168D7F09a7A0Ba9D1DEf21a479950E44C2",
+  "memes": [
+   {
+    "sym": "HOTDOG",
+    "liq": 350903.23,
+    "vol": 994806.08,
+    "chg": -4.79,
+    "price": "0.001534",
+    "mcap": 1534660,
+    "addr": "0x9c05CBEc6C6F8cE87926fec6A491314030D4215C"
+   },
+   {
+    "sym": "LOW",
+    "liq": 45498.84,
+    "vol": 3145.75,
+    "chg": -0.96,
+    "price": "0.00002064",
+    "mcap": 24505,
+    "addr": "0xc63f55C03D4beAC1DD6F7d9534551bB3Cb6f1E18"
+   },
+   {
+    "sym": "GLIZZY",
+    "liq": 37139.97,
+    "vol": 37975.29,
+    "chg": -56.84,
+    "price": "0.00004051",
+    "mcap": 40511,
+    "addr": "0xDE3549041c1252675eD83e14Ee489b4c1FC9f310"
+   },
+   {
+    "sym": "CHUSD",
+    "liq": 21448.83,
+    "vol": 10167.91,
+    "chg": 1.28,
+    "price": "0.00002140",
+    "mcap": 21406,
+    "addr": "0x7A839e4df07191a2250332b3ea69E7aDedC71e18"
+   },
+   {
+    "sym": "HOLO",
+    "liq": 21001.02,
+    "vol": 1991.62,
+    "chg": -4.35,
+    "price": "0.00002099",
+    "mcap": 20995,
+    "addr": "0x850a2138C60D634aC111f8229e13de8b8eEf1e18"
+   },
+   {
+    "sym": "LOWW",
+    "liq": 20988.65,
+    "vol": 4991.26,
+    "chg": -2.2,
+    "price": "0.00002097",
+    "mcap": 20975,
+    "addr": "0xf9c061Abe5aDFd75c770912339C12BF3c45d1E18"
+   },
+   {
+    "sym": "ROTICHAD",
+    "liq": 20693.51,
+    "vol": 1579.93,
+    "chg": -0.94,
+    "price": "0.00002068",
+    "mcap": 20689,
+    "addr": "0xeDae4D4A5E672d220147f96FD10b67edC59B1e18"
+   },
+   {
+    "sym": "EXECUTIVE",
+    "liq": 20655.12,
+    "vol": 982.74,
+    "chg": -1.16,
+    "price": "0.00002065",
+    "mcap": 20652,
+    "addr": "0xf0d61ebD17fFBa7C2F4f836De1Cc23D3b92C1E18"
+   },
+   {
+    "sym": "DOUBLECHUNK",
+    "liq": 20619.99,
+    "vol": 1977.18,
+    "chg": -2.68,
+    "price": "0.00002061",
+    "mcap": 20615,
+    "addr": "0x6C05fB655b709ACac0b00bd53a9Fe1143D1E1e18"
+   },
+   {
+    "sym": "BROKEAF",
+    "liq": 20586.37,
+    "vol": 2.2,
+    "chg": -0.27,
+    "price": "0.00002058",
+    "mcap": 20586,
+    "addr": "0x71c9CfB69156Fbc73a4620C6d0559B88eDDF1E18"
+   },
+   {
+    "sym": "KIRKLAND",
+    "liq": 19912.58,
+    "vol": 8128.47,
+    "chg": -5.75,
+    "price": "0.00001987",
+    "mcap": 19878,
+    "addr": "0xE1b783a4F2863ace9803fd46CEC6121b140B1E18"
+   },
+   {
+    "sym": "BUCKFIFTY",
+    "liq": 19599.15,
+    "vol": 229.31,
+    "chg": -1.16,
+    "price": "0.00001959",
+    "mcap": 19599,
+    "addr": "0x520ce38CB88Ea5752e7023fB440C3726a4521E18"
+   },
+   {
+    "sym": "PLXMS",
+    "liq": 6963.07,
+    "vol": 11348.78,
+    "chg": -50.49,
+    "price": "0.000007595",
+    "mcap": 7595,
+    "addr": "0x76b864a2C2CFd01604ab8C6133c52Fdc216Dd566"
+   },
+   {
+    "sym": "CAPY",
+    "liq": 3831.93,
+    "vol": 31.47,
+    "chg": null,
+    "price": "0.000003841",
+    "mcap": 3814,
+    "addr": "0x41Db1B03119aA422407ea731B784Fb4af4f665A9"
+   }
+  ]
+ },
+ "SOFI": {
+  "ticker": "SOFI",
+  "liq": 57333.42,
+  "vol": 355310.45999999996,
+  "price": "16.86",
+  "addr": "0x98E75885157C80992A8D41b696D8c9C6Fb30A926",
+  "memes": [
+   {
+    "sym": "CHAMATH",
+    "liq": 32063.33,
+    "vol": 7575.48,
+    "chg": -21.48,
+    "price": "0.00003442",
+    "mcap": 34423,
+    "addr": "0x0A478b0F299B9AEA2A8D98EA2F60385Ecf101e18"
+   },
+   {
+    "sym": "KIMCHI",
+    "liq": 23949.73,
+    "vol": 172147.01,
+    "chg": 14.44,
+    "price": "0.00002384",
+    "mcap": 23845,
+    "addr": "0x50142D76F2aea6f1D9FB35f7778e46BD2e1e1e18"
+   },
+   {
+    "sym": "HYSA",
+    "liq": 23050.67,
+    "vol": 12803.41,
+    "chg": 10.28,
+    "price": "0.00002304",
+    "mcap": 23049,
+    "addr": "0x1A793f8e45C0824d049C14ee7D6A0B30E0231E18"
+   },
+   {
+    "sym": "SOFIE",
+    "liq": 22418.31,
+    "vol": 652.3,
+    "chg": -10.07,
+    "price": "0.00002244",
+    "mcap": 22444,
+    "addr": "0x65cA04dD4057Cf273dbb5F231bFfa2849e381E18"
+   },
+   {
+    "sym": "SOFIBULL",
+    "liq": 21403.51,
+    "vol": 384.74,
+    "chg": -0.42,
+    "price": "0.00002140",
+    "mcap": 21403,
+    "addr": "0x53EE08a37818788E8bcc9C6d23726a0abec41e18"
+   },
+   {
+    "sym": "BROKIE",
+    "liq": 21073.24,
+    "vol": 93.5,
+    "chg": -0.44,
+    "price": "0.00002107",
+    "mcap": 21073,
+    "addr": "0x97b062a567BfB52cE21d37A3CF76e75d36AC1e18"
+   },
+   {
+    "sym": "RIZZO",
+    "liq": 20788.41,
+    "vol": 3964.33,
+    "chg": -0.4,
+    "price": "0.00002077",
+    "mcap": 20772,
+    "addr": "0x650856364370F2DfC1cb0A33481244F5136F1E18"
+   },
+   {
+    "sym": "LOANS",
+    "liq": 20617.55,
+    "vol": 1955.8,
+    "chg": -1.6,
+    "price": "0.00002061",
+    "mcap": 20612,
+    "addr": "0x316bcE223f7F8ce48D47C47F029D4b9589201E18"
+   },
+   {
+    "sym": "LOFI",
+    "liq": 20424.73,
+    "vol": 316.39,
+    "chg": -1.53,
+    "price": "0.00002042",
+    "mcap": 20424,
+    "addr": "0x984E974C1b71DCcD31bD11cf19A62Ffa3Ed51e18"
+   },
+   {
+    "sym": "TURTLENECK",
+    "liq": 20292.53,
+    "vol": 4.77,
+    "chg": null,
+    "price": "0.00002028",
+    "mcap": 20287,
+    "addr": "0x0776dca7D95Dc8d313351cA4E0857A31Fe841E18"
+   },
+   {
+    "sym": "DELULU",
+    "liq": 15728.97,
+    "vol": 895.63,
+    "chg": -8.43,
+    "price": "0.00001572",
+    "mcap": 15727,
+    "addr": "0x0Bf4210e3eF10Bc9662126d7955B82aF42E81E18"
+   },
+   {
+    "sym": "JIRO",
+    "liq": 1599.37,
+    "vol": 1.26,
+    "chg": null,
+    "price": "0.000003198",
+    "mcap": 3199,
+    "addr": "0x71F7044a4e42afa1f429981d70Adf4C389C2863F"
+   },
+   {
+    "sym": "STADIUM",
+    "liq": 0.0,
+    "vol": 18.16,
+    "chg": 0.05,
+    "price": "0.000004084",
+    "mcap": 4084,
+    "addr": "0xc286F553102fF3cE50b04a857C89776EE5927801"
+   },
+   {
+    "sym": "FREAKO",
+    "liq": 0.0,
+    "vol": 223.56,
+    "chg": -5.29,
+    "price": "0.000004058",
+    "mcap": 4059,
+    "addr": "0x0fcB29fca4b78dBd717e5C93c328214428A95301"
+   }
+  ]
+ },
+ "RDDT": {
+  "ticker": "RDDT",
+  "liq": 1571195.27,
+  "vol": 7090879.340000001,
+  "price": "153.55",
+  "addr": "0x05b37Fb53A299a1b874A619e1c4C404D52C36F4C",
+  "memes": [
+   {
+    "sym": "SNOO",
+    "liq": 188739.41999999998,
+    "vol": 395297.51,
+    "chg": 14.77,
+    "price": "0.0004050",
+    "mcap": 405030,
+    "addr": "0x939CA34ce2Dc5845f4BFf8079Fc6cCD6aB641E18"
+   },
+   {
+    "sym": "MODERATOR",
+    "liq": 57631.64,
+    "vol": 98597.9,
+    "chg": -30.66,
+    "price": "0.00007558",
+    "mcap": 75590,
+    "addr": "0x88dD489A32fD62cD4621f526644d554E167F1E18"
+   },
+   {
+    "sym": "Meowdani",
+    "liq": 44651.44,
+    "vol": 434376.94,
+    "chg": -49.68,
+    "price": "0.0001090",
+    "mcap": 109012,
+    "addr": "0xE012787b4643EfcF4faea4dfD0F3a22d8E9696d0"
+   },
+   {
+    "sym": "SNOOFI",
+    "liq": 31303.86,
+    "vol": 214122.7,
+    "chg": 33.34,
+    "price": "0.0001284",
+    "mcap": 128487,
+    "addr": "0x8Eb6F6E1bf27A0f27869Cd84240B4b90462cb791"
+   },
+   {
+    "sym": "SPLASHY",
+    "liq": 23372.32,
+    "vol": 70461.96,
+    "chg": 0.77,
+    "price": "0.00002323",
+    "mcap": 23236,
+    "addr": "0xD10CeBfb542A47695711aDA9f9518EA16CB61E18"
+   },
+   {
+    "sym": "MEOWDANI",
+    "liq": 22301.61,
+    "vol": 27306.06,
+    "chg": 720,
+    "price": "0.00006315",
+    "mcap": 63157,
+    "addr": "0x7A7B95d04a63D2e8a869ae3441f36D0f43f82a19"
+   },
+   {
+    "sym": "NARWHAL",
+    "liq": 20029.52,
+    "vol": 473.21,
+    "chg": 2.26,
+    "price": "0.00005563",
+    "mcap": 55631,
+    "addr": "0x68A19Da73868204B53FeB80db10C896764C5cCcC"
+   },
+   {
+    "sym": "chud",
+    "liq": 18947.87,
+    "vol": 751680.88,
+    "chg": 90.53,
+    "price": "0.00006415",
+    "mcap": 64150,
+    "addr": "0x982965547E3B1f6DA55eE93B515834bD34081feB"
+   },
+   {
+    "sym": "RDC",
+    "liq": 18713.55,
+    "vol": 665955.15,
+    "chg": 75.03,
+    "price": "0.00006257",
+    "mcap": 62573,
+    "addr": "0x80997Fc9014531C6B8d2E4c2Ba54af0bB11A73BF"
+   },
+   {
+    "sym": "Karma",
+    "liq": 14507.26,
+    "vol": 1092359.98,
+    "chg": 11.77,
+    "price": "0.00003760",
+    "mcap": 37604,
+    "addr": "0xb1B800835f93d40D43e3B3467494b9155364baC3"
+   },
+   {
+    "sym": "WSB",
+    "liq": 13431.4,
+    "vol": 91340.7,
+    "chg": 182,
+    "price": "0.00003223",
+    "mcap": 32234,
+    "addr": "0xBA334dcab2e956c466a6394403C6dd15cd04e838"
+   },
+   {
+    "sym": "HI",
+    "liq": 10045.03,
+    "vol": 93397.11,
+    "chg": 42.92,
+    "price": "0.00001802",
+    "mcap": 18029,
+    "addr": "0x391A23575CF190D364916C0ABE6655BFD2edF4Ec"
+   },
+   {
+    "sym": "ZOE",
+    "liq": 9705.81,
+    "vol": 4044.59,
+    "chg": -27.97,
+    "price": "0.00001683",
+    "mcap": 16832,
+    "addr": "0x9B17497E7B9B4F73aF3E968c918E8C69Bb46c13F"
+   },
+   {
+    "sym": "KARMA",
+    "liq": 6501.29,
+    "vol": 11887.9,
+    "chg": -33.81,
+    "price": "0.000007552",
+    "mcap": 7552,
+    "addr": "0xEAb58b46c3E937E6d298F88e8637cB1D30049fF5"
+   },
+   {
+    "sym": "OP",
+    "liq": 6322.65,
+    "vol": 2535.58,
+    "chg": 18.84,
+    "price": "0.000007142",
+    "mcap": 7143,
+    "addr": "0x74Da2d8daDc16c65AdE068CBA824857DEE969c30"
+   },
+   {
+    "sym": "RUBY",
+    "liq": 5995.32,
+    "vol": 696.94,
+    "chg": -21.59,
+    "price": "0.000006358",
+    "mcap": 6359,
+    "addr": "0xCfe71fD6535a9E8dC278a9c59AC137699b41d701"
+   },
+   {
+    "sym": "AHHH",
+    "liq": 5651.19,
+    "vol": 953.14,
+    "chg": -29.17,
+    "price": "0.000005706",
+    "mcap": 5706,
+    "addr": "0x91977308388303Ad824bE1BeC319C1793DeDB965"
+   },
+   {
+    "sym": "INKKY",
+    "liq": 5066.11,
+    "vol": 865.35,
+    "chg": 8.9,
+    "price": "0.000004585",
+    "mcap": 4586,
+    "addr": "0xF770eA37d674A0Be16a2A82E2bCe9AE600eB3E8d"
+   },
+   {
+    "sym": "Caine",
+    "liq": 4875.75,
+    "vol": 3968.97,
+    "chg": -21.59,
+    "price": "0.000004247",
+    "mcap": 4248,
+    "addr": "0x66bdF91CA7DD512ed8569b1267FFc0267266E7f7"
+   },
+   {
+    "sym": "CHEEMS",
+    "liq": 4541.63,
+    "vol": 347.59,
+    "chg": 4.9,
+    "price": "0.000003685",
+    "mcap": 3686,
+    "addr": "0x21d17eA14644f72f8a752B2e8AACcAe02402A4Bf"
+   },
+   {
+    "sym": "SOY",
+    "liq": 4528.46,
+    "vol": 23699.1,
+    "chg": -84.15,
+    "price": "0.000003664",
+    "mcap": 3664,
+    "addr": "0x3BaBAa253582075A5B80EFc754AC7c00f6537994"
+   },
+   {
+    "sym": "UPVOTE",
+    "liq": 4399.78,
+    "vol": 487.18,
+    "chg": 9.29,
+    "price": "0.000003458",
+    "mcap": 3459,
+    "addr": "0x0F476040c06eD34FBcdDF87a08048526d858706f"
+   },
+   {
+    "sym": "Emilio",
+    "liq": 4344.87,
+    "vol": 36.16,
+    "chg": -2.3,
+    "price": "0.000003373",
+    "mcap": 3373,
+    "addr": "0x709389c73bb8A99a6573219d6bCE9a95a8cE0524"
+   },
+   {
+    "sym": "ROGE",
+    "liq": 4326.66,
+    "vol": 81203.09,
+    "chg": -90.23,
+    "price": "0.000003344",
+    "mcap": 3345,
+    "addr": "0xfd2108b05Fda5e5FA761b813f760CfF092ddE9a0"
+   },
+   {
+    "sym": "moon",
+    "liq": 4160.2,
+    "vol": 98464.31,
+    "chg": -90.8,
+    "price": "0.000003092",
+    "mcap": 3092,
+    "addr": "0x7D0cA91a448983768B2975D030B355780Be4b395"
+   },
+   {
+    "sym": "Ruru ",
+    "liq": 4015.58,
+    "vol": 89049.21,
+    "chg": -91.55,
+    "price": "0.000002881",
+    "mcap": 2881,
+    "addr": "0x16Dfbb52F893e673Ad3139Cd20c3b7bB8AE10271"
+   }
+  ]
+ },
+ "SNAP": {
+  "ticker": "SNAP",
+  "liq": 279411.08,
+  "vol": 8300325.859999999,
+  "price": "5.58",
+  "addr": "0xF6589F11Bc40b669e584073F428B05562F568733",
+  "memes": [
+   {
+    "sym": "NUDES",
+    "liq": 273702.34,
+    "vol": 6206153.47,
+    "chg": 107695,
+    "price": "0.004616",
+    "mcap": 4616110,
+    "addr": "0xbe98b75361935b18d688409424a869a4C3dC7401"
+   },
+   {
+    "sym": "SELFIE",
+    "liq": 56478.119999999995,
+    "vol": 436536.32,
+    "chg": 876,
+    "price": "0.00004739",
+    "mcap": 47400,
+    "addr": "0x57886902f922dC39aF881DccAF632C1969c7Ca01"
+   },
+   {
+    "sym": "EBT",
+    "liq": 31594.57,
+    "vol": 7624.32,
+    "chg": 51.76,
+    "price": "0.00003290",
+    "mcap": 32903,
+    "addr": "0x3cb804B628184d320617671b695c9C48ca4c1e18"
+   },
+   {
+    "sym": "GHOST",
+    "liq": 23644.76,
+    "vol": 2161.79,
+    "chg": -23.16,
+    "price": "0.00002373",
+    "mcap": 23738,
+    "addr": "0x5Ca005F9104863Aa0A6351c0595f88da54951e18"
+   },
+   {
+    "sym": "INEVITABLE",
+    "liq": 21903.27,
+    "vol": 491.86,
+    "chg": 3.45,
+    "price": "0.00002191",
+    "mcap": 21912,
+    "addr": "0x64b80E989Ae8F957D8631aCa6b40c4a2ea541e18"
+   },
+   {
+    "sym": "TEST",
+    "liq": 21053.74,
+    "vol": 5.63,
+    "chg": -0.03,
+    "price": "0.00002105",
+    "mcap": 21054,
+    "addr": "0x29F6668e331eD91207dD834878C8D71B409A358f"
+   },
+   {
+    "sym": "SN",
+    "liq": 20964.84,
+    "vol": 38658.26,
+    "chg": -1.42,
+    "price": "0.00002087",
+    "mcap": 20879,
+    "addr": "0xE3604DD1173ab47205dcfa32769136B9abAc1e18"
+   },
+   {
+    "sym": "CHILLAH",
+    "liq": 20960.24,
+    "vol": 750.08,
+    "chg": 0.02,
+    "price": "0.00002095",
+    "mcap": 20958,
+    "addr": "0x2d24cbd54518d11c6e5D3e055E6CC9560e8d1E18"
+   },
+   {
+    "sym": "SNAPCAT",
+    "liq": 20953.31,
+    "vol": 49.33,
+    "chg": -0.23,
+    "price": "0.00002095",
+    "mcap": 20953,
+    "addr": "0x746a81672EDa22262E9b2AB5c73EEBdc1da31e18"
+   },
+   {
+    "sym": "STREAK",
+    "liq": 20926.76,
+    "vol": 752.03,
+    "chg": 0.02,
+    "price": "0.00002092",
+    "mcap": 20925,
+    "addr": "0xA12F65f6372f6DdF172266c5d27418A66f461E18"
+   }
+  ]
+ },
+ "SHOP": {
+  "ticker": "SHOP",
+  "liq": 21653.620000000003,
+  "vol": 42485.31,
+  "price": "149.38",
+  "addr": "0xF53F66751B1Eff985311b693531E3290F600c410",
+  "memes": [
+   {
+    "sym": "SHOPPY",
+    "liq": 14313.54,
+    "vol": 7517.280000000001,
+    "chg": -18.03,
+    "price": "0.000009473",
+    "mcap": 9473,
+    "addr": "0x1205A65295E10e499d8D54185E43F4bB87e31e18"
+   },
+   {
+    "sym": "Shoppy",
+    "liq": 5325.53,
+    "vol": 8680.25,
+    "chg": 3.01,
+    "price": "0.000005369",
+    "mcap": 5369,
+    "addr": "0x9412982bCF377142e18d845A8fc6672dF7DFcd01"
+   },
+   {
+    "sym": "SLOP",
+    "liq": 4513.64,
+    "vol": 7226.19,
+    "chg": -12.1,
+    "price": "0.000004514",
+    "mcap": 4514,
+    "addr": "0x99C5e8710b4B1363622E57091f4e23eBdB953B01"
+   },
+   {
+    "sym": "DROPSHIP",
+    "liq": 4167.66,
+    "vol": 25.04,
+    "chg": null,
+    "price": "0.000004169",
+    "mcap": 4170,
+    "addr": "0x750bA9AF47ff76848bE6A4087A0733b781eCC6Ff"
+   },
+   {
+    "sym": "PAWN",
+    "liq": 0.0,
+    "vol": 1545.6,
+    "chg": -1.19,
+    "price": "0.000004698",
+    "mcap": 4698,
+    "addr": "0x7bd44D739A02E0AF7297677B4E82Bc10527A8701"
+   },
+   {
+    "sym": "NOSHIP",
+    "liq": 0.0,
+    "vol": 597.97,
+    "chg": -0.57,
+    "price": "0.000004641",
+    "mcap": 4642,
+    "addr": "0xfB8913f7254bdae9eFf3D58Ce4e0Db3196b3c801"
+   }
+  ]
+ },
+ "CRM": {
+  "ticker": "CRM",
+  "liq": 5454.7699999999995,
+  "vol": 729.3900000000001,
+  "price": "263.37",
+  "addr": "0xd95B44124e475743a7589e68F3D74008A5536D44",
+  "memes": [
+   {
+    "sym": "PIE",
+    "liq": 5260.83,
+    "vol": 248.53,
+    "chg": 0.28,
+    "price": "0.000005260",
+    "mcap": 5261,
+    "addr": "0x06242021291A695F259b495dcaB63AAB2aa28001"
+   },
+   {
+    "sym": "SALESFORCE",
+    "liq": 0.0,
+    "vol": 452.11,
+    "chg": -2.6,
+    "price": "0.000005243",
+    "mcap": 5243,
+    "addr": "0x47FE469BF446F8FF8F9041a903Cd1E3566a3eB01"
+   }
+  ]
+ },
+ "ORCL": {
+  "ticker": "ORCL",
+  "liq": 20764.899999999998,
+  "vol": 43130.840000000004,
+  "price": "147.096",
+  "addr": "0xb0992820E760d836549ba69BC7598b4af75dEE03",
+  "memes": [
+   {
+    "sym": "DUKE",
+    "liq": 25705.11,
+    "vol": 5469.25,
+    "chg": 12.3,
+    "price": "0.00002592",
+    "mcap": 25929,
+    "addr": "0x5ED10Bbe6b09b6558D4C2284A6c50df91E2F1E18"
+   },
+   {
+    "sym": "TIKTOK",
+    "liq": 21066.48,
+    "vol": 2971.96,
+    "chg": -2.38,
+    "price": "0.00002077",
+    "mcap": 20778,
+    "addr": "0x19990E409a202DCdc08a494c07A054021Df61e18"
+   },
+   {
+    "sym": "FLITE",
+    "liq": 20068.63,
+    "vol": 264.72,
+    "chg": 2.61,
+    "price": "0.00002006",
+    "mcap": 20064,
+    "addr": "0xada57379eD1034bB7e0B512f7258960663Cc1e18"
+   },
+   {
+    "sym": "TAKO",
+    "liq": 19457.6,
+    "vol": 3.2,
+    "chg": null,
+    "price": "0.00001933",
+    "mcap": 19331,
+    "addr": "0x4b4b5e8E17C1C2B99D784BB1ce1bEcf3EC471e18"
+   },
+   {
+    "sym": "ORACLINU",
+    "liq": 19156.57,
+    "vol": 15212.01,
+    "chg": -0.11,
+    "price": "0.00001910",
+    "mcap": 19104,
+    "addr": "0x0fF37B14ddC1502697041B0A95F9327e38661e18"
+   },
+   {
+    "sym": "Duke",
+    "liq": 5057.21,
+    "vol": 19361.82,
+    "chg": -1.09,
+    "price": "0.000005057",
+    "mcap": 5058,
+    "addr": "0x81a31f3Dab8c754f282D26De4F1f0F0b74D87201"
+   },
+   {
+    "sym": "JEWFOLIO",
+    "liq": 1292.96,
+    "vol": 13.55,
+    "chg": -0.71,
+    "price": "0.000005485",
+    "mcap": 5486,
+    "addr": "0x23956666A327bF7ECE13176d6AB693545a6E7080"
+   },
+   {
+    "sym": "OSAMA",
+    "liq": 639.86,
+    "vol": 13.62,
+    "chg": null,
+    "price": "0.000003200",
+    "mcap": 3201,
+    "addr": "0x2002c8F89bbD89B55584274F255B98a67A678150"
+   },
+   {
+    "sym": "BUFFETT",
+    "liq": 0.0,
+    "vol": 1210.92,
+    "chg": -2.37,
+    "price": "0.000004969",
+    "mcap": 4969,
+    "addr": "0x7A26c69caeD609Fdbb27D2295b0C2698679e0101"
+   }
+  ]
+ },
+ "IBM": {
+  "ticker": "IBM",
+  "liq": 92392.81000000001,
+  "vol": 182197.28999999998,
+  "price": "235.92",
+  "addr": "0x980dcf6766FA79f5Cf0c4AAdb3ab477ff15a9619",
+  "memes": [
+   {
+    "sym": "TUX",
+    "liq": 59458.85,
+    "vol": 60177.99,
+    "chg": 144,
+    "price": "0.00007560",
+    "mcap": 75602,
+    "addr": "0x4E9d3bfbcB90Da72808AFD5b8566C228ec861e18"
+   },
+   {
+    "sym": "QCAT",
+    "liq": 34553.65,
+    "vol": 40261.99,
+    "chg": 34.16,
+    "price": "0.00003630",
+    "mcap": 36302,
+    "addr": "0x6748d28c97df9d9042eaC6E711Ca6D51Ca971e18"
+   },
+   {
+    "sym": "IBUYMEMES",
+    "liq": 23140.4,
+    "vol": 4441.44,
+    "chg": -27.51,
+    "price": "0.00002302",
+    "mcap": 23027,
+    "addr": "0x96AE38a5497b5D6a4EF55B042772a42A787c1e18"
+   },
+   {
+    "sym": "SCHRODINGER",
+    "liq": 20656.54,
+    "vol": 371.86,
+    "chg": 0.12,
+    "price": "0.00002058",
+    "mcap": 20581,
+    "addr": "0x73a0F04d41e1104cD4628E5A02C89f6BF5541E18"
+   },
+   {
+    "sym": "DAD",
+    "liq": 20564.01,
+    "vol": 47.74,
+    "chg": -1.25,
+    "price": "0.00002045",
+    "mcap": 20459,
+    "addr": "0x04FCE8a83D123be2231b383b35CB2eF6E5e11e18"
+   },
+   {
+    "sym": "MYQUANT",
+    "liq": 20026.81,
+    "vol": 246.32,
+    "chg": -3.39,
+    "price": "0.00002002",
+    "mcap": 20025,
+    "addr": "0x32ec3A376c157fbdC649d9427F39632E17981e18"
+   },
+   {
+    "sym": "COMPUTER",
+    "liq": 3757.02,
+    "vol": 1507.46,
+    "chg": 17.95,
+    "price": "0.000003896",
+    "mcap": 3896,
+    "addr": "0xdbEc51DfD93e6F041F2C6Ba57C4B8642e047dFd9"
+   },
+   {
+    "sym": "can",
+    "liq": 1201.1,
+    "vol": 495.31,
+    "chg": -4.23,
+    "price": "0.000003617",
+    "mcap": 3617,
+    "addr": "0x7d1766405933Af9D376DE0cA59a89cFaA9922D2b"
+   },
+   {
+    "sym": "BOB",
+    "liq": 0.0,
+    "vol": 1316.8600000000001,
+    "chg": -5.72,
+    "price": "0.000003963",
+    "mcap": 3976,
+    "addr": "0xD874f37266AdbF9d3b702814789c1570E1F11A01"
+   }
+  ]
+ },
+ "CSCO": {
+  "ticker": "CSCO",
+  "liq": 8558.41,
+  "vol": 1791.23,
+  "price": "116.48",
+  "addr": "0xF543967EEBB6f1917992eF0E68De63ab07a5a0dA",
+  "memes": [
+   {
+    "sym": "CSGO",
+    "liq": 0.0,
+    "vol": 107.21,
+    "chg": -3.78,
+    "price": "0.000003987",
+    "mcap": 3988,
+    "addr": "0x4744336ec675c73c2024fC8297C05b4D209f6A01"
+   }
+  ]
+ },
+ "QCOM": {
+  "ticker": "QCOM",
+  "liq": 16076.430000000002,
+  "vol": 45301.350000000006,
+  "price": "165.94",
+  "addr": "0x0f17206447090e464C277571124dD2688E48AEA9",
+  "memes": [
+   {
+    "sym": "wUSDG",
+    "liq": 21492.1,
+    "vol": 1260.7,
+    "chg": 52.26,
+    "price": "2.14",
+    "mcap": 214921097,
+    "addr": "0x0Ff7A742b035504118A9d435c8264619A8428E1C"
+   },
+   {
+    "sym": "SNAPDRAGON",
+    "liq": 16582.05,
+    "vol": 30692.65,
+    "chg": -18.25,
+    "price": "0.00001653",
+    "mcap": 16535,
+    "addr": "0x8B51F1b275595714554d1B5230C0760aBC621e18"
+   },
+   {
+    "sym": "SnapdragonCPU",
+    "liq": 2147.88,
+    "vol": 82.56,
+    "chg": -20.65,
+    "price": "0.000002144",
+    "mcap": 2145,
+    "addr": "0x7e6e005736C905eBD7E40751a5f655889CceCCaF"
+   },
+   {
+    "sym": "SNAPDRAKE",
+    "liq": 0.0,
+    "vol": 117.54,
+    "chg": -0.45,
+    "price": "0.000004329",
+    "mcap": 4329,
+    "addr": "0xBB6E85063C75d41D85B1618Ad0238bef42252f01"
+   }
+  ]
+ },
+ "ADBE": {
+  "ticker": "ADBE",
+  "liq": 30929.109999999997,
+  "vol": 162048.14,
+  "price": "284.81",
+  "addr": "0x232B8ed6377BE97813853B0Ac104c4Cda8378d1B",
+  "memes": [
+   {
+    "sym": "Artcoin",
+    "liq": 8823.79,
+    "vol": 33244.54,
+    "chg": 112,
+    "price": "0.000009987",
+    "mcap": 9988,
+    "addr": "0x1c91158B08c245340a94D8E091b8CD3B452fB101"
+   },
+   {
+    "sym": "PDF",
+    "liq": 8516.95,
+    "vol": 83097.63,
+    "chg": 100,
+    "price": "0.000009527",
+    "mcap": 9528,
+    "addr": "0xdb2Cb5a26f01d67A2859C3bCCD3Ff15D6A070901"
+   },
+   {
+    "sym": "Wagie",
+    "liq": 0.0,
+    "vol": 1178.07,
+    "chg": -8.87,
+    "price": "0.000004482",
+    "mcap": 4483,
+    "addr": "0xb63da0dC9b1fB414A790e5A548525884BeB52601"
+   },
+   {
+    "sym": "PS",
+    "liq": 0.0,
+    "vol": 225.34,
+    "chg": -7.33,
+    "price": "0.000004498",
+    "mcap": 4499,
+    "addr": "0x54EB8901C042ee1C6C58CaE7307B6c29C85F1301"
+   }
+  ]
+ },
+ "NOW": {
+  "ticker": "NOW",
+  "liq": 12928.83,
+  "vol": 41252.2,
+  "price": "131.94",
+  "addr": "0x0C3260aF4B8f13a69c4c2dFb84fD667890CDFa14",
+  "memes": [
+   {
+    "sym": "wUSDG",
+    "liq": 13374.5,
+    "vol": 31.66,
+    "chg": null,
+    "price": "1.33",
+    "mcap": 133745416,
+    "addr": "0x0Ff7A742b035504118A9d435c8264619A8428E1C"
+   },
+   {
+    "sym": "BUY",
+    "liq": 11336.150000000001,
+    "vol": 9595.949999999999,
+    "chg": -2.37,
+    "price": "0.000005333",
+    "mcap": 6048,
+    "addr": "0xb0d538566c339D8399341F5B96de9CAf116bcf01"
+   },
+   {
+    "sym": "LATER",
+    "liq": 5225.1,
+    "vol": 10312.4,
+    "chg": 0.45,
+    "price": "0.000005231",
+    "mcap": 5232,
+    "addr": "0xDD80A9299DcD81Ec319787Dcd3dB3Ad2aD9C2301"
+   },
+   {
+    "sym": "MM",
+    "liq": 353.52,
+    "vol": 145.13,
+    "chg": 0.44,
+    "price": "0.01767",
+    "mcap": 17675888,
+    "addr": "0x835f8Dc4dE4684ee10DD0fb1E1656B6e065bA104"
+   }
+  ]
+ },
+ "PANW": {
+  "ticker": "PANW",
+  "liq": 4285.76,
+  "vol": 1097.54,
+  "price": "391.54",
+  "addr": "0xB039597eD45CBa7B6E2fb9E8BE51802969CEe5Be",
+  "memes": []
+ },
+ "CRWD": {
+  "ticker": "CRWD",
+  "liq": 10220.89,
+  "vol": 9443.170000000002,
+  "price": "828.79",
+  "addr": "0xea72Ecca2d0f6bFA1394DBBCff85b52CD4233931",
+  "memes": []
+ },
+ "DDOG": {
+  "ticker": "DDOG",
+  "liq": 33152.280000000006,
+  "vol": 169506.63,
+  "price": "213.63",
+  "addr": "0x27c99fBde9D0d2AA4f4Bfb4943f237843DdF6958",
+  "memes": [
+   {
+    "sym": "CATDOG",
+    "liq": 9032.72,
+    "vol": 26083.02,
+    "chg": 115,
+    "price": "0.00003656",
+    "mcap": 36567,
+    "addr": "0xCc4106ca4aD17Ad8AfD5fD84b880a87EBF6cAAFF"
+   },
+   {
+    "sym": "RETAR",
+    "liq": 4678.33,
+    "vol": 1887.29,
+    "chg": -13.94,
+    "price": "0.000004741",
+    "mcap": 4741,
+    "addr": "0x9341536F322bA6004108Afac6bE7cB470E00B201"
+   },
+   {
+    "sym": "Data Dog ",
+    "liq": 4540.1,
+    "vol": 61158.12,
+    "chg": 2.82,
+    "price": "0.000004594",
+    "mcap": 4595,
+    "addr": "0xF8C797E573F9D3448c88DECE84200EFfbaD40301"
+   },
+   {
+    "sym": "DUOBUTT",
+    "liq": 3946.87,
+    "vol": 417.42,
+    "chg": -2.22,
+    "price": "0.000003946",
+    "mcap": 3947,
+    "addr": "0x163D94d1c23967A7aeC230115B599E8B6FDA4b01"
+   },
+   {
+    "sym": "Bite",
+    "liq": 3917.15,
+    "vol": 14740.79,
+    "chg": -20.01,
+    "price": "0.000003918",
+    "mcap": 3918,
+    "addr": "0x7BEA90466Ce89D342A15609a8c27e596C99dd601"
+   },
+   {
+    "sym": "Bits",
+    "liq": 3854.65,
+    "vol": 21355.64,
+    "chg": -11.28,
+    "price": "0.000003855",
+    "mcap": 3855,
+    "addr": "0xA04Bb38D0Be5d375fD39cAEa0BF394c4f5d8bD01"
+   },
+   {
+    "sym": "DATADOG",
+    "liq": 3833.09,
+    "vol": 4351.57,
+    "chg": -30.45,
+    "price": "0.000003833",
+    "mcap": 3833,
+    "addr": "0x5e3875503A889160a4298d42b59443923c456901"
+   },
+   {
+    "sym": "GODD",
+    "liq": 3264.27,
+    "vol": 66.76,
+    "chg": null,
+    "price": "0.000003264",
+    "mcap": 3264,
+    "addr": "0x54306e1f4c86E5ca41c9C47fe8Cda050363e5E8d"
+   },
+   {
+    "sym": "BITS",
+    "liq": 0.0,
+    "vol": 2395.45,
+    "chg": 5.46,
+    "price": "0.000004598",
+    "mcap": 4599,
+    "addr": "0xe3dD42B2f0bF86215C51de570deA6050123C9501"
+   },
+   {
+    "sym": "Datadog",
+    "liq": 0.0,
+    "vol": 738.56,
+    "chg": -4.01,
+    "price": "0.000003871",
+    "mcap": 3872,
+    "addr": "0xFb9D12F74018c3903331fefB5a2c0D579c283501"
+   },
+   {
+    "sym": "Retarde",
+    "liq": 0.0,
+    "vol": 22.34,
+    "chg": -0.42,
+    "price": "0.000003862",
+    "mcap": 3862,
+    "addr": "0xdf2ca8D4E157fc78FB0532E9E3b01e4AA7456201"
+   },
+   {
+    "sym": "KIMCHI",
+    "liq": 0.0,
+    "vol": 2114.99,
+    "chg": -100,
+    "price": "0.0000000000000000000000000000000000007322",
+    "mcap": null,
+    "addr": "0x0bE48053E19B6dF51DF930e0e315c2295Db6D901"
+   }
+  ]
+ },
+ "SNOW": {
+  "ticker": "SNOW",
+  "liq": 17345.56,
+  "vol": 20663.120000000003,
+  "price": "318.46",
+  "addr": "0xBa0CAB75495255d0cB58E22B648bFED4ECD1F47E",
+  "memes": [
+   {
+    "sym": "COCAINE",
+    "liq": 4309.23,
+    "vol": 609.24,
+    "chg": -12.33,
+    "price": "0.000004313",
+    "mcap": 4313,
+    "addr": "0xc3245AFAdd78e3A46921c176fC994B540C7Ad601"
+   },
+   {
+    "sym": "YELLOW",
+    "liq": 4009.4,
+    "vol": 5853.65,
+    "chg": -13.59,
+    "price": "0.000004009",
+    "mcap": 4010,
+    "addr": "0x77f701edBF83B6D7f16EF2d34D84E40B6D7e8801"
+   },
+   {
+    "sym": "snowball",
+    "liq": 0.0,
+    "vol": 1948.7,
+    "chg": 5.03,
+    "price": "0.000004266",
+    "mcap": 4266,
+    "addr": "0xb114124F254B7d023a2eD05A360bFc7CCc98fA01"
+   },
+   {
+    "sym": "NOSEBEERS",
+    "liq": 0.0,
+    "vol": 2561.72,
+    "chg": -5.76,
+    "price": "0.000004058",
+    "mcap": 4059,
+    "addr": "0x6B54ab3EcA9Ec17fEB0F3B94598332dc888C8c01"
+   },
+   {
+    "sym": "CARTEL",
+    "liq": 0.0,
+    "vol": 268.56,
+    "chg": -7.13,
+    "price": "0.000004058",
+    "mcap": 4059,
+    "addr": "0xDFA2a77c976513a7fd3838930FCd83011493A801"
+   }
+  ]
+ },
+ "NET": {
+  "ticker": "NET",
+  "liq": 54411.11,
+  "vol": 183681.16,
+  "price": "276.77",
+  "addr": "0x116F00968269B7bfbaD4109cE591d6E74c0601d4",
+  "memes": [
+   {
+    "sym": "CLOUD",
+    "liq": 27099.72,
+    "vol": 25510.69,
+    "chg": 6.49,
+    "price": "0.00002791",
+    "mcap": 27914,
+    "addr": "0x4aD6F2f349B8031DC09145f2d2c4bbd1852A1E18"
+   },
+   {
+    "sym": "SKY",
+    "liq": 21747.96,
+    "vol": 6873.8,
+    "chg": 2.84,
+    "price": "0.00002174",
+    "mcap": 21745,
+    "addr": "0xf9293375EF2Ca9Db0DF6baF6057B7d3604001e18"
+   }
+  ]
+ },
+ "MDB": {
+  "ticker": "MDB",
+  "liq": 5794.66,
+  "vol": 1895.3899999999999,
+  "price": "376.052",
+  "addr": "0xDdf2266b79abf0B48898959B0ed6E6adf512be74",
+  "memes": [
+   {
+    "sym": "MANGO",
+    "liq": 0.0,
+    "vol": 208.2,
+    "chg": -5.33,
+    "price": "0.000007215",
+    "mcap": 7216,
+    "addr": "0x3Cb9226a6ae26F792c02410807DD891C38cdCC01"
+   }
+  ]
+ },
+ "ZS": {
+  "ticker": "ZS",
+  "liq": 5919.5,
+  "vol": 894.0500000000001,
+  "price": "183.98",
+  "addr": "0x7dc013eB55e436f30d7ED1AFE4E36d6e45e3c3f7",
+  "memes": []
+ },
+ "BABA": {
+  "ticker": "BABA",
+  "liq": 94294.35000000002,
+  "vol": 305312.88,
+  "price": "112.40",
+  "addr": "0xad25Ac6C84D497db898fa1E8387bf6Af3532a1c4",
+  "memes": [
+   {
+    "sym": "OPENSESAME",
+    "liq": 39732.94,
+    "vol": 97325.6,
+    "chg": 56.3,
+    "price": "0.00004416",
+    "mcap": 44162,
+    "addr": "0xC3eF6563f82686F11cEF87C74a5d8c50BE321E18"
+   },
+   {
+    "sym": "\u7238\u7238",
+    "liq": 13537.78,
+    "vol": 45687.32,
+    "chg": 144,
+    "price": "0.00001881",
+    "mcap": 16900,
+    "addr": "0x2600928d10c88Fe78f4aA65Bf17090e9AFd76612"
+   },
+   {
+    "sym": "TMALLDOLL",
+    "liq": 10914.85,
+    "vol": 2400.73,
+    "chg": -6.42,
+    "price": "0.00001091",
+    "mcap": 10912,
+    "addr": "0x2F1e744696132fA4810DC4d0b1376670eA631e18"
+   },
+   {
+    "sym": "ALI",
+    "liq": 4988.52,
+    "vol": 486.87,
+    "chg": 0.09,
+    "price": "0.000004988",
+    "mcap": 4989,
+    "addr": "0x5760B76531F51D40A8544eb5d189D989Aa21b333"
+   },
+   {
+    "sym": "HYOUTH",
+    "liq": 4965.99,
+    "vol": 14.19,
+    "chg": null,
+    "price": "0.000004967",
+    "mcap": 4967,
+    "addr": "0xAB0c55d67B6659E073bceEaa19910097F66Eb50b"
+   },
+   {
+    "sym": "\u732b\u5929\u5929",
+    "liq": 4887.68,
+    "vol": 1469.13,
+    "chg": 22.99,
+    "price": "0.000004935",
+    "mcap": 4935,
+    "addr": "0xF523131381f9cD3e0532E8aC2A719B705c660f01"
+   },
+   {
+    "sym": "\u8303\u5c0f\u52e4",
+    "liq": 4448.38,
+    "vol": 12052.16,
+    "chg": 14.15,
+    "price": "0.000004465",
+    "mcap": 4466,
+    "addr": "0x6D164158C785Ef80fdc70Ce31Bab06468799D501"
+   },
+   {
+    "sym": "BROWNIE",
+    "liq": 4257.24,
+    "vol": 16090.41,
+    "chg": 5.14,
+    "price": "0.000004269",
+    "mcap": 4269,
+    "addr": "0x9dC55474937DC6058564f6Fe93C6BCeDb41a3E01"
+   },
+   {
+    "sym": "UP",
+    "liq": 4068.46,
+    "vol": 5554.91,
+    "chg": -24.08,
+    "price": "0.000004069",
+    "mcap": 4069,
+    "addr": "0xd52FDadc9e6917af60e4b4Ae475c5DFc45dD0a01"
+   },
+   {
+    "sym": "AI",
+    "liq": 4036.5,
+    "vol": 41.28,
+    "chg": -4.9,
+    "price": "0.000004039",
+    "mcap": 4039,
+    "addr": "0xa40456aED3558281c802bf2cC090BDCb32610A01"
+   },
+   {
+    "sym": "JAGA",
+    "liq": 3716.94,
+    "vol": 199.04,
+    "chg": -18.66,
+    "price": "0.000003806",
+    "mcap": 3806,
+    "addr": "0x61e698A2e918e224C25550Ac0e8E08d3F367A6a7"
+   },
+   {
+    "sym": "KIRBY",
+    "liq": 1824.27,
+    "vol": 64.5,
+    "chg": 1.24,
+    "price": "0.000003659",
+    "mcap": 3659,
+    "addr": "0x73c2925c3714729F255aC85DC208B94ff67D4F72"
+   },
+   {
+    "sym": "Yilong",
+    "liq": 1088.22,
+    "vol": 25.89,
+    "chg": null,
+    "price": "0.000003270",
+    "mcap": 3270,
+    "addr": "0x8307f4303Cb1dd570672a1D3e5B9A3f547f0C4fc"
+   },
+   {
+    "sym": "MM",
+    "liq": 307.48,
+    "vol": 23.91,
+    "chg": null,
+    "price": "0.01537",
+    "mcap": 15374472,
+    "addr": "0x835f8Dc4dE4684ee10DD0fb1E1656B6e065bA104"
+   }
+  ]
+ },
+ "XOM": {
+  "ticker": "XOM",
+  "liq": 39178.50000000001,
+  "vol": 174355.61,
+  "price": "162.54",
+  "addr": "0xf9B46d3D1B22199D4D1025a9cEDB540A33F1a2d5",
+  "memes": [
+   {
+    "sym": "FARTCOIN",
+    "liq": 5509.68,
+    "vol": 89217.79,
+    "chg": 23.86,
+    "price": "0.000005610",
+    "mcap": 5610,
+    "addr": "0x3E4F339beA31401e59f3F28959250FF9538c3901"
+   },
+   {
+    "sym": "gascoin",
+    "liq": 4516.37,
+    "vol": 18729.78,
+    "chg": 10.33,
+    "price": "0.000004521",
+    "mcap": 4522,
+    "addr": "0x4cF3C20ad25BDb1b9033D54706eD31576d8e6701"
+   },
+   {
+    "sym": "GAS",
+    "liq": 4218.77,
+    "vol": 2686.18,
+    "chg": -24.34,
+    "price": "0.000004222",
+    "mcap": 4222,
+    "addr": "0x5b7598e329AAE99ECc251d956D7d8b0cac550e38"
+   },
+   {
+    "sym": "TEST",
+    "liq": 0.0,
+    "vol": 133.01,
+    "chg": -6.81,
+    "price": "0.000004028",
+    "mcap": 4029,
+    "addr": "0x66Dc464e8Aa361E9b0b651E29384a34290e59a01"
+   },
+   {
+    "sym": "ASTK",
+    "liq": 0.0,
+    "vol": 0.0,
+    "chg": null,
+    "price": null,
+    "mcap": null,
+    "addr": "0x9C9A600a0D29f28219CD521c0Bf489fe145C6969"
+   }
+  ]
+ },
+ "JOBY": {
+  "ticker": "JOBY",
+  "liq": 14162.95,
+  "vol": 10003.34,
+  "price": "6.45",
+  "addr": "0xb334C5cE741B80B5B671F47F5C269Cb193fe8E24",
+  "memes": [
+   {
+    "sym": "SKYCABBY",
+    "liq": 9572.93,
+    "vol": 5564.68,
+    "chg": -21.87,
+    "price": "0.000009570",
+    "mcap": 9570,
+    "addr": "0x1319A1d53A891A80AfB096C8c5F3bcAA18F71e18"
+   },
+   {
+    "sym": "BLOW",
+    "liq": 0.0,
+    "vol": 58.67,
+    "chg": -1.85,
+    "price": "0.000003129",
+    "mcap": 3129,
+    "addr": "0xd1d8025421449d8a85835b37f3A426B8076D5C01"
+   }
+  ]
+ },
+ "RKLB": {
+  "ticker": "RKLB",
+  "liq": 56321.81,
+  "vol": 92563.20000000001,
+  "price": "65.24",
+  "addr": "0x3b14C39E89D60D627b42a1A4CA45b5bb45Fc12e2",
+  "memes": [
+   {
+    "sym": "ROCKET",
+    "liq": 22476.22,
+    "vol": 36932.08,
+    "chg": 2285,
+    "price": "0.00006191",
+    "mcap": 61918,
+    "addr": "0xe0781CD68E541CC5063B9a844BBb9fCA77BCC680"
+   },
+   {
+    "sym": "wUSDG",
+    "liq": 16652.74,
+    "vol": 360.39,
+    "chg": 4.75,
+    "price": "1.66",
+    "mcap": 166527486,
+    "addr": "0x0Ff7A742b035504118A9d435c8264619A8428E1C"
+   },
+   {
+    "sym": "CUM",
+    "liq": 7818.55,
+    "vol": 7763.28,
+    "chg": 81.71,
+    "price": "0.000008564",
+    "mcap": 8564,
+    "addr": "0x7ed9e0BDC072229118fB6FcE2a69ad27d9Cb1101"
+   },
+   {
+    "sym": "MOON",
+    "liq": 5437.65,
+    "vol": 44.41,
+    "chg": 1.07,
+    "price": "0.000005438",
+    "mcap": 5438,
+    "addr": "0x97d19259CED2c2413A2a549aC34c316f0d88B8c9"
+   },
+   {
+    "sym": "\ud83d\ude80",
+    "liq": 5304.8,
+    "vol": 7.33,
+    "chg": null,
+    "price": "0.000005304",
+    "mcap": 5305,
+    "addr": "0xC9AAAf6059688c1138DAc630eb82C3B6a4D21329"
+   },
+   {
+    "sym": "cummies",
+    "liq": 4440.91,
+    "vol": 610.34,
+    "chg": 5.02,
+    "price": "0.000004443",
+    "mcap": 4443,
+    "addr": "0x64b338373a78254A56B71FE6FF8397e239CC2e01"
+   },
+   {
+    "sym": "TEST1",
+    "liq": 2981.44,
+    "vol": 1578.12,
+    "chg": 26.13,
+    "price": "0.000003001",
+    "mcap": 3002,
+    "addr": "0xC9E35189c0816e16465505f0802adc0B910dD492"
+   }
+  ]
+ },
+ "ASTS": {
+  "ticker": "ASTS",
+  "liq": 59867.95999999999,
+  "vol": 214195.37,
+  "price": "59.23",
+  "addr": "0x1AF6446f07eb1d97c546AFC8c9544cBDF3AD5137",
+  "memes": [
+   {
+    "sym": "ASSTITS",
+    "liq": 12650.25,
+    "vol": 112372.33,
+    "chg": 120,
+    "price": "0.000009414",
+    "mcap": 9414,
+    "addr": "0xD3CCFd2d3f73950537504234937883504eBa5701"
+   },
+   {
+    "sym": "wUSDG",
+    "liq": 7093.97,
+    "vol": 430.09,
+    "chg": -27.03,
+    "price": "0.7101",
+    "mcap": 71011131,
+    "addr": "0x0Ff7A742b035504118A9d435c8264619A8428E1C"
+   },
+   {
+    "sym": "GPS",
+    "liq": 6143.86,
+    "vol": 438.09,
+    "chg": -7.94,
+    "price": "0.000006194",
+    "mcap": 6194,
+    "addr": "0xD9B39Dc4af8EDFC736Df6A44Eaecb4c15aC91Db9"
+   },
+   {
+    "sym": "GPU",
+    "liq": 5640.22,
+    "vol": 89.6,
+    "chg": null,
+    "price": "0.000005679",
+    "mcap": 5679,
+    "addr": "0x8Ae6AB638C814e39a3004ba90D8a34C9347df169"
+   },
+   {
+    "sym": "STELLA",
+    "liq": 4007.14,
+    "vol": 14813.8,
+    "chg": -19.09,
+    "price": "0.000004007",
+    "mcap": 4008,
+    "addr": "0x1cc395D5fBA1Cc9acbbF0d474dC9096E91fe1301"
+   },
+   {
+    "sym": "assets",
+    "liq": 0.0,
+    "vol": 2647.92,
+    "chg": -6.96,
+    "price": "0.000003953",
+    "mcap": 3953,
+    "addr": "0x923bD7b2D638cD5ca60bC2103f3E7630E0d96F01"
+   },
+   {
+    "sym": "BRE",
+    "liq": 0.0,
+    "vol": 16.82,
+    "chg": null,
+    "price": "0.000003953",
+    "mcap": 3953,
+    "addr": "0x58A30fAda57Dd8701561F9ae30D4ED146b513B01"
+   }
+  ]
+ },
+ "LUNR": {
+  "ticker": "LUNR",
+  "liq": 8756.310000000001,
+  "vol": 33301.34,
+  "price": "14.79",
+  "addr": "0xa5D4968421bA94814Be3B136b15cf422101aC1a3",
+  "memes": [
+   {
+    "sym": "\ud83c\udf1d",
+    "liq": 22353.82,
+    "vol": 22983.1,
+    "chg": -0.12,
+    "price": "0.00002235",
+    "mcap": 22356,
+    "addr": "0x618D9cef4858184a5151e10B97436eEb67525001"
+   },
+   {
+    "sym": "wUSDG",
+    "liq": 14616.3,
+    "vol": 670.98,
+    "chg": -71.4,
+    "price": "1.46",
+    "mcap": 146163069,
+    "addr": "0x0Ff7A742b035504118A9d435c8264619A8428E1C"
+   },
+   {
+    "sym": "LUNA",
+    "liq": 6187.57,
+    "vol": 54.43,
+    "chg": -4.8,
+    "price": "0.000006233",
+    "mcap": 6233,
+    "addr": "0x5828b4838FA8aD936728741F28A4C6a460ebE801"
+   },
+   {
+    "sym": "DAT",
+    "liq": 0.0,
+    "vol": 1015.53,
+    "chg": -4.13,
+    "price": "0.00002194",
+    "mcap": 21941,
+    "addr": "0xACD78071E24c2e01889F3e5ff176a94BD298Af01"
+   },
+   {
+    "sym": "MARSCOIN",
+    "liq": 0.0,
+    "vol": 854.21,
+    "chg": -5.33,
+    "price": "0.00002194",
+    "mcap": 21941,
+    "addr": "0xC934ed09E8C3354262101D2471212287BED76401"
+   },
+   {
+    "sym": "MoonCoin",
+    "liq": 0.0,
+    "vol": 2673.5,
+    "chg": -3.46,
+    "price": "0.000005184",
+    "mcap": 5184,
+    "addr": "0x5F2437300C93Ba27CD72C33785D8da17DD421301"
+   },
+   {
+    "sym": "MOON",
+    "liq": 0.0,
+    "vol": 36100.85,
+    "chg": 12.21,
+    "price": null,
+    "mcap": null,
+    "addr": "0x40d14170c26C1d4123F56ae9eee3fA30f5aF0901"
+   }
+  ]
+ },
+ "IONQ": {
+  "ticker": "IONQ",
+  "liq": 1965.31,
+  "vol": 383.28000000000003,
+  "price": "41.63",
+  "addr": "0x558378E000D634A36593E338eBacdd6207640EfE",
+  "memes": [
+   {
+    "sym": "wUSDG",
+    "liq": 0.0,
+    "vol": 0.0,
+    "chg": -0.19,
+    "price": null,
+    "mcap": null,
+    "addr": "0x0Ff7A742b035504118A9d435c8264619A8428E1C"
+   },
+   {
+    "sym": "Schr\u00f6dinger",
+    "liq": 0.0,
+    "vol": 0.0,
+    "chg": null,
+    "price": null,
+    "mcap": null,
+    "addr": "0x3DfC401ffdc3aA8853FF0A2e48A2414527B79a01"
+   }
+  ]
+ },
+ "RGTI": {
+  "ticker": "RGTI",
+  "liq": 4045.95,
+  "vol": 10.95,
+  "price": "15.36",
+  "addr": "0x284358abc07F9359f19f4b5b4aC91901Be2597Ba",
+  "memes": [
+   {
+    "sym": "MM",
+    "liq": 41.71,
+    "vol": 10.43,
+    "chg": null,
+    "price": "0.002085",
+    "mcap": 2085662,
+    "addr": "0x835f8Dc4dE4684ee10DD0fb1E1656B6e065bA104"
+   }
+  ]
+ },
+ "SOUN": {
+  "ticker": "SOUN",
+  "liq": 76219.96999999999,
+  "vol": 353116.98000000004,
+  "price": "6.96",
+  "addr": "0x6E3Dfd9f7e1649BaA14D25cac18C94d62dB10A54",
+  "memes": [
+   {
+    "sym": "FOX",
+    "liq": 23325.16,
+    "vol": 127849.72,
+    "chg": -43.73,
+    "price": "0.00005006",
+    "mcap": 50069,
+    "addr": "0x255dbB4B8102616fC999D44cF3f8e3df063E4501"
+   },
+   {
+    "sym": "HOUND",
+    "liq": 16654.17,
+    "vol": 55398.53,
+    "chg": -59.18,
+    "price": "0.00002835",
+    "mcap": 28351,
+    "addr": "0xaF5c17d3460BD951A3771Cc8fc3303745120FF01"
+   },
+   {
+    "sym": "UFG",
+    "liq": 3854.22,
+    "vol": 325.19,
+    "chg": 1.2,
+    "price": "0.000003854",
+    "mcap": 3855,
+    "addr": "0x895566383c3c983052037Cf19bdB2e8B84060001"
+   },
+   {
+    "sym": "SOUND",
+    "liq": 3838.93,
+    "vol": 112.75,
+    "chg": null,
+    "price": "0.000003840",
+    "mcap": 3841,
+    "addr": "0xB3986FE6a44084716139451d9D0551c1B31CB101"
+   },
+   {
+    "sym": "BANDZ",
+    "liq": 3700.44,
+    "vol": 913.22,
+    "chg": -8.37,
+    "price": "0.000003700",
+    "mcap": 3701,
+    "addr": "0x650f21Aa9DCb6998987E1AF62b9e5c70a8933501"
+   },
+   {
+    "sym": "SoundHound ",
+    "liq": 3587.53,
+    "vol": 251.13,
+    "chg": -10.94,
+    "price": "0.000003587",
+    "mcap": 3588,
+    "addr": "0x26Ccd6E3bd15c1E8bF1fA1ce5ECeB14d2C7BAA01"
+   },
+   {
+    "sym": "SOUN GOKU",
+    "liq": 0.0,
+    "vol": 447.53,
+    "chg": -4.94,
+    "price": "0.000003654",
+    "mcap": 3654,
+    "addr": "0x37548128FDa59922ceF9807C5fD4488E32a46b01"
+   },
+   {
+    "sym": "SOLI6",
+    "liq": 0.0,
+    "vol": 31.78,
+    "chg": -100,
+    "price": "0.00000000000000000000000000000000000002003",
+    "mcap": null,
+    "addr": "0x3c93302A676779a521C64A88dde12C1b56085501"
+   }
+  ]
+ },
+ "CVNA": {
+  "ticker": "CVNA",
+  "liq": 14680.61,
+  "vol": 105109.19,
+  "price": "324.99",
+  "addr": "0xa4f319104089FE321dc8093C6E707d4fE190A988",
+  "memes": [
+   {
+    "sym": "LAMBO",
+    "liq": 5209.08,
+    "vol": 87412.78,
+    "chg": 20.38,
+    "price": "0.000005293",
+    "mcap": 5293,
+    "addr": "0x713678496C50a3f025c61bc6291e82b55a0D8701"
+   },
+   {
+    "sym": "toyota",
+    "liq": 0.0,
+    "vol": 3383.63,
+    "chg": 45.86,
+    "price": "0.00001464",
+    "mcap": 14646,
+    "addr": "0x15fA9B1CBF4E43E9983f1Fd6d53AdFee7284A601"
+   },
+   {
+    "sym": "FineShyt",
+    "liq": 0.0,
+    "vol": 2473.73,
+    "chg": 0.13,
+    "price": "0.000004018",
+    "mcap": 4019,
+    "addr": "0x1e8d4e1C85F1343Dfe62776F5d634bB90a321201"
+   }
+  ]
+ },
+ "CLSK": {
+  "ticker": "CLSK",
+  "liq": 6943.16,
+  "vol": 1257.13,
+  "price": "11.27",
+  "addr": "0xcBB95BBF36099d34dA091dc6Fa6F49EfA257Cee3",
+  "memes": [
+   {
+    "sym": "MALFINA",
+    "liq": 0.0,
+    "vol": 0.0,
+    "chg": -6.2,
+    "price": null,
+    "mcap": null,
+    "addr": "0x9C0d238E85303c9C4089f302209BD56F012b9301"
+   }
+  ]
+ },
+ "MARA": {
+  "ticker": "MARA",
+  "liq": 3800.76,
+  "vol": 65.27,
+  "price": "0.000003817",
+  "addr": "0x7AA6c1CFB5e78660E09f3Ca44c80934A5d8F2930",
+  "memes": []
+ },
+ "WULF": {
+  "ticker": "WULF",
+  "liq": 21512.899999999998,
+  "vol": 45121.78,
+  "price": "21.38",
+  "addr": "0x348Be1A8663f15edDe5CDf8A96BB69078f7aB6Fd",
+  "memes": [
+   {
+    "sym": "WALLSTREET",
+    "liq": 20804.31,
+    "vol": 4640.04,
+    "chg": -16.14,
+    "price": "0.00002079",
+    "mcap": 20796,
+    "addr": "0xcEd76e734B9887E5C8467AfD6c38C70fD5821e18"
+   },
+   {
+    "sym": "WOLF",
+    "liq": 7508.63,
+    "vol": 7886.09,
+    "chg": -8.39,
+    "price": "0.000003733",
+    "mcap": 3776,
+    "addr": "0xa3364F668F8118f118D6AC061151edB03797b901"
+   }
+  ]
+ },
+ "APLD": {
+  "ticker": "APLD",
+  "liq": 30689.530000000002,
+  "vol": 4299.65,
+  "price": "25.16",
+  "addr": "0xb8DBf92F9741c9ac1c32115E78581f23509916FD",
+  "memes": []
+ },
+ "NBIS": {
+  "ticker": "NBIS",
+  "liq": 5056.59,
+  "vol": 1406.66,
+  "price": "196.73",
+  "addr": "0x9D9c6684F596F66a64C030B93A886D51Fd4D7931",
+  "memes": []
+ }
+}

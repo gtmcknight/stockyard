@@ -1,0 +1,34 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stockyard",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "observability": { "enabled": true },
+
+  // The page itself is static. Everything live comes from KV.
+  "assets": { "directory": "../public", "binding": "ASSETS", "run_worker_first": true },
+
+  // Own hostname on the rhps.fun zone, so a bad deploy here can never touch the game.
+  // Provisions the cert and DNS record on deploy.
+  "workers_dev": true,
+  "routes": [{ "pattern": "stockyard.rhps.fun", "custom_domain": true }],
+
+  "vars": {
+    "CHAIN_ID": "4663",
+    "CHAIN_NAME": "Robinhood Chain",
+    // Robinhood deploys every tokenized stock from this contract, and it emits
+    // Deployed(bytes32 uid, address stock, string name, string symbol).
+    "STOCK_FACTORY": "0x4783C67b63dE2B358Ac5951a7D41F47A38F3C046",
+    "EXPLORER_API": "https://robinhoodchain.blockscout.com/api/v2",
+    "PUBLIC_RPC": "https://rpc.mainnet.chain.robinhood.com"
+  },
+
+  "triggers": {
+    // pools every 5 minutes, real-world prices hourly, registry once a day
+    "crons": ["*/5 * * * *", "7 * * * *", "23 6 * * *"]
+  },
+
+  "kv_namespaces": [
+    { "binding": "SY", "id": "4e31fbb9611f46b0b69c66ddf0e50550" }
+  ]
+}
