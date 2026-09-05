@@ -109,6 +109,7 @@ const KEY = {
   longbow: "longbow",         // anchor token -> the memes Longbow sees riding it
   history: (d) => `history:${d}`,
   lock: "lock:pools",         // held while a crawl runs, so ticks cannot overlap
+  lastRun: "lastrun",         // stats from the most recent crawl, cron included
 };
 
 // ---------------------------------------------------------------- fetch helpers
@@ -127,8 +128,11 @@ async function paced() {
 }
 
 async function getJSON(url, tries = 3) {
+  // Five tries with a rising backoff meant 61 rate-limited requests spent eight
+  // minutes asleep, which is what pushed a run past its own cron interval and
+  // got it cancelled. Three quick tries, then let the pacer do the work.
   const ds = url.includes("dexscreener");
-  if (ds) tries = 5;
+  if (ds) tries = 3;
   const browser = url.includes("blockscout");
   const headers = browser
     ? { "User-Agent": BROWSER_UA, Accept: "application/json" }
@@ -142,7 +146,7 @@ async function getJSON(url, tries = 3) {
       const r = await fetch(url, { headers });
       if (r.status === 429) {
         last = "429";
-        await sleep(800 * (i + 1));
+        await sleep(500 * (i + 1));
         continue;
       }
       if (r.ok) return await r.json();
@@ -461,7 +465,8 @@ async function refreshPools(env, force = false) {
   const blob = { asOf: new Date().toISOString().slice(0, 16).replace("T", " ") + " UTC", rows };
   await env.SY.put(KEY.snapshot, JSON.stringify(blob));
   await env.SY.put(KEY.lock, "0", { expirationTtl: 60 });
-  return {
+
+  const stats = {
     ok: true, stocks: rows.length,
     memes: rows.reduce((s, r) => s + r.n, 0),
     padsResolved: resolved,
@@ -470,7 +475,13 @@ async function refreshPools(env, force = false) {
     // snapshot is missing part of some roster.
     droppedRequests: _lost,
     dropReasons: { rateLimited: _lost429, badStatus: _lostBad, network: _lostErr },
+    // a cron run has nowhere to return this to, so keep it where we can read it
+    trigger: force ? "manual" : "cron",
+    startedAt: new Date(now).toISOString(),
+    tookSeconds: Math.round((Date.now() - now) / 1000),
   };
+  await env.SY.put(KEY.lastRun, JSON.stringify(stats));
+  return stats;
 }
 
 async function refreshQuotes(env) {
@@ -535,6 +546,13 @@ export default {
     }
 
     // manual kick, handy before the first cron fires
+    if (url.pathname === "/api/status") {
+      return json({
+        lastRun: JSON.parse((await env.SY.get(KEY.lastRun)) || "null"),
+        lockUntil: Number((await env.SY.get(KEY.lock)) || 0) || null,
+      });
+    }
+
     if (url.pathname === "/api/refresh") {
       const job = url.searchParams.get("job");
       const run = job === "registry" ? buildRegistry(env)
