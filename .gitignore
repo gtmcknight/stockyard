@@ -1,3 +1,17 @@
 public/data/
 worker/node_modules/
 worker/.wrangler/
+
+# credentials for the crawler
+.env
+tools/__pycache__/
+
+# regenerated caches. launchpads.json is kept: it takes several Blockscout hops
+# per token to rebuild, never changes once known, and is uploaded to KV on deploy
+data/page.json
+data/rhc.json
+data/longbow.json
+data/stocks.json
+
+# scratch
+.mockup/

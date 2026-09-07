@@ -2,7 +2,7 @@
 """Re-fetch any stock that came back with zero memes, and fall back to search."""
 import json, os, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from pull import sh, roster, QUOTES, DATA
+from pull import sh, roster, QUOTES, DATA, PARKED_LIQ, PARKED_TURN
 
 blob = json.load(open(os.path.join(DATA, "page.json")))
 rows = blob["rows"]
@@ -49,15 +49,22 @@ for r in empty:
     memes = roster(r["t"], r["a"]) or by_search(r["t"], r["a"])
     if not memes:
         continue
-    ml = sum(m["l"] for m in memes); mv = sum(m["v"] for m in memes)
-    num = den = 0.0
+    # same parked rule as pull.py, so a repaired row matches an unrepaired one
     for m in memes:
+        if m["l"] >= PARKED_LIQ and m["v"] < m["l"] * PARKED_TURN:
+            m["q"] = 1
+    memes.sort(key=lambda m: (m.get("q", 0), -m["l"]))
+    live = [m for m in memes if not m.get("q")]
+    ml = sum(m["l"] for m in live); mv = sum(m["v"] for m in live)
+    num = den = 0.0
+    for m in live:
         if m.get("c") is not None and m["l"]:
             num += m["c"] * m["l"]; den += m["l"]
     r["m"] = [{k: (round(v) if k in ("l", "v") and v else v) for k, v in m.items()} for m in memes[:14]]
-    r["n"] = len(memes); r["ml"] = round(ml); r["mv"] = round(mv)
+    r["n"] = len(live); r["nq"] = len(memes) - len(live)
+    r["ml"] = round(ml); r["mv"] = round(mv)
+    r["pl"] = round(sum(m["l"] for m in memes if m.get("q")))
     r["c"] = round(num / den, 1) if den else None
-    r["orph"] = len([m for m in memes if m["l"] > 2000 and (not m["x"] or m["tx"] < 20)])
     fixed += 1
     print("  %-6s -> %d memes, $%s liq" % (r["t"], r["n"], format(r["ml"], ",")), file=sys.stderr)
 

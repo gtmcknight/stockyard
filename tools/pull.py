@@ -21,6 +21,9 @@ NOT_MEMES = {
 }
 # a pool with no liquidity is not a market. Dust pools distort every count.
 MIN_LIQ = 1000
+# a pool holding real liquidity that nobody traded one percent of in a day
+PARKED_LIQ = 2000
+PARKED_TURN = 0.01
 
 TICKERS = """
 AAPL MSFT NVDA AMZN GOOGL GOOG META TSLA BRK.B AVGO LLY JPM V UNH XOM MA JNJ PG
@@ -110,13 +113,28 @@ def find_stock(t):
             img = img or (p.get("info") or {}).get("imageUrl")
     return (t, addr, liq, vol, price, img) if addr else None
 
-def _absorb(memes, pairs, addr):
+def _absorb(memes, pairs, addr, reg=()):
+    """Every pool pairing this stock with a memecoin, in either orientation.
+
+    Dexscreener decides which side is base and which is quote, and once a meme is
+    deep enough to be quoted against itself the orientation flips: LLY/FATCOIN is
+    filed with the stock as the base. Reading only the quote side dropped those
+    pools entirely. Mirrors absorb() in worker/src/index.js.
+    """
     now = time.time() * 1000
+    want = (addr or "").lower()
     for p in pairs or []:
         if p.get("chainId") not in (None, "robinhood"):
             continue
-        b, q = p.get("baseToken") or {}, p.get("quoteToken") or {}
-        if (q.get("address") or "").lower() != (addr or "").lower():
+        base, quote = p.get("baseToken") or {}, p.get("quoteToken") or {}
+        ba = (base.get("address") or "").lower()
+        qa = (quote.get("address") or "").lower()
+        flipped = ba == want
+        if not flipped and qa != want:
+            continue
+        b = quote if flipped else base
+        # both sides in the registry is a stock traded against a stock, not a meme
+        if (qa if flipped else ba) in reg:
             continue
         key = (b.get("address") or b.get("symbol") or "").lower()
         s = b.get("symbol")
@@ -127,12 +145,12 @@ def _absorb(memes, pairs, addr):
         m = memes.get(key)
         if m is None:
             m = memes[key] = {"s": s, "a": b.get("address"), "l": 0.0, "v": 0.0,
-                              "c": (p.get("priceChange") or {}).get("h24"),
+                              "c": None,
                               "cs": [None, None, None, None], "vs": [0.0, 0.0, 0.0, 0.0],
                               "_cw": [0.0, 0.0, 0.0, 0.0], "_cn": [0.0, 0.0, 0.0, 0.0],
-                              "mc": p.get("marketCap"), "x": None, "w": None,
-                              "tx": 0, "age": None, "img": info.get("imageUrl"), "u": p.get("url"),
-                              "_seen": set()}
+                              "mc": 0, "x": None, "w": None,
+                              "tx": 0, "age": None, "img": None, "u": p.get("url"),
+                              "_inv": 0, "_seen": set()}
         pid = p.get("pairAddress") or id(p)
         if pid in m["_seen"]:
             continue
@@ -144,28 +162,73 @@ def _absorb(memes, pairs, addr):
         for i, k in enumerate(("m5", "h1", "h6", "h24")):
             m["vs"][i] += vol.get(k) or 0
             cv = chg.get(k)
+            # a price move belongs to the base side, so on a flipped pair it is
+            # the stock moving against the meme. The meme's own move is the inverse.
+            # Past a 99% move either way the reciprocal is arithmetic on a rounding
+            # error rather than a price, so there is nothing to invert.
+            if cv is not None and flipped:
+                r = 1 + cv / 100.0
+                cv = (1 / r - 1) * 100 if 0.01 <= r <= 100 else None
+            # Dexscreener sometimes reports a move no pool can hold: a day-old
+            # $1.6k pool that traded $47 came back at +5.75e20%. A thousandfold
+            # in a day is already past anything real on this chain.
+            if cv is not None and abs(cv) > 1e5:
+                cv = None
             if cv is not None and pl:
                 m["_cn"][i] += cv * pl
                 m["_cw"][i] += pl
         m["tx"] += (tx.get("buys") or 0) + (tx.get("sells") or 0)
-        if not m["img"]:
-            m["img"] = info.get("imageUrl")
         if not m.get("u"):
             m["u"] = p.get("url")
+        if p.get("pairCreatedAt"):
+            days = round((now - p["pairCreatedAt"]) / 86400000.0, 1)
+            m["age"] = days if m["age"] is None else min(m["age"], days)
+        # marketCap, the logo and the socials all describe the base token, so on a
+        # flipped pair they belong to the stock, not the meme. Filled in later.
+        if flipped:
+            m["_inv"] += 1
+            continue
+        if not m["img"]:
+            m["img"] = info.get("imageUrl")
         for soc in info.get("socials") or []:
             if soc.get("type") == "twitter" and not m["x"]:
                 m["x"] = soc.get("url")
         for web in info.get("websites") or []:
             if not m["w"]:
                 m["w"] = web.get("url")
-        if p.get("pairCreatedAt"):
-            days = round((now - p["pairCreatedAt"]) / 86400000.0, 1)
-            m["age"] = days if m["age"] is None else min(m["age"], days)
         if (p.get("marketCap") or 0) > (m.get("mc") or 0):
             m["mc"] = p.get("marketCap")
 
 
-def roster(t, addr, known=()):
+def _fill_flipped(memes):
+    """A meme only ever seen as the quote side has no market cap, logo or socials
+    yet, because everything Dexscreener attaches to a pair describes its base
+    token. It is a handful of coins, so one batched lookup of their own pools
+    fills them in."""
+    if not memes:
+        return
+    want = {}
+    for m in memes:
+        want.setdefault((m["a"] or "").lower(), []).append(m)
+    addrs = [a for a in want if a]
+    for i in range(0, len(addrs), 30):
+        d = sh("https://api.dexscreener.com/latest/dex/tokens/%s" % ",".join(addrs[i:i + 30]))
+        for p in (d or {}).get("pairs") or []:
+            for m in want.get(((p.get("baseToken") or {}).get("address") or "").lower(), []):
+                info = p.get("info") or {}
+                if (p.get("marketCap") or 0) > (m.get("mc") or 0):
+                    m["mc"] = p.get("marketCap")
+                if not m["img"]:
+                    m["img"] = info.get("imageUrl")
+                for soc in info.get("socials") or []:
+                    if soc.get("type") == "twitter" and not m["x"]:
+                        m["x"] = soc.get("url")
+                for web in info.get("websites") or []:
+                    if not m["w"]:
+                        m["w"] = web.get("url")
+
+
+def roster(t, addr, known=(), reg=()):
     """Every pool where this stock token is the QUOTE, unioned across four sources.
 
     token-pairs caps at roughly 30 pools and the searches only partly fill the
@@ -177,19 +240,21 @@ def roster(t, addr, known=()):
     memes = {}
     tp = sh("https://api.dexscreener.com/token-pairs/v1/robinhood/%s" % addr)
     if isinstance(tp, list):
-        _absorb(memes, tp, addr)
+        _absorb(memes, tp, addr, reg)
     for q in ("%s%%20robinhood" % t.replace(".", ""), "%s%%20USDG" % t.replace(".", "")):
         d = sh("https://api.dexscreener.com/latest/dex/search?q=%s" % q)
         if isinstance(d, dict):
-            _absorb(memes, d.get("pairs"), addr)
+            _absorb(memes, d.get("pairs"), addr, reg)
     tail = [a for a in known if a not in memes]
     for i in range(0, len(tail), 30):
         d = sh("https://api.dexscreener.com/latest/dex/tokens/%s" % ",".join(tail[i:i + 30]))
         if isinstance(d, dict):
-            _absorb(memes, d.get("pairs"), addr)
+            _absorb(memes, d.get("pairs"), addr, reg)
     memes = {k: v for k, v in memes.items() if (v["l"] or 0) >= MIN_LIQ}
+    _fill_flipped([m for m in memes.values() if m["_inv"]])
     for m in memes.values():
         m.pop("_seen", None)
+        m.pop("_inv", None)
         for i in range(4):
             m["cs"][i] = round(m["_cn"][i] / m["_cw"][i], 1) if m["_cw"][i] else None
             m["vs"][i] = round(m["vs"][i])
@@ -299,41 +364,55 @@ def main():
             if i % 50 == 0:
                 print("  ...%d/%d" % (i, len(reg)), file=sys.stderr)
     print("phase 1 done: %d stock markets" % len(found), file=sys.stderr)
+    # a pool with a registry token on both sides is a stock traded against a
+    # stock, not a meme riding one
+    reg_addrs = {(e.get("a") or "").lower() for e in reg if e.get("a")}
+    reg_addrs |= {(r[1] or "").lower() for r in found if r[1]}
+    reg_addrs.discard("")
 
     print("phase 2: pulling complete meme rosters", file=sys.stderr)
     rows = []
     def one(r):
         t, addr, liq, vol, price, img = r
-        return t, addr, liq, vol, price, img, roster(t, addr, lb.get((addr or "").lower(), []))
+        return (t, addr, liq, vol, price, img,
+                roster(t, addr, lb.get((addr or "").lower(), []), reg_addrs))
     with cf.ThreadPoolExecutor(max_workers=4) as ex:
         for i, (t, addr, liq, vol, price, img, memes) in enumerate(ex.map(one, found)):
-            ml = sum(m["l"] for m in memes)
-            mv = sum(m["v"] for m in memes)
-            mmc = sum((m.get("mc") or 0) for m in memes)
+            # Parked money: real liquidity in a pool nobody traded one percent of in
+            # a day. It is a deposit, not a market, so it is counted on its own and
+            # kept out of every total. Mirrors the rule in worker/src/index.js.
+            for m in memes:
+                if m["l"] >= PARKED_LIQ and m["v"] < m["l"] * PARKED_TURN:
+                    m["q"] = 1
+            memes.sort(key=lambda m: (m.get("q", 0), -m["l"]))
+            live = [m for m in memes if not m.get("q")]
+
+            ml = sum(m["l"] for m in live)
+            mv = sum(m["v"] for m in live)
+            pl = sum(m["l"] for m in memes if m.get("q"))
+            mmc = sum((m.get("mc") or 0) for m in live)
             num = den = 0.0
             cs = [None] * 4
             vs = [0] * 4
             for i in range(4):
                 n2 = d2 = 0.0
-                for m in memes:
+                for m in live:
                     vs[i] += m["vs"][i]
                     cv = m["cs"][i]
                     if cv is not None and m["l"]:
                         n2 += cv * m["l"]; d2 += m["l"]
                 cs[i] = round(n2 / d2, 1) if d2 else None
-            for m in memes:
+            for m in live:
                 if m.get("c") is not None and m["l"]:
                     num += m["c"] * m["l"]; den += m["l"]
-            # "quiet": real liquidity, almost nobody trading. No inference, just counts.
-            orphans = [m for m in memes if m["l"] > 2000 and m["tx"] < 20]
-            state, dom, cap = classify(memes, ml)
+            state, dom, cap = classify(live, ml)
             rows.append({
                 "t": t, "a": addr, "sl": round(liq), "sv": round(vol), "img": img,
-                "p": price, "ml": round(ml), "mv": round(mv), "n": len(memes),
+                "p": price, "ml": round(ml), "mv": round(mv), "pl": round(pl),
+                "n": len(live), "nq": len(memes) - len(live),
                 "c": round(num / den, 1) if den else None,
                 "cs": cs, "vs": vs, "mmc": round(mmc),
                 "st": state, "dom": round(dom, 3), "top": round(cap),
-                "orph": len(orphans),
                 "m": [{k: (round(v) if k in ("l", "v") and v else v) for k, v in m.items()}
                       for m in memes[:14]],
             })
