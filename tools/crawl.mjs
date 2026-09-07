@@ -57,13 +57,19 @@ setLimits({
 const stamp = () => new Date().toISOString().slice(11, 19);
 const say = (...a) => console.log(stamp(), ...a);
 
+// buildRegistry answers with the roster itself rather than the { ok } every
+// other job returns, so an unwrapped result logs "failed" and prints all 203
+// entries, and a single `registry` run exits 1 on success.
+const registryResult = (roster) =>
+  Array.isArray(roster) ? { ok: roster.length > 0, stocks: roster.length } : roster;
+
 async function run(job) {
   const t0 = Date.now();
   try {
     const out =
       job === "pools"    ? await refreshPools(env, true)   // force: this machine is the crawler
     : job === "quotes"   ? await refreshQuotes(env)
-    : job === "registry" ? await buildRegistry(env)
+    : job === "registry" ? registryResult(await buildRegistry(env))
     : job === "longbow"  ? await refreshLongbow(env)
     : null;
     if (!out) { console.error(`unknown job: ${job}`); process.exit(1); }
