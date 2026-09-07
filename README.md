@@ -8,6 +8,11 @@ Nobody has mapped it. The best public count was 27 pairs across 22 tickers.
 
 <https://stockyard.rhps.fun>
 
+Currently tracking **1,672 memecoins across 108 tokenized stocks**, holding $58.6M of
+liquidity and trading $179M in 24 hours, with another $2.2B parked in pools nobody
+trades. The three busiest are AMC at $37.2M led by MEME, NVDA at $23.9M led by AI, and
+SPY at $18.7M led by PAIR.
+
 ## What you are looking at
 
 One row per tokenized stock: the ticker and its own move on the left, the three deepest memes
@@ -29,21 +34,20 @@ costs a fee every round trip.
 
 ## Run it
 
-```
-./run.sh
-```
-
-Pulls fresh data if the last snapshot is over 10 minutes old, then serves on
-<http://localhost:8787> and opens a browser.
+The crawl needs nothing but an ordinary internet connection. No keys, no accounts.
 
 ```
-./run.sh --fresh    force a fresh pull first
-./run.sh --serve    skip the pull, serve what is on disk
+npm --prefix worker install
+node tools/crawl.mjs pools
+```
+
+All 203 tickers in about 150 seconds. Writing the result anywhere needs Cloudflare
+credentials, so to just look at the page against a snapshot on disk:
+
+```
+./run.sh --serve    serve public/ on http://localhost:8787
 PORT=9000 ./run.sh  different port
 ```
-
-The pull takes about three minutes and hits Dexscreener's public API plus Longbow's.
-No keys, no accounts.
 
 ## Where the data comes from
 
@@ -206,3 +210,24 @@ run.sh               pull and serve locally
 - Impersonation. LONG's own token page marks coins that were not launched through it
   and whose onchain config does not match, which caught the largest parked pool on the
   chain. That verdict is not in the snapshot and it should be.
+
+## What it turned up
+
+Three things the map found that were not visible before it existed.
+
+**A meme can become a quote asset, and then it disappears.** Dexscreener decides which
+side of a pool is base and which is quote. Once a coin is deep enough that others trade
+against it, the orientation flips and its stock pool is filed the other way round:
+`LLY/FATCOIN`, `AMC/MEME`. Reading only one side dropped both, and they are the two
+largest live markets on the chain, $4.6M of liquidity and $36M a day.
+
+**Most of the money is not a market.** $2.2B sits in pools nobody traded one percent of
+in a day. The single largest held $22M against sixteen trades. That is a deposit, so
+nothing on the page counts it except its own line.
+
+**Stocks trade against stocks here too.** 43 pools, $7.8M, mostly `QQQ/SPY`. Out of scope
+for a meme map, and as far as we can tell also unmapped.
+
+## Licence
+
+MIT.
