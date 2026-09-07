@@ -66,6 +66,11 @@
   .by{font-family:var(--mono);font-size:11px;color:var(--faint);text-decoration:none;
       white-space:nowrap;transition:color .16s var(--ease)}
   .by:hover{color:var(--accent)}
+  /* how fresh the page is, in the header rather than only inside the explanation.
+     Relative, because "4m ago" answers the question and a UTC stamp makes you do
+     arithmetic to get there. The stamp is on the tooltip. */
+  .upd{font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap;
+       margin-right:3px}
   .brand{display:flex;align-items:baseline;gap:9px;flex:none}
   .brand{cursor:pointer}
   .brand b{font-size:14.5px;font-weight:600;letter-spacing:-.015em;
@@ -377,7 +382,7 @@
   @media (max-width:700px){
     .bar{display:flex;padding:0 8px 0 12px;gap:8px}
     .lead{flex:none}
-    .by{display:none}   /* the search bar needs the width more than the byline does */
+    .by,.upd{display:none}   /* the search bar needs the width more than these do */
     .brand{flex:none}
     .brand b{font-size:13.5px}
     .find{flex:1;width:auto;min-width:0}
@@ -433,6 +438,7 @@
   </div>
   <input class="find" id="find" type="search" placeholder="Search a ticker, coin or launchpad" spellcheck="false" aria-label="Filter tickers and memes">
   <div class="right">
+  <span class="upd" id="upd" aria-live="polite"></span>
   <!-- 5m is gone: only 19% of the coins on this map have any five-minute trade at
        all, so the column was four fifths dashes and sorting by it ranked noise. -->
   <div class="seg" id="tf" role="group" aria-label="Timeframe">
@@ -1111,7 +1117,30 @@
       '<span class="sep">/</span><span><b>'+crowns+"</b> crowned</span>";
     var f=document.getElementById("fresh");
     if(f) f.textContent="Updated every 10 minutes \u00b7 last "+DATA.asOf;
+    freshness();
   }
+
+  /* "2026-09-07 14:58 UTC" is what the snapshot carries; the header wants the
+     gap, not the timestamp. Ticks on its own so it keeps counting between polls
+     rather than jumping ten minutes at a time. */
+  function snapTime(){
+    if(!DATA||!DATA.asOf) return null;
+    var t=Date.parse(DATA.asOf.replace(" UTC","Z").replace(" ","T"));
+    return isNaN(t)?null:t;
+  }
+  function freshness(){
+    var el=document.getElementById("upd");
+    if(!el) return;
+    var t=snapTime();
+    if(t==null){ el.textContent=""; return; }
+    var s=Math.max(0,Math.round((Date.now()-t)/1000)), txt;
+    if(s<90) txt="just now";
+    else if(s<5400) txt=Math.round(s/60)+"m ago";
+    else txt=Math.round(s/3600)+"h ago";
+    el.textContent="updated "+txt;
+    el.title="Last snapshot "+DATA.asOf;
+  }
+  setInterval(freshness,30000);
   /* one definition of a crown, used by the row, the hover card and the counter */
   function crownedRow(r){
     var m0=r.m&&r.m[0];
