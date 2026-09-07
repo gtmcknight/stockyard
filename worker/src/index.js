@@ -992,7 +992,20 @@ export default {
       });
     }
 
+    // Kicking a job by hand costs about 700 Dexscreener requests and force=1
+    // skips the lock that stops two crawls running at once, so this cannot be
+    // open to the internet. It fails closed: no REFRESH_KEY set, no endpoint.
+    //   wrangler secret put REFRESH_KEY
     if (url.pathname === "/api/refresh") {
+      const want = env.REFRESH_KEY;
+      if (!want) return json({ error: "refresh disabled: no REFRESH_KEY set" }, 503);
+      const got = (req.headers.get("authorization") || "").replace(/^Bearer /, "") ||
+                  url.searchParams.get("key") || "";
+      // constant time enough for a value this size, and never says which part failed
+      if (got.length !== want.length ||
+          !got.split("").every((c, i) => c === want[i])) {
+        return json({ error: "unauthorized" }, 401);
+      }
       const job = url.searchParams.get("job");
       const run = job === "registry" ? buildRegistry(env)
                 : job === "quotes"   ? refreshQuotes(env)

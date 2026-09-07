@@ -15,3 +15,6 @@ data/stocks.json
 
 # scratch
 .mockup/
+
+# manual refresh key
+.refresh-key

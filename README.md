@@ -137,9 +137,11 @@ npx wrangler deploy
 Then prime it, since the crons only fill KV going forward:
 
 ```
-curl "https://stockyard.<subdomain>.workers.dev/api/refresh?job=registry"
-curl "https://stockyard.<subdomain>.workers.dev/api/refresh?job=longbow"
-curl "https://stockyard.<subdomain>.workers.dev/api/refresh?job=quotes"
+npx wrangler secret put REFRESH_KEY   # any random string; /api/refresh is off without it
+K=<that key>
+curl -H "Authorization: Bearer $K" "https://stockyard.<subdomain>.workers.dev/api/refresh?job=registry"
+curl -H "Authorization: Bearer $K" "https://stockyard.<subdomain>.workers.dev/api/refresh?job=longbow"
+curl -H "Authorization: Bearer $K" "https://stockyard.<subdomain>.workers.dev/api/refresh?job=quotes"
 npx wrangler kv key put --binding SY launchpads --path ../data/launchpads.json --remote
 ```
 
@@ -171,7 +173,10 @@ snapshots are still inside their TTL, so the charts do not start from empty.
 - `/api/map.json` the current snapshot, edge cached 60s
 - `/api/history.json` the last 30 days, edge cached 10m
 - `/api/status` what the last crawl did, including logo and launchpad coverage
-- `/api/refresh?job=pools|quotes|registry|longbow` run a job by hand
+- `/api/refresh?job=pools|quotes|registry|longbow` run a job by hand. Needs a key:
+  one kick is ~700 Dexscreener requests and `force=1` skips the lock that keeps two
+  crawls apart, so it fails closed. `wrangler secret put REFRESH_KEY`, then pass it
+  as `Authorization: Bearer <key>` or `?key=`. Unset means the endpoint is off.
 
 ## Layout
 
