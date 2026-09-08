@@ -12,7 +12,7 @@
     --ground:#faf9f7; --raise:#fff; --sunk:#f1f0ed;
     --line:#e6e4e0; --line-2:#cfccc6;
     --ink:#14161a; --mute:#4b5158; --faint:#6d737a;
-    --up:#15704f; --dn:#a63c22; --accent:#a06a10;
+    --up:#15704f; --dn:#a63c22; --accent:#a06a10; --rh:#0b8a3c;
     --tint-up:rgba(21,112,79,.11); --tint-dn:rgba(166,60,34,.1);
     --fill:rgba(20,22,26,.05);
     --hover:#f4f2ee;
@@ -20,14 +20,14 @@
     --ease:cubic-bezier(.16,1,.3,1);
     --sans:"Schibsted Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    --bar:46px; --rail:230px; --field:186px; --rowh:90px;
+    --bar:72px; --rail:230px; --field:186px; --rowh:90px;
     color-scheme:light;
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --ground:#0b0c0f; --raise:#14161a; --sunk:#101216;
     --line:#212429; --line-2:#2f343b;
     --ink:#eceef1; --mute:#a3aab3; --faint:#848b94;
-    --up:#3fc48d; --dn:#ff7351; --accent:#e0a642;
+    --up:#3fc48d; --dn:#ff7351; --accent:#e0a642; --rh:#35d67f;
     --tint-up:rgba(63,196,141,.13); --tint-dn:rgba(255,115,81,.13);
     --fill:rgba(236,238,241,.06);
     --hover:#181b20;
@@ -37,7 +37,7 @@
     --ground:#0b0c0f; --raise:#14161a; --sunk:#101216;
     --line:#212429; --line-2:#2f343b;
     --ink:#eceef1; --mute:#a3aab3; --faint:#848b94;
-    --up:#3fc48d; --dn:#ff7351; --accent:#e0a642;
+    --up:#3fc48d; --dn:#ff7351; --accent:#e0a642; --rh:#35d67f;
     --tint-up:rgba(63,196,141,.13); --tint-dn:rgba(255,115,81,.13);
     --fill:rgba(236,238,241,.06);
     --hover:#181b20;
@@ -55,10 +55,21 @@
   /* ---------- bar ---------- */
   /* three zones: the brand holds the left edge, the controls hold the right, and
      the search sits dead centre with room to actually type a contract into it */
-  .bar{height:var(--bar);display:grid;grid-template-columns:1fr minmax(240px,460px) 1fr;
-       align-items:center;gap:12px;padding:0 10px 0 14px;
-       border-bottom:1px solid var(--line);background:var(--ground)}
-  .bar .right{justify-self:end;display:flex;align-items:center;gap:9px}
+  .bar{height:var(--bar);display:flex;align-items:center;gap:24px;
+       padding:0 16px;border-bottom:1px solid var(--line);background:var(--ground)}
+  .lead{flex:none;display:flex;flex-direction:column;gap:3px;min-width:0}
+  .idl{display:flex;align-items:baseline;gap:8px}
+  /* what this is, in one line, under the name it belongs to rather than three
+     clicks into the explanation */
+  .tag{margin:0;font-size:11.5px;line-height:1.3;color:var(--mute);
+       white-space:nowrap;letter-spacing:.005em}
+  /* the one place the chain's own green earns its keep. Painting the whole bar
+     green would put it in an argument with the up and down colours three pixels
+     below, which are the ones carrying meaning. */
+  .tag .rh{color:var(--rh);font-weight:500}
+  /* everything that narrows the table, on one axis, one height, one corner */
+  .tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex:none}
+  .icons{margin-left:2px}
   .bar::-webkit-scrollbar{display:none}
   /* the byline sits beside the brand rather than inside it: the brand is a button
      that resets the view, and a link nested in a button is a broken control */
@@ -69,11 +80,13 @@
   /* how fresh the page is, in the header rather than only inside the explanation.
      Relative, because "4m ago" answers the question and a UTC stamp makes you do
      arithmetic to get there. The stamp is on the tooltip. */
-  .upd{font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap;
-       margin-right:3px}
+  /* the freshness rides on the end of that line: it is the same kind of fact and
+     it was the last thing floating loose in the bar */
+  .upd{font-family:var(--mono);font-size:10.5px;color:var(--faint);white-space:nowrap}
+  .upd:not(:empty)::before{content:"\00b7";margin:0 6px;opacity:.55}
   .brand{display:flex;align-items:baseline;gap:9px;flex:none}
   .brand{cursor:pointer}
-  .brand b{font-size:14.5px;font-weight:600;letter-spacing:-.015em;
+  .brand b{font-size:16px;font-weight:600;letter-spacing:-.02em;
            transition:color .16s var(--ease)}
   .brand:hover b{color:var(--accent)}
   .brand i{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--mute);
@@ -81,13 +94,66 @@
   .brand i b{font-weight:500;color:var(--ink)}
   .brand i .sep{opacity:.4}
   .brand i .tick{color:var(--faint)}
-  .find{width:100%;background:var(--fill);border:1px solid transparent;border-radius:8px;
-        font:inherit;font-family:var(--mono);font-size:11.5px;color:var(--ink);
-        padding:7px 11px;height:32px}
+  .findw{position:relative;flex:none}
+  .fico{position:absolute;left:11px;top:50%;transform:translateY(-50%);
+        width:13px;height:13px;color:var(--faint);pointer-events:none}
+  .findw:focus-within .fico{color:var(--mute)}
+  .find{width:270px;max-width:38vw;background:var(--fill);border:1px solid transparent;
+        border-radius:10px;font:inherit;font-family:var(--mono);font-size:11.5px;
+        color:var(--ink);padding:0 11px 0 31px;height:36px;
+        transition:background .18s var(--ease),border-color .18s var(--ease),width .2s var(--ease)}
   .find::placeholder{color:var(--faint)}
-  .find:focus{outline:none;border-color:var(--line-2);background:var(--raise)}
+  .find:focus{outline:none;background:var(--raise);border-color:var(--line-2)}
   .spacer{margin-left:auto}
-  .seg{display:flex;gap:2px;background:var(--fill);border-radius:8px;padding:2px;flex:none}
+  /* The launchpad filter. Nineteen pads do not fit in a segmented control, and a
+     native select cannot carry the logos that make a pad recognisable at a
+     glance, so it is a menu. */
+  .ctl{flex:none;height:36px;display:flex;align-items:center;padding:3px;
+       background:var(--fill);border:1px solid transparent;border-radius:10px}
+  .cdiv{width:1px;height:16px;background:var(--line-2);opacity:.7;margin:0 4px;flex:none}
+  .padwrap{position:relative;flex:none}
+  .padbtn{appearance:none;font:inherit;font-family:var(--mono);font-size:11px;color:var(--ink);
+          background:transparent;border:0;border-radius:7px;cursor:pointer;
+          height:28px;padding:0 6px 0 7px;display:flex;align-items:center;gap:6px;
+          max-width:158px;white-space:nowrap;
+          transition:color .18s var(--ease),background .18s var(--ease)}
+  .padbtn:hover{background:var(--raise)}
+  .padbtn[aria-expanded="true"],.padbtn[data-on="1"]{background:var(--raise);
+          box-shadow:0 1px 2px rgba(0,0,0,.09)}
+  .padbtn b{font-weight:500;overflow:hidden;text-overflow:ellipsis}
+  /* Unfiltered, the button is three logos overlapping rather than the words "all
+     launchpads": it says what the control is made of and that you can pick one,
+     in a third of the width. The ring is the button's own background, so the
+     chips read as stacked rather than merged. */
+  .padbtn{--chip:var(--ground)}  /* opaque: a translucent ring cannot separate anything */
+  .padbtn:hover,.padbtn[aria-expanded="true"],.padbtn[data-on="1"]{--chip:var(--raise)}
+  .padstack .pmi{width:19px;height:19px;border-radius:6px}
+  .padstack{display:flex;align-items:center;padding-left:1px}
+  /* two rings: the button's own background so the chips do not merge, then a
+     hairline so each one still has an edge of its own against it */
+  .padstack .pmi{margin-left:-6px;box-shadow:0 0 0 2px var(--chip),0 0 0 3px var(--line-2)}
+  .padstack .pmi:first-child{margin-left:0}
+  .padbtn[data-on="0"]{padding:0 6px 0 7px}
+  .padbtn svg{width:10px;height:10px;flex:none;color:var(--faint);margin-left:1px}
+  .padbtn[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .pmi{width:15px;height:15px;border-radius:4px;flex:none;display:grid;place-items:center;
+       background:var(--fill);color:var(--faint);font-size:8px;font-weight:600;overflow:hidden;
+       position:relative;text-transform:uppercase}
+  .pmi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .padmenu{position:absolute;top:calc(100% + 11px);right:-4px;z-index:60;min-width:216px;
+           max-height:min(76vh,560px);overflow-y:auto;padding:5px;
+           background:var(--raise);border:1px solid var(--line);border-radius:10px;
+           box-shadow:0 12px 32px rgba(0,0,0,.16),0 2px 6px rgba(0,0,0,.06)}
+  .padmenu button{appearance:none;width:100%;border:0;background:transparent;cursor:pointer;
+           font:inherit;font-family:var(--mono);font-size:11.5px;color:var(--ink);
+           display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:7px;
+           text-align:left;white-space:nowrap}
+  .padmenu button:hover,.padmenu button:focus-visible{background:var(--fill);outline:none}
+  .padmenu button[aria-selected="true"]{color:var(--accent)}
+  .padmenu button i{font-style:normal;flex:1;overflow:hidden;text-overflow:ellipsis}
+  .padmenu button em{font-style:normal;color:var(--faint);font-size:10.5px}
+  .padmenu hr{border:0;border-top:1px solid var(--line);margin:5px 8px}
+  .seg{display:flex;gap:2px;background:transparent;border-radius:8px;flex:none}
   .seg button{appearance:none;font:inherit;font-family:var(--mono);font-size:11px;background:transparent;
     color:var(--mute);border:0;border-radius:6px;padding:6px 8px;min-height:28px;cursor:pointer;
     white-space:nowrap;transition:color .18s var(--ease),background .18s var(--ease)}
@@ -95,7 +161,7 @@
   .seg button[aria-pressed="true"]{background:var(--raise);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.09)}
   .icons{display:flex;gap:1px;flex:none}
   .icons button{appearance:none;border:0;background:transparent;cursor:pointer;color:var(--faint);
-    padding:7px;border-radius:6px;display:grid;place-items:center;min-width:32px;min-height:32px;
+    padding:7px;border-radius:9px;display:grid;place-items:center;min-width:34px;min-height:34px;
     transition:color .18s var(--ease),background .18s var(--ease)}
   .icons button:hover{color:var(--ink);background:var(--fill)}
   .icons button[aria-pressed="true"]{color:var(--ink);background:var(--fill)}
@@ -379,14 +445,23 @@
     .peek{display:none!important}
   }
 
+  /* The launchpad menu costs the bar 150px. Below this the brand starts losing
+     the argument for that space, and the byline and the freshness stamp are the
+     two things in the bar nobody came for. */
+  /* the tagline is the first thing to go: past this it would run into the toolbar */
+  @media (max-width:1000px){ .tag{display:none} .lead{gap:0} }
+
   @media (max-width:700px){
-    .bar{display:flex;padding:0 8px 0 12px;gap:8px}
-    .lead{flex:none}
-    .by,.upd{display:none}   /* the search bar needs the width more than these do */
-    .brand{flex:none}
+    /* On a phone the toolbar takes its own line under the name, and the search
+       stretches into whatever the filters leave. */
+    .bar{flex-wrap:wrap;height:auto;align-items:center;gap:8px;padding:8px 10px 10px 12px}
     .brand b{font-size:13.5px}
-    .find{flex:1;width:auto;min-width:0}
-    .bar .right{flex:none}
+    .icons{order:2;margin-left:auto}
+    .tools{order:3;flex:1 1 100%;margin-left:0;gap:8px}
+    .findw{flex:1 1 auto;min-width:0}
+    .find{width:100%;max-width:none;height:34px}
+    .ctl{height:34px}
+    .padbtn{max-width:104px;gap:5px}
     .seg button{padding:6px 7px}
     .icons button{min-width:30px}
 
@@ -432,26 +507,51 @@
 </style>
 
 <div class="bar">
+  <!-- One row, two blocks. The identity block carries the wordmark with the line
+       that says what this is directly under it, where a subtitle belongs, instead
+       of floating in the middle of the bar with nothing above or below it. The
+       toolbar carries everything that narrows the table, on one right-hand axis,
+       every control the same height and the same corner. -->
   <div class="lead">
-    <div class="brand" id="home" role="button" tabindex="0" title="Reset the view"><b>Stockyard</b></div>
-    <a class="by" href="https://x.com/taylor_" target="_blank" rel="noopener me">by @taylor_</a>
+    <div class="idl">
+      <div class="brand" id="home" role="button" tabindex="0" title="Reset the view"><b>Stockyard</b></div>
+      <a class="by" href="https://x.com/taylor_" target="_blank" rel="noopener me">by @taylor_</a>
+    </div>
+    <p class="tag">Every memecoin on <span class="rh">Robinhood Chain</span> that trades
+      against a tokenized stock<span class="upd" id="upd" aria-live="polite"></span></p>
   </div>
-  <input class="find" id="find" type="search" placeholder="Search a ticker, coin or launchpad" spellcheck="false" aria-label="Filter tickers and memes">
-  <div class="right">
-  <span class="upd" id="upd" aria-live="polite"></span>
-  <!-- 5m is gone: only 19% of the coins on this map have any five-minute trade at
-       all, so the column was four fifths dashes and sorting by it ranked noise. -->
-  <div class="seg" id="tf" role="group" aria-label="Timeframe">
-    <button data-tf="1" aria-pressed="false">1H</button>
-    <button data-tf="2" aria-pressed="false">6H</button>
-    <button data-tf="3" aria-pressed="true">24H</button>
+
+  <div class="tools">
+    <div class="findw">
+      <svg class="fico" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="6.2" cy="6.2" r="4.3" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 9.5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <input class="find" id="find" type="search" placeholder="Search a ticker or coin"
+             spellcheck="false" aria-label="Filter tickers and memes">
+    </div>
+    <!-- Both of these narrow the map, so they are one control with a rule between
+         them rather than two objects that happen to sit side by side. -->
+    <div class="ctl">
+      <div class="padwrap" id="padwrap">
+        <button class="padbtn" id="padbtn" aria-haspopup="listbox" aria-expanded="false"
+                title="Filter by launchpad" aria-label="Filter by launchpad">
+          <svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="padmenu" id="padmenu" role="listbox" hidden></div>
+      </div>
+      <span class="cdiv" aria-hidden="true"></span>
+      <!-- 5m is gone: only 19% of the coins on this map have any five-minute trade
+           at all, so the column was four fifths dashes and sorting by it ranked noise. -->
+      <div class="seg" id="tf" role="group" aria-label="Timeframe">
+        <button data-tf="1" aria-pressed="false">1H</button>
+        <button data-tf="2" aria-pressed="false">6H</button>
+        <button data-tf="3" aria-pressed="true">24H</button>
+      </div>
+    </div>
   </div>
+
   <div class="icons">
     <button id="info" aria-pressed="false" aria-label="What is this? How to read the table">
       <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.4" stroke="currentColor" stroke-width="1.4"/><path d="M6.15 6.05a1.9 1.9 0 113.2 1.5c-.75.6-1.35.9-1.35 1.85" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="11.6" r=".95" fill="currentColor"/></svg></button>
     <button id="theme" aria-label="Theme">
       <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.6" stroke="currentColor" stroke-width="1.4"/><path d="M8 2.4a5.6 5.6 0 010 11.2z" fill="currentColor"/></svg></button>
-  </div>
   </div>
 </div>
 
@@ -532,7 +632,7 @@
   (function(){var v=null;try{v=localStorage.getItem("sy.theme");}catch(e){}
     setTheme(v==="light"||v==="dark"?v:"auto");})();
 
-  var DATA=null, tf=3, sortBy="mv", sortDir=1, state="all", q="", sel=null;
+  var DATA=null, tf=3, sortBy="mv", sortDir=1, state="all", q="", sel=null, pad="", VIEW={};
   var TFN=["5m","1h","6h","24h"];
   var rowsEl=document.getElementById("rows");
   var sheet=document.getElementById("sheet"), scrim=document.getElementById("scrim");
@@ -555,9 +655,15 @@
   function vol(o){ return (o.vs&&o.vs[tf]!=null)?o.vs[tf]:(o.mv!=null?o.mv:o.v); }
   function logo(t){ return "https://financialmodelingprep.com/image-stock/"+t.replace(/\./g,"-")+".png"; }
   var PADSITE={Long:"app.long.xyz",Longbow:"longbow.gg",Pons:"pons.family","Pair.fund":"pair.fund",
-               Hookr:"hookr.fun",o1:"launch.o1.exchange",StockV4:"",Doppler:"",self:""};
-  var PADICON={Pons:"pons.family","Pair.fund":"pair.fund",Hookr:"hookr.fun",o1:"o1.exchange",Longbow:"longbow.gg"};
-  var PADIMG={Long:"https://pbs.twimg.com/profile_images/1923698402488909824/0EiGLmyu_400x400.jpg"};
+               Hookr:"hookr.fun",o1:"launch.o1.exchange",Airlock:"airlocks.xyz",
+               Doppler:"doppler.lol",StockV4:"",self:""};
+  var PADICON={Pons:"pons.family","Pair.fund":"pair.fund",Hookr:"hookr.fun",o1:"o1.exchange",
+               Longbow:"longbow.gg",Airlock:"airlocks.xyz",
+               /* the bare domain resolves to a generic globe, the www one to the mark */
+               Doppler:"www.doppler.lol"};
+  var PADIMG={Long:"https://pbs.twimg.com/profile_images/1923698402488909824/0EiGLmyu_400x400.jpg",
+              "Pair.fund":"https://pbs.twimg.com/profile_images/2079372574447038464/akB4Fx3m_400x400.jpg",
+              Airlock:"https://airlocks.xyz/favicon.png"};
   /* deep link straight to the coin on its own launchpad, where the pattern is known */
   var PADCOIN={Long:"https://app.long.xyz/tokens/",
                o1:"https://launch.o1.exchange/token/"};
@@ -743,6 +849,120 @@
     }
     return false;
   }
+  /* Filtering by launchpad re-reads every row as that pad's book: the podium,
+     the field and the row's own numbers come only from its coins, by the rules
+     the crawler uses on the whole roster. Parked pools stay out of the totals
+     and off the podium, and the move is weighted by the liquidity that trades.
+     It reads the coins the snapshot carries, which is the deepest fourteen on a
+     ticker, so a pad's tail on NVDA is as invisible here as it is everywhere
+     else on the page. */
+  function view(r){
+    if(!pad) return r;
+    var m=r.m.filter(padHas);
+    var live=m.filter(function(x){return !isQuiet(x);});
+    var vs=[0,1,2,3].map(function(i){
+      return live.reduce(function(s,x){return s+((x.vs&&x.vs[i])||0);},0);
+    });
+    var cs=[0,1,2,3].map(function(i){
+      var n=0,d=0;
+      live.forEach(function(x){ if(x.cs&&x.cs[i]!=null&&x.l){ n+=x.cs[i]*x.l; d+=x.l; } });
+      return d?Math.round(n/d*10)/10:null;
+    });
+    var v={};
+    for(var k in r) if(r.hasOwnProperty(k)) v[k]=r[k];
+    v.m=m;
+    v.ml=live.reduce(function(s,x){return s+(x.l||0);},0);
+    v.pl=m.reduce(function(s,x){return s+(isQuiet(x)?(x.l||0):0);},0);
+    v.vs=vs; v.mv=vs[3]; v.cs=cs; v.c=cs[3];
+    v.n=live.length; v.nq=m.length-live.length;
+    return v;
+  }
+
+  /* Which pads get their own line: the ones that are actually pads. "U", "V2",
+     "SemiBond", "WolfHook" are not brands, they are whatever was left after the
+     resolver stripped Launchpad/Factory/Deployer off a contract name, and a menu
+     of them reads like a stack trace. So the list is the pads we have identified,
+     and everything else rides with the unresolved under Other. The cost is real:
+     WolfHook's single coin trades eight million dollars a day. It gets a name
+     here the day we can say whose it is. */
+  var PADREAL={Long:1,Pons:1,"Pair.fund":1,o1:1,Doppler:1,Longbow:1,Airlock:1,
+               Hookr:1,self:1};
+  var OTHER=[], TALLY={}, STACK=[], STACKPREF=["Long","Pons","o1"];
+  var PADLABEL={self:"Self-deployed"};
+  function padHas(m){
+    if(pad==="__other") return OTHER.indexOf(m.lp||"")>-1;
+    return m.lp===pad;
+  }
+  function padName(k){ return PADLABEL[k]||k; }
+  function padSrc(lp){
+    var icd=PADICON[lp];
+    return PADIMG[lp]||(icd?"https://www.google.com/s2/favicons?domain="+icd+"&sz=64":"");
+  }
+  /* the logo where there is one, the pad's first letter where there is not. The
+     tag carries data-ph so the page-wide image handler drops it if it 404s,
+     which leaves the letter that was underneath it all along. */
+  function padMark(k){
+    var src=k&&k!=="__other"?padSrc(k):"";
+    var init=k==="__other"?"+":(padName(k)||"\u00b7").slice(0,1);
+    return '<span class="pmi">'+init+
+      /* not lazy: these are the first thing in the bar and they are 16 pixels */
+      (src?'<img src="'+src+'" alt="" data-ph="1">':"")+"</span>";
+  }
+
+  /* Every pad on the map, biggest book first, with what it is carrying. Built
+     from the snapshot rather than a list in the source, so a pad that launches
+     tomorrow is in the menu the moment a coin of its shows up. */
+  function padOptions(){
+    var btn=document.getElementById("padbtn"), menu=document.getElementById("padmenu");
+    if(!btn||!DATA) return;
+    TALLY={}; var all={n:0,v:0};
+    DATA.rows.forEach(function(r){ r.m.forEach(function(m){
+      var k=m.lp||"";
+      var t=TALLY[k]||(TALLY[k]={n:0,v:0});
+      t.n++; t.v+=(m.vs&&m.vs[3])||0;
+      all.n++; all.v+=(m.vs&&m.vs[3])||0;
+    });});
+    /* by the number on the row: sorting a visible count by an invisible dollar
+       figure reads as no order at all */
+    var named=Object.keys(TALLY).filter(function(k){return k;}).sort(function(a,b){
+      return TALLY[b].n-TALLY[a].n||TALLY[b].v-TALLY[a].v;
+    });
+    var top=[], oth={n:0,v:0};
+    OTHER=[""];
+    named.forEach(function(k){
+      if(PADREAL[k]) top.push(k); else OTHER.push(k);
+    });
+    OTHER.forEach(function(k){ if(TALLY[k]){ oth.n+=TALLY[k].n; oth.v+=TALLY[k].v; } });
+    /* the three the chain is known by, in that order. Any that has gone missing
+       falls back to the next biggest pad carrying a mark of its own, because a
+       stack of grey initials would say nothing. */
+    STACK=STACKPREF.filter(function(k){return TALLY[k]&&padSrc(k);});
+    top.forEach(function(k){
+      if(STACK.length<3&&STACK.indexOf(k)<0&&padSrc(k)) STACK.push(k);
+    });
+    STACK=STACK.slice(0,3);
+    if(pad&&pad!=="__other"&&top.indexOf(pad)<0) pad="";
+    if(pad==="__other"&&!oth.n) pad="";
+
+    function item(v,label,t){
+      return '<button role="option" data-v="'+v+'" aria-selected="'+(pad===v)+'">'+
+        padMark(v)+"<i>"+label+"</i><em>"+t.n+"</em></button>";
+    }
+    menu.innerHTML=item("","All launchpads",all)+"<hr>"+
+      top.map(function(k){ return item(k,padName(k),TALLY[k]); }).join("")+
+      (oth.n?"<hr>"+item("__other","Other",oth):"");
+    padLabel();
+  }
+  function padLabel(){
+    var btn=document.getElementById("padbtn");
+    if(!btn) return;
+    btn.innerHTML=(pad
+      ? padMark(pad)+"<b>"+(pad==="__other"?"Other":padName(pad))+"</b>"
+      : '<span class="padstack">'+STACK.map(padMark).join("")+"</span>")+
+      '<svg viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    btn.dataset.on=pad?"1":"0";
+  }
+
   function sortVal(r){
     if(sortBy==="t") return r.t;
     if(sortBy==="mv") return vol(r);
@@ -799,10 +1019,13 @@
 
   function render(){
     if(!DATA) return;
-    var rows=DATA.rows.filter(function(r){return r.n>0&&matches(r);}).sort(compare);
+    VIEW={};
+    var rows=DATA.rows.map(view).filter(function(r){return r.n>0&&matches(r);}).sort(compare);
+    rows.forEach(function(r){ VIEW[r.t]=r; });
     if(!rows.length){
       rowsEl.innerHTML='<div class="none">'+
-        (q?'nothing matches &ldquo;'+q+'&rdquo;':"no tickers here")+"</div>";
+        (q?'nothing matches &ldquo;'+q+'&rdquo;':
+         pad?"nothing on "+pad+" here":"no tickers here")+"</div>";
       return;
     }
 
@@ -870,8 +1093,7 @@
   function rowFor(el){
     var tr=el.closest("tr[data-t]");
     if(!tr) return null;
-    for(var i=0;i<DATA.rows.length;i++) if(DATA.rows[i].t===tr.dataset.t) return DATA.rows[i];
-    return null;
+    return VIEW[tr.dataset.t]||null;
   }
   rowsEl.addEventListener("click",function(e){
     var th=e.target.closest("th[data-sort]");
@@ -1055,7 +1277,8 @@
   /* The wordmark is the way back. Search, sort, timeframe, whatever panel is
      open and wherever the table is scrolled all go back to how the page opened. */
   function reset(){
-    findEl.value=""; q="";
+    findEl.value=""; q=""; pad="";
+    padOptions();
     sortBy="mv"; sortDir=1; tf=3;
     document.querySelectorAll("#tf button").forEach(function(x){
       x.setAttribute("aria-pressed",String(+x.dataset.tf===tf));});
@@ -1079,7 +1302,13 @@
   ascrim.addEventListener("click",function(){ about(false); });
   document.getElementById("ax").addEventListener("click",function(){ about(false); });
   document.addEventListener("keydown",function(e){
-    if(e.key==="Escape"){close();about(false);}
+    if(e.key==="Escape"){
+      var pm=document.getElementById("padmenu");
+      if(pm&&!pm.hidden){ pm.hidden=true;
+        document.getElementById("padbtn").setAttribute("aria-expanded","false");
+        document.getElementById("padbtn").focus(); return; }
+      close();about(false);
+    }
     if(e.key==="/"&&document.activeElement!==findEl){e.preventDefault();findEl.focus();}
   });
 
@@ -1093,6 +1322,32 @@
     });
   });
   var findT;
+  /* the menu: click to open, click an option to filter, escape or a click
+     anywhere else to put it away */
+  var padBtn=document.getElementById("padbtn"), padMenu=document.getElementById("padmenu");
+  function padOpen(on){
+    padMenu.hidden=!on;
+    padBtn.setAttribute("aria-expanded",String(!!on));
+    if(on) padMenu.scrollTop=0;
+  }
+  padBtn.addEventListener("click",function(e){
+    e.stopPropagation();
+    padOpen(padMenu.hidden);
+  });
+  padMenu.addEventListener("click",function(e){
+    var b=e.target.closest("button[data-v]");
+    if(!b) return;
+    pad=b.dataset.v;
+    padOptions();
+    padOpen(false);
+    close();                       /* the open ticker card is about to change under it */
+    render(); headline();
+    rowsEl.scrollTop=0;
+  });
+  document.addEventListener("click",function(e){
+    if(!padMenu.hidden&&!e.target.closest("#padwrap")) padOpen(false);
+  });
+
   findEl.addEventListener("input",function(){
     clearTimeout(findT);
     findT=setTimeout(function(){ q=findEl.value.trim().toLowerCase(); render(); },130);
@@ -1104,12 +1359,16 @@
   function headline(){
     var el=document.getElementById("stat");
     if(!el||!DATA) return;
-    var live=0, park=0, memes=0, parked=0, crowns=0;
-    DATA.rows.forEach(function(r){
+    var live=0, park=0, memes=0, parked=0, crowns=0, on=0;
+    DATA.rows.map(view).forEach(function(r){
       live+=r.ml||0; park+=r.pl||0; memes+=r.n||0; parked+=r.nq||0;
+      if(r.n>0) on++;
       if(crownedRow(r)) crowns++;
     });
-    el.innerHTML="<span><b>"+DATA.rows.length+"</b> stocks</span>"+
+    /* unfiltered, the stock count is every tokenized stock this map watches,
+       most of which carry no memes. A pad only reaches the ones it launched on,
+       so under a filter the number is the stocks it actually reached. */
+    el.innerHTML="<span><b>"+(pad?on:DATA.rows.length)+"</b> stocks</span>"+
       '<span class="sep">/</span><span><b>'+memes+"</b> memes</span>"+
       '<span class="sep">/</span><span><b>'+money(live)+"</b> trading</span>"+
       (park?'<span class="sep">/</span><span><b class="park">'+money(park)+
@@ -1151,6 +1410,7 @@
 
   function boot(d){
     DATA=d;
+    padOptions();
     headline();
     document.getElementById("src").textContent=
       "Pools from Dexscreener, Robinhood Chain only, with the long tail behind each ticker "+
@@ -1170,7 +1430,7 @@
   /* the Worker rebuilds every 10 minutes, so pick it up without a reload */
   setInterval(function(){
     fetch("/api/map.json",{cache:"no-store"}).then(function(r){return r.json();})
-      .then(function(d){ if(d&&d.rows){ DATA=d; headline(); render(); } })
+      .then(function(d){ if(d&&d.rows){ DATA=d; padOptions(); headline(); render(); } })
       .catch(function(){});
   },300000);
 
