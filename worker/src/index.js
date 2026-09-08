@@ -47,11 +47,26 @@ const PADS = {
   "0x8660a7f019c7943b0b0a91b8e39aff3b6db6ae62": "Pair.fund",
   "0x18e674231a58c239dc7daedcffe15ec3a24cff5c": "Hookr",
   "0x6544af3524a8d9135eb5765cece6e514d85d615b": "o1",
+  // o1's factory. Onchain it is called RWAERC20LaunchpadFactory, which names the
+  // asset class and not the operator, so the label used to be a guess. Every coin
+  // it launches carries the answer in its own contractURI: {"launchpad":"o1
+  // Launchpad","launchpadUrl":"https://launch.o1.exchange"}, identical across the
+  // twelve largest, launched by twelve different wallets. o1.exchange is a live
+  // trading terminal, @o1_exchange.
+  "0xe64ac4113848bbc1a6dde1a6d1da96720a36f297": "o1",
+  // airlocks.xyz, verified onchain as AirlockLaunchpad and named as the launchpad
+  // by the site's own frontend config.
+  "0x6215f027cd66410c3a0cb5548036698e8b7cf1dd": "Airlock",
+  // Doppler's core contract is also called Airlock, and a coin that went through
+  // it is not an airlocks.xyz coin. Naming the address keeps the two apart: without
+  // this the contract's name wins and both pads read "Airlock".
+  "0xeb7c034704ef8dcd2d32324c1545f62fb4ad0862": "Doppler",
 };
 // Doppler is shared plumbing several pads build on, so it never names the pad itself
 const SHARED = new Set(["0x1b37d3a72082029c44b35b604ea473617580b69a"]);
 const PLUMBING = new Set(["0x0000000071727de22e5e9d8baf0edac6f37da032"]); // ERC-4337 entry point
 const PAD_PREFIX = [["pons", "Pons"], ["long", "Long"], ["hookr", "Hookr"],
+                    // every RWA*Launchpad contract on this chain is o1's, see above
                     ["pair", "Pair.fund"], ["rwa", "o1"], ["doppler", "Doppler"],
                     ["sushi", "Sushi"]];
 const PAD_GENERIC = new Set(["transparentupgradeableproxy", "erc1967proxy", "proxy",

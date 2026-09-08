@@ -97,6 +97,11 @@ invisible to a map that claimed to count everything: $4.6M of liquidity and $36M
 **Most of the money is not a market.** $2.2B sits in pools nobody traded 1% of in a day.
 The largest held $22M against sixteen trades.
 
+**A launchpad's contract name is not its brand.** The second-largest pad by coin
+count calls itself `RWAERC20LaunchpadFactory` onchain; every coin it launches names
+o1 in its own metadata. Doppler's core contract is called `Airlock`, which is also
+the name of an unrelated pad at airlocks.xyz. Both are pinned by address now.
+
 **Stocks trade against stocks here too.** 43 pools, $7.8M, mostly `QQQ/SPY`. Out of
 scope for a meme map, and as far as we can tell also unmapped.
 
@@ -106,8 +111,9 @@ scope for a meme map, and as far as we can tell also unmapped.
   input is already in the snapshot.
 - Impersonation. LONG marks coins whose onchain config does not match the pad they
   claim, which caught the largest parked pool on the chain. That verdict should be here.
-- "RWA", the second-biggest launchpad by meme volume, is a contract named
-  `RWAERC20Launchpad` and the brand behind it is unverified.
+- Zora launches memes paired against tokenized stocks on this chain too, and
+  neither Dexscreener nor Longbow indexes those pools, so the map cannot see them
+  yet. Reading them means reading the chain.
 
 ## Licence
 
