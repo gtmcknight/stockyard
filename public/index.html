@@ -1258,8 +1258,12 @@
       var m=w.m, i=w.i, c=chg(m);
       var meta=[];
       if(m.age!=null) meta.push(m.age<1?"new":Math.round(m.age)+"d");
-      meta.push(num(m.tx||0)+" tx");
       meta.push(money(m.l)+" liq");
+      /* Volume rather than the trade count that used to sit here. They measure
+         the same thing and this is the half that cannot be faked cheaply, which
+         is the argument the crown already rests on. Four facts wrapped the line;
+         three do not. */
+      meta.push(money(m.v||0)+" vol");
       /* the verdicts ride on the end without a separator: they are already set
          apart by colour, and the dots were what pushed them onto a second line */
       var flags="";

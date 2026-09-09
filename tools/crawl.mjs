@@ -12,6 +12,9 @@
  *   node tools/crawl.mjs quotes     real-world share prices. hourly
  *   node tools/crawl.mjs registry   the tokenized stock list. daily
  *   node tools/crawl.mjs longbow    the launchpad index. folded into pools
+ *   node tools/crawl.mjs discover   read pools off the chain. folded into pools,
+ *                                   one window a run. run it here to backfill the
+ *                                   history at speed instead of over days
  *   node tools/crawl.mjs loop       all of the above, on their own schedules
  */
 import { readFileSync } from "node:fs";
@@ -19,7 +22,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { kv } from "./kv.mjs";
 import {
-  refreshPools, refreshQuotes, refreshLongbow, buildRegistry, setLimits,
+  refreshPools, refreshQuotes, refreshLongbow, buildRegistry, discoverPools, setLimits,
 } from "../worker/src/index.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -71,6 +74,7 @@ async function run(job) {
     : job === "quotes"   ? await refreshQuotes(env)
     : job === "registry" ? registryResult(await buildRegistry(env))
     : job === "longbow"  ? await refreshLongbow(env)
+    : job === "discover" ? await backfill()
     : null;
     if (!out) { console.error(`unknown job: ${job}`); process.exit(1); }
     // tell the Worker this machine is alive, so its cron stays out of the way.
@@ -83,6 +87,25 @@ async function run(job) {
   } catch (e) {
     say(`${job} threw:`, e.message);
     return { ok: false, why: e.message };
+  }
+}
+
+// A crawl gives discovery one window, because the ten-minute budget is spent on
+// Dexscreener. From here nothing is competing for it, so it runs until the chain
+// is read to genesis, saying where it is as it goes.
+async function backfill() {
+  const reg = JSON.parse((await env.SY.get("registry")) || "[]");
+  if (!reg.length) return { ok: false, why: "no registry yet" };
+  let last = null;
+  for (;;) {
+    const o = await discoverPools(env, reg, 20);
+    if (!o.ok) return o;
+    say(`discover: ${o.queued} queued, ${o.live} live, block ${o.tail} and down, ` +
+        `${Math.round(o.backfilled * 100)}% read`);
+    if (o.tail === 0) return { ...o, ok: true, done: true };
+    // a window that answers nothing new still moves the cursor, so this ends
+    if (last === o.tail) return { ...o, ok: true, stuck: true };
+    last = o.tail;
   }
 }
 

@@ -29,6 +29,15 @@ const NOT_MEMES = new Set([
 
 const MIN_LIQ = 1000;        // a pool with nothing in it is not a market
 
+// Dexscreener answers the batch token endpoint with at most thirty pairs, however
+// many addresses were asked about. Four deep tokens fill that on their own.
+const DS_PAIR_CAP = 30;
+// and a ceiling on the splitting, so a batch of coins that all turn out to be
+// deep cannot eat a crawl
+const TAIL_ASKS = 400;
+// what the splitting actually cost, because a guess at it is not worth having
+let _tailAsks = 0;
+
 // Parked money. A pool holding real liquidity that nobody traded one percent of
 // in a day is not a market, it is a deposit. The distinction matters because the
 // biggest of them dwarfs everything real on the chain: one $22M pool with sixteen
@@ -195,6 +204,7 @@ const KEY = {
   crawler: "crawler",         // heartbeat from the machine crawling off-platform
   lock: "lock:pools",         // held while a crawl runs, so ticks cannot overlap
   lastRun: "lastrun",         // stats from the most recent crawl, cron included
+  chain: "chainpools",        // pools read off the chain, and how far back we have read
 };
 
 // ---------------------------------------------------------------- fetch helpers
@@ -417,35 +427,233 @@ async function refreshLongbow(env) {
 }
 
 /**
- * Ask Dexscreener about every coin Longbow names, once, in batches of 30.
- * Batching per stock wasted half of each request on anchors with a short tail;
- * doing it globally cuts the crawl by roughly a hundred requests.
+ * Ask Dexscreener about every coin the other sources name, once, in batches of
+ * 30. Batching per stock wasted half of each request on anchors with a short
+ * tail; doing it globally cuts the crawl by roughly a hundred requests.
+ *
+ * Three lists go in. Longbow's, which is the whole chain as Longbow sees it.
+ * Every address the chain scan has already confirmed holds a pool, which is the
+ * part that has to be asked about every run or it falls off the map. And a slice
+ * of the queue the chain scan is still working through, which is what makes a
+ * coin no indexer carries appear here at all.
+ *
  * Returns anchor address -> the pairs riding it.
  */
 async function longbowTail(env, reg) {
   const lb = JSON.parse((await env.SY.get(KEY.longbow)) || "{}");
   const inReg = new Set(reg.map((e) => (e.a || "").toLowerCase()));
+
+  // The chain's addresses go first. Longbow's coins have three other ways onto
+  // the map, the per-stock roster and both searches; these have this one. If the
+  // ceiling below is ever reached it should land on the list that can afford it.
   const want = new Set();
+  const st = JSON.parse((await env.SY.get(KEY.chain)) || "null");
+  const asked = st ? st.q.slice(0, CHAIN_CONFIRM) : [];
+  if (st) {
+    for (const a of Object.keys(st.live)) want.add(a);
+    for (const a of asked) want.add(a);
+  }
   for (const [anchor, list] of Object.entries(lb)) {
     if (inReg.has(anchor)) for (const a of list) want.add(a);
   }
 
   const addrs = [...want];
   const byAnchor = new Map();
-  for (let i = 0; i < addrs.length; i += 30) {
+  // an address only counts as live once a pool of its own comes back, so the
+  // queue drains into a verdict either way and never grows on a guess
+  const confirmed = new Set();
+  let asks = 0;
+  const take = (p) => {
+    // either side can be the stock, same as absorb
+    const q = (p.quoteToken?.address || "").toLowerCase();
+    const b = (p.baseToken?.address || "").toLowerCase();
+    const anchor = inReg.has(q) ? q : inReg.has(b) ? b : null;
+    if (!anchor) return;
+    confirmed.add(anchor === q ? b : q);
+    if (!byAnchor.has(anchor)) byAnchor.set(anchor, []);
+    byAnchor.get(anchor).push(p);
+  };
+  const covered = new Set();
+  const ask = async (list) => {
+    if (!list.length || asks >= TAIL_ASKS) return;
+    asks++;
     const d = await getJSON(
-      `https://api.dexscreener.com/latest/dex/tokens/${addrs.slice(i, i + 30).join(",")}`);
-    for (const p of d?.pairs || []) {
-      // either side can be the stock, same as absorb
-      const q = (p.quoteToken?.address || "").toLowerCase();
-      const b = (p.baseToken?.address || "").toLowerCase();
-      const anchor = inReg.has(q) ? q : inReg.has(b) ? b : null;
-      if (!anchor) continue;
-      if (!byAnchor.has(anchor)) byAnchor.set(anchor, []);
-      byAnchor.get(anchor).push(p);
+      `https://api.dexscreener.com/latest/dex/tokens/${list.join(",")}`);
+    const pairs = d?.pairs || [];
+    // A full answer is a truncated one. Asked about four tokens this endpoint
+    // returned thirty pairs and none of RTRD's seven, because the deeper tokens
+    // in the batch spent the whole allowance. The cap is on pairs, not on
+    // addresses, so the batch size is only ever a guess at how many pools the
+    // batch will turn out to have. Saturation is the only signal that the guess
+    // was wrong, so split and ask again until an answer comes back short.
+    if (pairs.length >= DS_PAIR_CAP && list.length > 1) {
+      const half = Math.ceil(list.length / 2);
+      await ask(list.slice(0, half));
+      await ask(list.slice(half));
+      return;
+    }
+    for (const p of pairs) take(p);
+    // answered for, as opposed to merely queued behind a ceiling
+    for (const a of list) covered.add(a);
+  };
+  for (let i = 0; i < addrs.length; i += 30) await ask(addrs.slice(i, i + 30));
+  _tailAsks = asks;
+
+  // The ones that turned out to hold a pool are kept and asked about every run
+  // from here; the rest are dropped, so a queue of dead launches does not become
+  // a permanent tax on the crawl. Only what was actually answered for leaves the
+  // queue: draining on the slice instead would throw away, unasked, whatever the
+  // ceiling stopped short of.
+  if (st && asked.length) {
+    let drained = 0;
+    for (const a of asked) {
+      if (!covered.has(a)) continue;
+      drained++;
+      if (confirmed.has(a)) st.live[a] = 1;
+    }
+    if (drained) {
+      st.q = st.q.filter((a) => !covered.has(a));
+      await env.SY.put(KEY.chain, JSON.stringify(st));
     }
   }
   return byAnchor;
+}
+
+// ---------------------------------------------------------------- the chain
+
+/**
+ * Where the roster actually comes from.
+ *
+ * Dexscreener's roster endpoint caps at thirty pools and does not rank them by
+ * anything useful. Asked for RDDT it returned a pool holding $125 and left out
+ * RTRD, which holds $20k and trades $220k a day. Both searches came back capped
+ * too, and Longbow had never heard of it. Onchain RDDT has 462 pools against
+ * 396 counterparties. No indexer is going to hand us that list.
+ *
+ * A pool announces itself when it opens, and every shape indexes both of its
+ * tokens: Uniswap v4 puts them in Initialize, v2 in PairCreated, v3 in
+ * PoolCreated. Matching on the topic instead of on a factory address means a pad
+ * that deploys its own factory is picked up without anyone having to notice. On
+ * one 60k-block window that is 925 v4 pools from a single manager, 146 v2 from
+ * four factories and 21 v3 from three.
+ *
+ * Nothing here is trusted. An address found this way is only ever a question put
+ * to Dexscreener, which decides whether a pool exists and what is in it. Anyone
+ * can emit a lookalike event; the cost of one is a wasted lookup.
+ */
+const POOL_EVENTS = [
+  // Initialize(PoolId id, Currency currency0, Currency currency1, ...)
+  { topic: "0xdd466e674ea557f56295e2d0218a125ea4b4f0f6f3307b95f85e6110838d6438", at: [2, 3] },
+  // PairCreated(address indexed token0, address indexed token1, address pair, uint)
+  { topic: "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9", at: [1, 2] },
+  // PoolCreated(address indexed token0, address indexed token1, uint24 indexed fee, ...)
+  { topic: "0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118", at: [1, 2] },
+];
+
+// 900k blocks came back over the node's log limit and 300k returned four
+// thousand pools in one answer. 50k is well inside both, and at a tenth of a
+// second per block it is an hour and a half of chain.
+const CHAIN_SPAN = 50000;
+// New pools first, always. The backfill is whatever is left of the budget, and
+// it walks down from wherever the last run stopped.
+const CHAIN_WINDOWS = 1;
+// Discovery is cheap and confirming is not, so the queue drains at a fixed rate
+// rather than all at once. Dexscreener takes thirty addresses a request.
+const CHAIN_CONFIRM = 600;
+
+async function rpcCall(url, method, params) {
+  const r = await fetch(url, {
+    method: "POST",
+    headers: { "content-type": "application/json", "User-Agent": UA },
+    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
+  });
+  if (!r.ok) throw new Error(`rpc ${method}: ${r.status}`);
+  const j = await r.json();
+  if (j.error) throw new Error(`rpc ${method}: ${JSON.stringify(j.error)}`);
+  return j.result;
+}
+
+// one window, all three pool shapes, addresses that pair with a stock we know
+async function scanWindow(url, from, to, inReg) {
+  const found = new Set();
+  for (const ev of POOL_EVENTS) {
+    let logs;
+    try {
+      logs = await rpcCall(url, "eth_getLogs", [{
+        fromBlock: "0x" + Math.max(0, from).toString(16),
+        toBlock: "0x" + to.toString(16),
+        topics: [ev.topic],
+      }]);
+    } catch { continue; }   // a refused window is retried by the next run
+    for (const l of logs || []) {
+      const a = ("0x" + (l.topics[ev.at[0]] || "").slice(26)).toLowerCase();
+      const b = ("0x" + (l.topics[ev.at[1]] || "").slice(26)).toLowerCase();
+      // one side has to be a stock and the other is then the coin riding it
+      if (inReg.has(a) && !inReg.has(b)) found.add(b);
+      else if (inReg.has(b) && !inReg.has(a)) found.add(a);
+    }
+  }
+  return found;
+}
+
+/**
+ * Walk the chain for pools, forward from the last run and then backward into
+ * history, and keep the addresses. Returns nothing the crawl reads directly:
+ * the list lands in KV and `longbowTail` asks Dexscreener about it.
+ */
+async function discoverPools(env, reg, windows = CHAIN_WINDOWS) {
+  const url = env.PUBLIC_RPC;
+  if (!url) return { ok: false, why: "no PUBLIC_RPC" };
+  const inReg = new Set(reg.map((e) => (e.a || "").toLowerCase()));
+
+  const st = JSON.parse((await env.SY.get(KEY.chain)) || "null")
+    || { head: 0, tail: 0, q: [], live: {} };
+  st.q ||= []; st.live ||= {};
+
+  let latest;
+  try { latest = parseInt(await rpcCall(url, "eth_blockNumber", []), 16); }
+  catch (e) { return { ok: false, why: String(e.message).slice(0, 80) }; }
+
+  const queued = new Set(st.q);
+  let added = 0;
+  const keep = (found) => {
+    for (const a of found) {
+      if (st.live[a] || queued.has(a)) continue;
+      queued.add(a); st.q.push(a); added++;
+    }
+  };
+
+  // first run has no cursor, so it starts at the head and digs from there
+  if (!st.head) { st.head = st.tail = latest; }
+
+  // forward: everything opened since the last run. Usually one small window.
+  let forward = 0;
+  if (latest > st.head) {
+    for (let from = st.head; from < latest; from += CHAIN_SPAN) {
+      const to = Math.min(latest, from + CHAIN_SPAN);
+      keep(await scanWindow(url, from, to, inReg));
+      st.head = to;
+      forward++;
+      if (forward >= 20) break;   // a long outage catches up over several runs
+    }
+  }
+
+  // backward: the history, a window at a time, until it reaches the genesis end
+  let back = 0;
+  while (back < windows && st.tail > 0) {
+    const to = st.tail;
+    const from = Math.max(0, to - CHAIN_SPAN);
+    keep(await scanWindow(url, from, to, inReg));
+    st.tail = from;
+    back++;
+  }
+
+  await env.SY.put(KEY.chain, JSON.stringify(st));
+  return {
+    ok: true, added, queued: st.q.length, live: Object.keys(st.live).length,
+    head: st.head, tail: st.tail,
+    backfilled: st.tail === 0 ? 1 : Math.round(((latest - st.tail) / latest) * 100) / 100,
+  };
 }
 
 // ---------------------------------------------------------------- pools
@@ -542,6 +750,11 @@ function absorb(memes, pairs, addr, reg) {
     if (!m.img && p.info?.imageUrl) m.img = p.info.imageUrl;
     for (const s of p.info?.socials || []) if (s.type === "twitter" && !m.x) m.x = s.url;
     for (const w of p.info?.websites || []) if (!m.w) m.w = w.url;
+    // No FDV here, though it was tried. Market cap counts circulating supply and
+    // FDV counts all of it, so the gap is supply that has not landed. On this
+    // chain there is no gap: across 296 pairs FDV equalled market cap every
+    // time, because these are fixed-supply launches. A column that is provably
+    // always a copy of the one beside it is not worth the width.
     if ((p.marketCap || 0) > (m.mc || 0)) m.mc = p.marketCap;
   }
 }
@@ -774,7 +987,7 @@ async function refreshPools(env, force = false) {
   }
   await env.SY.put(KEY.lock, String(now + 9 * 60 * 1000), { expirationTtl: 600 });
 
-  _lost = _lost429 = _lostBad = _lostErr = _lostLate = _throttles = 0;
+  _lost = _lost429 = _lostBad = _lostErr = _lostLate = _throttles = _tailAsks = 0;
   _pace = PACE_MIN;
   // Backing off is only safe if the crawl still ends. Past this the remaining
   // tickers are left alone and carried forward, which beats a run that outlives
@@ -788,6 +1001,10 @@ async function refreshPools(env, force = false) {
   // rather than once a day as it was when it only named coins
   await refreshLongbow(env);
   const lbStats = JSON.parse((await env.SY.get(KEY.lbstats)) || "{}");
+
+  // the chain, before the tail fetch, so anything opened since the last run is
+  // in the same batch as everything else rather than a run behind it
+  const chain = await discoverPools(env, reg);
 
   const tail = await longbowTail(env, reg);
   const regSet = new Set(reg.map((e) => (e.a || "").toLowerCase()));
@@ -856,6 +1073,8 @@ async function refreshPools(env, force = false) {
     memes: rows.reduce((s, r) => s + r.n, 0),
     padsResolved: resolved,
     padsKnown: Object.keys(pads).length,
+    chain,
+    tailAsks: _tailAsks,
     // memes reaching the page with a logo already attached. The rest resolve in
     // the browser against LONG's store, which no server-side call can reach.
     logoCoverage: (() => {
@@ -1120,4 +1339,4 @@ const json = (o, status = 200) =>
 // and tools/crawl.mjs runs it from a machine with an ordinary IP where nothing
 // throttles it. Keeping a second copy in another language is what let the Python
 // tools drift out of date, so there is no second copy.
-export { refreshPools, refreshQuotes, refreshLongbow, buildRegistry, KEY };
+export { refreshPools, refreshQuotes, refreshLongbow, buildRegistry, discoverPools, KEY };

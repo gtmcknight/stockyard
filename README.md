@@ -41,6 +41,7 @@ The crawl needs nothing but an ordinary internet connection.
 ```
 npm --prefix worker install
 node tools/crawl.mjs pools     # all 203 tickers, about 150 seconds
+node tools/crawl.mjs discover  # read the chain back to genesis. once, then never
 node tools/crawl.mjs loop      # pools every 10m, quotes hourly, registry daily
 ```
 
@@ -50,7 +51,7 @@ look at a snapshot already on disk, `./run.sh --serve`.
 ## How it works
 
 A page of static HTML reads one JSON blob from Workers KV. Something rebuilds that blob
-every ten minutes. Three things about that are worth knowing.
+every ten minutes. Four things about that are worth knowing.
 
 **The crawl does not run on the Worker.** Dexscreener sits behind Cloudflare and a
 Worker's requests leave through Cloudflare's shared egress, so the budget is not ours:
@@ -65,10 +66,21 @@ quote, and once a coin is deep enough that others trade against it the orientati
 flips: `LLY/FATCOIN`, `AMC/MEME`. Reading one side dropped both, and they are the two
 largest live markets on the chain.
 
-**Three sources, because no one of them is complete.** Dexscreener confirms every pool
-and is the only one with the four timeframes the page sorts on, but truncates a roster
-at ~30 pools. Longbow publishes the whole chain in one request and fills the rest.
-Blockscout gives the stock registry and launchpads, Yahoo the real share prices.
+**Four sources, because no one of them is complete.** Dexscreener confirms every pool
+and is the only one with the four timeframes the page sorts on, but truncates. Longbow
+publishes the whole chain in one request and fills some of the rest. The chain itself
+names the pools neither of them carries. Blockscout gives the stock registry and
+launchpads, Yahoo the real share prices.
+
+**The roster comes off the chain, not out of an index.** Asked for RDDT, Dexscreener
+returned thirty pools including one holding $125, and left out RTRD, which holds $20k
+and trades $220k a day. Both fallback searches came back capped too and Longbow had
+never heard of it. Onchain RDDT has 462 pools against 396 counterparties. A pool
+announces itself when it opens and every shape indexes both its tokens, so one log
+query per shape per block window finds all of them. Matching on the event topic rather
+than on a factory address means a pad that deploys its own factory is picked up without
+being told about it. Nothing found this way is trusted: an address is only a question
+put to Dexscreener, which still decides whether a pool exists and what is in it.
 
 The reasoning behind each rule lives next to the code in `worker/src/index.js`.
 
@@ -110,6 +122,13 @@ count calls itself `RWAERC20LaunchpadFactory` onchain; every coin it launches na
 o1 in its own metadata. Doppler's core contract is called `Airlock`, which is also
 the name of an unrelated pad at airlocks.xyz. Both are pinned by address now.
 
+**The batch endpoint caps pairs, not addresses.** Thirty addresses a request looked
+like a free hundredfold saving and was quietly losing most of the answers: asked about
+four tokens it returns thirty pairs total, and four deep tokens spend the whole
+allowance before a shallow one is reached. RTRD came back with none of its seven. A
+full answer is the only sign there was more, so a saturated batch is split and asked
+again. That alone put nine more coins on the RDDT row.
+
 **Stocks trade against stocks here too.** 43 pools, $7.8M, mostly `QQQ/SPY`. Out of
 scope for a meme map, and as far as we can tell also unmapped.
 
@@ -128,9 +147,10 @@ and 187 trades against 0.0002 MRNA.
   carry yet.
 - Impersonation. LONG marks coins whose onchain config does not match the pad they
   claim, which caught the largest parked pool on the chain. That verdict should be here.
-- Zora launches memes paired against tokenized stocks on this chain too, and
-  neither Dexscreener nor Longbow indexes those pools, so the map cannot see them
-  yet. Reading them means reading the chain.
+- Zora, still. Reading the chain now names those pools, but naming them is only half
+  of it: the numbers on every coin here come from Dexscreener, which does not index
+  Zora, so a coin it has never seen is found and then has nothing to say about it.
+  Pricing them means reading their reserves the same way.
 
 ## Licence
 
