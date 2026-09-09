@@ -229,10 +229,12 @@ const KEY = {
 // refusal from a laptop while the Worker was losing 414 of 700 at a slower rate.
 // So they are settings rather than constants, and the runner turns them off.
 let PACE_MIN = 260, PACE_MAX = 1200, DEADLINE_MS = 6 * 60 * 1000;
-export function setLimits({ pace, paceMax, deadlineMs } = {}) {
+export function setLimits({ pace, paceMax, deadlineMs, confirm, rpcPace } = {}) {
   if (pace) PACE_MIN = pace;
   if (paceMax) PACE_MAX = paceMax;
   if (deadlineMs) DEADLINE_MS = deadlineMs;
+  if (confirm) CHAIN_CONFIRM = confirm;
+  if (rpcPace) RPC_PACE = rpcPace;
 }
 let _gate = 0, _pace = PACE_MIN, _throttles = 0;
 let _lost = 0, _lost429 = 0, _lostBad = 0, _lostErr = 0, _lostLate = 0;
@@ -587,7 +589,19 @@ const CHAIN_SPAN = 50000;
 const CHAIN_WINDOWS = 1;
 // Discovery is cheap and confirming is not, so the queue drains at a fixed rate
 // rather than all at once. Dexscreener takes thirty addresses a request.
-const CHAIN_CONFIRM = 600;
+//
+// The Worker keeps the low number: it crawls against a rate limit it does not
+// own and has six minutes to do it in. A machine crawling from its own IP has
+// neither problem and can raise this to drain a backfill's findings in hours
+// instead of a day. Every address that confirms is then asked about on every
+// later run, so this buys drain rate with permanent per-run cost.
+let CHAIN_CONFIRM = 600;
+
+// Paces the chain reads. The public RPC refuses a caller going flat out, and a
+// backfill going window after window is exactly that: left alone it earns a 429
+// mid-run, which costs more than the pause would have. Zero for the Worker,
+// which reads one window a run and is never the caller that trips it.
+let RPC_PACE = 0;
 
 // The public RPC refuses a caller going flat out, which matters more here than
 // it looks: a refused window that still moved the cursor would leave a hole in
@@ -640,6 +654,7 @@ async function scanWindow(url, from, to, inReg) {
   let ok = true;
   for (const ev of POOL_EVENTS) {
     let logs;
+    if (RPC_PACE) await sleep(RPC_PACE);
     try {
       logs = await rpcCall(url, "eth_getLogs", [{
         fromBlock: "0x" + Math.max(0, from).toString(16),

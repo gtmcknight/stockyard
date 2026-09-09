@@ -56,6 +56,11 @@ setLimits({
   pace: Number(process.env.PACE_MS || 120),
   paceMax: Number(process.env.PACE_MAX_MS || 600),
   deadlineMs: Number(process.env.DEADLINE_MS || 15 * 60 * 1000),
+  // this machine has its own IP and fifteen minutes, so it drains the discovery
+  // queue faster than the Worker's default, and pauses between chain reads so a
+  // long backfill does not earn the 429 that ends it
+  confirm: Number(process.env.CHAIN_CONFIRM || 1800),
+  rpcPace: Number(process.env.RPC_PACE_MS || 150),
 });
 
 const stamp = () => new Date().toISOString().slice(11, 19);
