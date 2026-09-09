@@ -39,6 +39,43 @@ const PARKED_LIQ = 2000;     // below this, a dead pool is too small to distort 
 const PARKED_TURN = 0.01;    // 24h volume as a share of liquidity
 const parked = (m) => m.l >= PARKED_LIQ && m.v < m.l * PARKED_TURN;
 
+// One-sided money. Uniswap's own term: a position whose range excludes the
+// current price is "out of range" and "single-sided", holding one token and not
+// the other. Uniswap shows it per position, we need it per pool and per stock,
+// and neither aggregator does that. Dexscreener's API carries both side amounts
+// but its UI only ever shows the two added together, and GeckoTerminal publishes
+// one reserve_in_usd total and does not index this chain anyway.
+//
+// The exact test is whether the pool's current tick sits inside a position's
+// range. That is an RPC call per pool against the v4 PoolManager, which the
+// crawl cannot afford across 1,600 coins, so the reserves are the cheap proxy
+// for it: a pool out of range holds one asset, and that shows up as a stock
+// side of nothing.
+//
+// Liquidity is two assets, and the whole claim of this map is
+// that a meme pool is demand for the stock it rides. A pool whose stock side has
+// been bought out holds none of it. SHROOM/MRNA is $46k of liquidity and 187
+// trades against 0.0002 MRNA: a real market, still buyable with the share, but
+// not one dollar of MRNA is locked in it. Counting it as stock riding MRNA is
+// counting SHROOM twice. So read the stock side of every pool and say what is
+// actually there.
+//
+// This is a reading, not a property. Concentrated liquidity holds one asset at
+// the edge of its range, so a pool empty of the stock today can hold it again
+// tomorrow on a price move alone. The flag says what the pool is holding now,
+// which is the only thing anyone can trade against now.
+// The line is where the data puts it, not where it looked round. Across 511
+// measured pools the stock side is bimodal: 73 sit under a tenth of a percent,
+// 220 sit near half, and between them is a thin even smear with no structure in
+// it. The spike decays out by about half a percent, so that is the cut. 2% swept
+// in fifty more pools that are thin rather than empty, which is a different
+// thing and not one this flag should be claiming.
+const ONESIDED = 0.005;      // stock side as a share of the pool
+// and only trust the verdict once most of a coin's liquidity has been read: a
+// coin carried in from Longbow has no reserves at all, which is not the same
+// thing as a coin whose reserves are empty
+const SIDES_SEEN = 0.5;
+
 // A token's launchpad never changes, so it is resolved once and cached forever.
 // Known launcher and deployer contracts, keyed by address.
 const PADS = {
@@ -450,6 +487,9 @@ function absorb(memes, pairs, addr, reg) {
         _cn: [0, 0, 0, 0], _cw: [0, 0, 0, 0],
         mc: 0, x: null, w: null, age: null,
         img: null, u: p.url || null, seen: new Set(), _inv: 0,
+        // shares of the stock sitting in this coin's pools, and the liquidity
+        // we were able to read a side of at all
+        _sa: 0, _sal: 0,
       };
       memes.set(key, m);
     }
@@ -459,6 +499,17 @@ function absorb(memes, pairs, addr, reg) {
 
     const liq = p.liquidity?.usd || 0;
     m.l += liq;
+    // How much of the stock this pool is actually holding, counted in shares.
+    // Taking it as dollars off liquidity.usd looked simpler and was wrong: that
+    // total is the base side plus whatever Dexscreener could price, so a quote
+    // it cannot price reads as an empty pool. The side amounts are reserves and
+    // mean the same thing whoever is base. Priced later, where the row knows
+    // what a share costs.
+    const sa = flipped ? p.liquidity?.base : p.liquidity?.quote;
+    if (liq > 0 && sa != null && Number.isFinite(Number(sa))) {
+      m._sa += Number(sa);
+      m._sal += liq;
+    }
     m.v += p.volume?.h24 || 0;
     m.tx += (p.txns?.h24?.buys || 0) + (p.txns?.h24?.sells || 0);
     ["m5", "h1", "h6", "h24"].forEach((k, i) => {
@@ -544,6 +595,7 @@ function fillFromLongbow(memes, coins) {
       _cn: [0, 0, 0, 0], _cw: [0, 0, 0, 0],
       mc: c.mc || 0, x: null, w: null, age: null,
       img: null, u: null, seen: new Set(), _lb: 1,
+      _sa: 0, _sal: 0,
     };
     // go through the same weighted average the crawled coins do, so one code
     // path decides what a move is worth
@@ -568,7 +620,7 @@ async function stockRow(entry, tailPairs = null, reg = null, lbCoins = null) {
   if (Date.now() > _deadline) {
     return {
       t, name: entry.name || t, a: addr, img: null, p: null,
-      sl: 0, sv: 0, ml: 0, mv: 0, pl: 0, n: 0, nq: 0,
+      sl: 0, sv: 0, ml: 0, mv: 0, pl: 0, sk: null, no: 0, n: 0, nq: 0,
       c: null, cs: [null, null, null, null], vs: [0, 0, 0, 0], m: [], lost: 3,
     };
   }
@@ -601,12 +653,22 @@ async function stockRow(entry, tailPairs = null, reg = null, lbCoins = null) {
   const fromLb = fillFromLongbow(memes, lbCoins);
 
   const list = [...memes.values()].filter((m) => m.l >= MIN_LIQ);
+  const px = Number(price) || 0;
   for (const m of list) {
     for (let i = 0; i < 4; i++) {
       m.cs[i] = m._cw[i] ? Math.round((m._cn[i] / m._cw[i]) * 10) / 10 : null;
       m.vs[i] = Math.round(m.vs[i]);
     }
     m.c = m.cs[3];
+    // the stock this coin actually holds, in dollars. Reported only once the
+    // pools we read cover most of its liquidity, so silence is unread rather
+    // than empty, and only with a share price to value it against.
+    if (px && m._sal > 0 && m._sal >= m.l * SIDES_SEEN) {
+      const held = m._sa * px;
+      m.sk = Math.round(held);
+      if (held < m._sal * ONESIDED) m.o = 1;
+    }
+    delete m._sa; delete m._sal;
     delete m._cn; delete m._cw; delete m.seen;
     if (!m._inv) delete m._inv;
     if (!m._lb) delete m._lb;
@@ -635,6 +697,12 @@ async function stockRow(entry, tailPairs = null, reg = null, lbCoins = null) {
     ml: Math.round(ml), mv: Math.round(mv),
     // liquidity sitting in pools nobody trades, reported rather than hidden
     pl: Math.round(list.reduce((s, m) => s + (m.q ? m.l : 0), 0)),
+    // the stock itself, locked inside meme pools. Float capture, in dollars.
+    // Parked pools count here where they do not count as market: money nobody
+    // trades is still money nobody can sell, and the share is still in it.
+    sk: Math.round(list.reduce((s, m) => s + (m.sk || 0), 0)),
+    // coins on this row whose stock side has been bought out entirely
+    no: list.filter((m) => m.o).length,
     n: live.length, nq: list.length - live.length,
     c: cs[3], cs, vs,
     m: list.slice(0, 14),
@@ -741,7 +809,7 @@ async function refreshPools(env, force = false) {
     if (old) { carried++; return { ...old, sr: 1 }; }
     return {
       t: e.t, name: e.name || e.t, a: e.a, img: null, p: null,
-      sl: 0, sv: 0, ml: 0, mv: 0, pl: 0, n: 0, nq: 0,
+      sl: 0, sv: 0, ml: 0, mv: 0, pl: 0, sk: null, no: 0, n: 0, nq: 0,
       c: null, cs: [null, null, null, null], vs: [0, 0, 0, 0], m: [],
     };
   });

@@ -22,6 +22,14 @@ full roster and a month of history.
 deposit, not a market, so nothing counts it except its own line. On this chain it is
 most of the money.
 
+**No MRNA** on a coin means its pools hold none of the stock they are quoted against.
+This is Uniswap's own out-of-range, single-sided position, read from the pool rather
+than the position: liquidity is two assets, and a pool is only demand for a share
+while it is holding one. Each ticker says how much of its meme liquidity is the share
+itself, which is usually about half and sometimes nothing at all. No aggregator shows
+this. Dexscreener's API carries both side amounts but its page only shows the sum,
+and GeckoTerminal publishes a single reserve total and does not index this chain.
+
 A **crown** means one coin holds the majority of both the liquidity and the trading on
 its stock, against three or more rivals. Liquidity a team can buy; volume costs a fee
 every round trip.
@@ -105,10 +113,19 @@ the name of an unrelated pad at airlocks.xyz. Both are pinned by address now.
 **Stocks trade against stocks here too.** 43 pools, $7.8M, mostly `QQQ/SPY`. Out of
 scope for a meme map, and as far as we can tell also unmapped.
 
+**A pool riding a stock often holds none of it.** Across 511 measured pools the stock
+side is bimodal: 73 hold under a tenth of a percent, 220 sit near half, and the space
+between is a thin even smear. So $9.8M of liquidity riding NVDA is $3.7M of NVDA, and
+62 of its 153 coins hold none. Two shapes make them. A pad seeds the launch single-sided, meme against share, and the pool
+starts with no share in it: BELL took in 8.6M BELL over 828 trades and gave up its
+last 0.9 NVDA. Or the share gets bought out later: SHROOM/MRNA is $46K of liquidity
+and 187 trades against 0.0002 MRNA.
+
 ## Not done yet
 
-- Float capture: what share of each tokenized stock is locked inside meme pools. Every
-  input is already in the snapshot.
+- Float capture as a share. The dollars locked are on every row now; turning that into
+  a percentage of each stock needs its onchain supply, which the registry does not
+  carry yet.
 - Impersonation. LONG marks coins whose onchain config does not match the pad they
   claim, which caught the largest parked pool on the chain. That verdict should be here.
 - Zora launches memes paired against tokenized stocks on this chain too, and

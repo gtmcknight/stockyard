@@ -311,9 +311,11 @@
   .nm .cp{font-family:var(--mono);font-size:13.5px;font-weight:600;letter-spacing:-.02em;
           white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:auto;min-width:0}
   .nm .cp .pair{opacity:.42;font-weight:400}
+  /* wraps rather than clips: the flags ride on the end of this line, and a
+     clipped line drops the one thing worth reading on it */
   .nm em{font-style:normal;font-size:10.5px;color:var(--mute);font-family:var(--mono);
-         display:flex;align-items:center;gap:6px;white-space:nowrap;overflow:hidden;
-         text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+         display:flex;align-items:center;gap:6px;flex-wrap:wrap;row-gap:1px;
+         white-space:nowrap;font-variant-numeric:tabular-nums}
   .nm em .dot{opacity:.4}
   .flag{color:var(--accent)}
   .rt2{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;
@@ -688,6 +690,12 @@
     if(m.q!=null) return !!m.q;
     return (m.l||0)>=2000 && (m.v||0) < (m.l||0)*0.01;
   }
+  /* A pool with none of the stock left in it. The whole claim of this map is
+     that a meme pool is demand for the share it rides, and a pool holding two
+     hundred dollars of NVDA against twenty thousand of the meme is not. The
+     crawler reads both sides and flags these; older snapshots have no reserves
+     to read, so they simply say nothing. */
+  function isHollow(m){ return m.o===1; }
   function short(a){ return a?a.slice(0,6)+"\u2026"+a.slice(-4):""; }
 
   /* Dexscreener only carries a logo for a coin someone paid it to enhance, which
@@ -1208,6 +1216,11 @@
     var ext='<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2h5.5v5.5M10 2L4.6 7.4M8 8.6V10H2V4h1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     sub.innerHTML="<span>"+r.n+(r.n===1?" meme":" memes")+" &middot; "+money(r.ml)+" live"+
         (r.nq?' &middot; <span class="park">'+money(r.pl)+" parked</span>":"")+"</span>"+
+      /* Of all that liquidity, the part that is the share itself. Its own line
+         because it is the answer to what the rest of the line implies: money
+         riding a stock is not the same as money holding one. */
+      (r.sk!=null?"<span>"+money(r.sk)+" of that is $"+r.t+
+        (r.no?' &middot; <span class="flag">'+r.no+" hold none</span>":"")+"</span>":"")+
       (padList?"<span>"+padList+"</span>":"")+
       (r.a?'<span class="idl"><a href="https://robinhoodchain.blockscout.com/token/'+r.a+
            '" target="_blank" rel="noopener">'+short(r.a)+" on the explorer"+ext+"</a></span>":"");
@@ -1247,7 +1260,11 @@
       if(m.age!=null) meta.push(m.age<1?"new":Math.round(m.age)+"d");
       meta.push(num(m.tx||0)+" tx");
       meta.push(money(m.l)+" liq");
-      if(isQuiet(m)) meta.push('<span class="flag">parked</span>');
+      /* the verdicts ride on the end without a separator: they are already set
+         apart by colour, and the dots were what pushed them onto a second line */
+      var flags="";
+      if(isQuiet(m)) flags+='<span class="flag">parked</span>';
+      if(isHollow(m)) flags+='<span class="flag">no '+r.t+"</span>";
       var links="";
       if(m.u) links+='<a href="'+m.u+'" target="_blank" rel="noopener" aria-label="Chart">'+IC.chart+"</a>";
       if(m.x) links+='<a href="'+m.x+'" target="_blank" rel="noopener" aria-label="Project account on X">'+IC.x+"</a>";
@@ -1258,7 +1275,7 @@
       return '<div class="item">'+av+
         '<div class="nm"><div class="ln"><button class="cp" data-i="'+i+'">'+m.s+
           '<span class="pair">/'+r.t+'</span></button>'+(m.lp?padPill(m.lp,true,m.a):"")+"</div>"+
-          "<em>"+meta.join('<span class="dot">&middot;</span>')+"</em></div>"+
+          "<em>"+meta.join('<span class="dot">&middot;</span>')+flags+"</em></div>"+
         '<div class="rt2"><b>'+(m.mc?money(m.mc):money(m.l))+"</b>"+
         '<small class="'+(c==null?"dim":(c>=0?"cup":"cdn"))+'">'+pct(c)+"</small></div>"+
         '<div class="acts2">'+links+"</div></div>";
