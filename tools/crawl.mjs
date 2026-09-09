@@ -103,7 +103,8 @@ async function backfill() {
     say(`discover: ${o.queued} queued, ${o.live} live, block ${o.tail} and down, ` +
         `${Math.round(o.backfilled * 100)}% read`);
     if (o.tail === 0) return { ...o, ok: true, done: true };
-    // a window that answers nothing new still moves the cursor, so this ends
+    // a window the node refused leaves the cursor where it is, on purpose, so
+    // that history is read rather than skipped. Stop and let the next run have it.
     if (last === o.tail) return { ...o, ok: true, stuck: true };
     last = o.tail;
   }

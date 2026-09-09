@@ -32,9 +32,15 @@ const MIN_LIQ = 1000;        // a pool with nothing in it is not a market
 // Dexscreener answers the batch token endpoint with at most thirty pairs, however
 // many addresses were asked about. Four deep tokens fill that on their own.
 const DS_PAIR_CAP = 30;
-// and a ceiling on the splitting, so a batch of coins that all turn out to be
-// deep cannot eat a crawl
-const TAIL_ASKS = 400;
+// How many to ask about at once. Thirty saturates often enough that re-asking
+// the halves costs more than the bigger batch saved: measured over 224 real
+// addresses it is 0.16 requests each at thirty against 0.13 at sixteen, and
+// sixteen saturates half as often. Six is worse again, for the obvious reason.
+const TAIL_BATCH = 16;
+// and a ceiling, so a run of coins that all turn out to be deep cannot eat a
+// crawl. At the rate above the whole roster is about four hundred, so this is
+// headroom rather than a budget: reaching it means something has changed.
+const TAIL_ASKS = 600;
 // what the splitting actually cost, because a guess at it is not worth having
 let _tailAsks = 0;
 
@@ -496,7 +502,9 @@ async function longbowTail(env, reg) {
     // answered for, as opposed to merely queued behind a ceiling
     for (const a of list) covered.add(a);
   };
-  for (let i = 0; i < addrs.length; i += 30) await ask(addrs.slice(i, i + 30));
+  for (let i = 0; i < addrs.length; i += TAIL_BATCH) {
+    await ask(addrs.slice(i, i + TAIL_BATCH));
+  }
   _tailAsks = asks;
 
   // The ones that turned out to hold a pool are kept and asked about every run
@@ -561,21 +569,38 @@ const CHAIN_WINDOWS = 1;
 // rather than all at once. Dexscreener takes thirty addresses a request.
 const CHAIN_CONFIRM = 600;
 
-async function rpcCall(url, method, params) {
-  const r = await fetch(url, {
-    method: "POST",
-    headers: { "content-type": "application/json", "User-Agent": UA },
-    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
-  });
-  if (!r.ok) throw new Error(`rpc ${method}: ${r.status}`);
-  const j = await r.json();
-  if (j.error) throw new Error(`rpc ${method}: ${JSON.stringify(j.error)}`);
-  return j.result;
+// The public RPC refuses a caller going flat out, which matters more here than
+// it looks: a refused window that still moved the cursor would leave a hole in
+// the history nothing ever goes back for. So it waits and asks again, and a
+// window that will not answer is left where it is for the next run.
+async function rpcCall(url, method, params, tries = 4) {
+  let last = "";
+  for (let i = 0; i < tries; i++) {
+    if (i) await new Promise((r) => setTimeout(r, 700 * i));
+    let j;
+    try {
+      const r = await fetch(url, {
+        method: "POST",
+        headers: { "content-type": "application/json", "User-Agent": UA },
+        body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
+      });
+      if (!r.ok) { last = String(r.status); continue; }
+      j = await r.json();
+    } catch (e) { last = String(e.message).slice(0, 60); continue; }
+    if (!j.error) return j.result;
+    last = JSON.stringify(j.error).slice(0, 90);
+    // a query too big for the node will be too big however often it is asked
+    if (!/limit|rate|429|busy|timed out/i.test(last)) break;
+  }
+  throw new Error(`rpc ${method}: ${last}`);
 }
 
-// one window, all three pool shapes, addresses that pair with a stock we know
+// one window, all three pool shapes, addresses that pair with a stock we know.
+// Answers whether it got through, because the caller only moves its cursor past
+// a window every shape actually answered for.
 async function scanWindow(url, from, to, inReg) {
   const found = new Set();
+  let ok = true;
   for (const ev of POOL_EVENTS) {
     let logs;
     try {
@@ -584,7 +609,7 @@ async function scanWindow(url, from, to, inReg) {
         toBlock: "0x" + to.toString(16),
         topics: [ev.topic],
       }]);
-    } catch { continue; }   // a refused window is retried by the next run
+    } catch { ok = false; continue; }
     for (const l of logs || []) {
       const a = ("0x" + (l.topics[ev.at[0]] || "").slice(26)).toLowerCase();
       const b = ("0x" + (l.topics[ev.at[1]] || "").slice(26)).toLowerCase();
@@ -593,7 +618,7 @@ async function scanWindow(url, from, to, inReg) {
       else if (inReg.has(b) && !inReg.has(a)) found.add(a);
     }
   }
-  return found;
+  return { found, ok };
 }
 
 /**
@@ -627,11 +652,13 @@ async function discoverPools(env, reg, windows = CHAIN_WINDOWS) {
   if (!st.head) { st.head = st.tail = latest; }
 
   // forward: everything opened since the last run. Usually one small window.
-  let forward = 0;
+  let forward = 0, missed = 0;
   if (latest > st.head) {
     for (let from = st.head; from < latest; from += CHAIN_SPAN) {
       const to = Math.min(latest, from + CHAIN_SPAN);
-      keep(await scanWindow(url, from, to, inReg));
+      const w = await scanWindow(url, from, to, inReg);
+      keep(w.found);
+      if (!w.ok) { missed++; break; }   // leave the cursor, come back for it
       st.head = to;
       forward++;
       if (forward >= 20) break;   // a long outage catches up over several runs
@@ -643,14 +670,16 @@ async function discoverPools(env, reg, windows = CHAIN_WINDOWS) {
   while (back < windows && st.tail > 0) {
     const to = st.tail;
     const from = Math.max(0, to - CHAIN_SPAN);
-    keep(await scanWindow(url, from, to, inReg));
+    const w = await scanWindow(url, from, to, inReg);
+    keep(w.found);
+    if (!w.ok) { missed++; break; }
     st.tail = from;
     back++;
   }
 
   await env.SY.put(KEY.chain, JSON.stringify(st));
   return {
-    ok: true, added, queued: st.q.length, live: Object.keys(st.live).length,
+    ok: true, added, missed, queued: st.q.length, live: Object.keys(st.live).length,
     head: st.head, tail: st.tail,
     backfilled: st.tail === 0 ? 1 : Math.round(((latest - st.tail) / latest) * 100) / 100,
   };
