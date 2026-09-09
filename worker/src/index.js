@@ -330,27 +330,47 @@ async function pooled(items, limit, fn) {
 // Robinhood deploys every tokenized stock from one contract and emits an event per
 // token, so the complete list comes from the issuer rather than a guessed ticker list.
 async function buildRegistry(env) {
+  // The factory emits Deployed(bytes32 uid, address stock, string name, string
+  // symbol) once per tokenized stock, so its own log is the roster. Only uid is
+  // indexed; the address and both strings sit in data.
+  //
+  // Read straight off the chain rather than through the explorer's index. The
+  // factory has a couple of hundred logs in its whole life, so one address
+  // filtered eth_getLogs answers for all of it: no paging, no window to walk.
+  // The explorer went behind a challenge and started returning an interstitial
+  // where the JSON used to be, which read here as a roster of nothing.
+  const url = env.PUBLIC_RPC;
+  if (!url) return [];
+
+  let logs;
+  try {
+    const latest = await rpcCall(url, "eth_blockNumber", []);
+    logs = await rpcCall(url, "eth_getLogs", [{
+      fromBlock: "0x0", toBlock: latest, address: env.STOCK_FACTORY,
+      topics: [DEPLOYED],
+    }]);
+  } catch { return []; }
+
+  // the addresses already on file keep the casing they were stored with, so a
+  // roster read a new way does not rewrite every row of the snapshot
+  const was = new Map();
+  for (const e of JSON.parse((await env.SY.get(KEY.registry)) || "[]")) {
+    if (e.a) was.set(e.a.toLowerCase(), e.a);
+  }
+
   const seen = new Set();
   const out = [];
-  let url = `${env.EXPLORER_API}/addresses/${env.STOCK_FACTORY}/logs`;
-  for (let page = 0; page < 40 && url; page++) {
-    const d = await getJSON(url);
-    const items = d?.items || [];
-    if (!items.length) break;
-    for (const it of items) {
-      const call = it?.decoded?.method_call || "";
-      if (!call.startsWith("Deployed(")) continue;
-      const p = Object.fromEntries((it.decoded.parameters || []).map((x) => [x.name, x.value]));
-      const a = (p.stock || "").toLowerCase();
-      const sym = (p.symbol || "").trim().toUpperCase();
-      if (!a || !sym || seen.has(a)) continue;
-      seen.add(a);
-      out.push({ t: sym, a: p.stock, name: p.name || sym });
-    }
-    const np = d?.next_page_params;
-    url = np ? `${env.EXPLORER_API}/addresses/${env.STOCK_FACTORY}/logs?${new URLSearchParams(np)}` : null;
-    await sleep(120);
+  for (const l of logs || []) {
+    const d = l.data || "";
+    if (d.length < 2 + 3 * 64) continue;
+    const a = "0x" + word(d, 0).slice(24);
+    const name = abiString(d, parseInt(word(d, 1), 16));
+    const sym = (abiString(d, parseInt(word(d, 2), 16)) || "").trim().toUpperCase();
+    if (!sym || seen.has(a)) continue;
+    seen.add(a);
+    out.push({ t: sym, a: was.get(a) || a, name: name || sym });
   }
+
   out.sort((x, y) => (x.t < y.t ? -1 : 1));
   if (out.length) await env.SY.put(KEY.registry, JSON.stringify(out));
   return out;
@@ -598,6 +618,23 @@ async function rpcCall(url, method, params, tries = 4) {
 // one window, all three pool shapes, addresses that pair with a stock we know.
 // Answers whether it got through, because the caller only moves its cursor past
 // a window every shape actually answered for.
+// Deployed(bytes32,address,string,string) on the stock factory
+const DEPLOYED = "0xd9b0c6a1c0de228715ad0fa09f3259686ee84f8cc675e03ef7e47a9cdafa76d6";
+
+// the two bits of ABI decoding the roster needs: a 32 byte word, and a string
+// read from the offset one of those words points at
+const word = (hex, i) => hex.slice(2 + i * 64, 2 + (i + 1) * 64);
+const abiString = (hex, off) => {
+  const at = 2 + off * 2;
+  const len = parseInt(hex.slice(at, at + 64), 16);
+  if (!Number.isFinite(len) || len <= 0) return "";
+  const body = hex.slice(at + 64, at + 64 + len * 2);
+  // no Buffer here: this file runs in the Worker too, without nodejs_compat
+  const bytes = new Uint8Array(len);
+  for (let i = 0; i < len; i++) bytes[i] = parseInt(body.slice(i * 2, i * 2 + 2), 16);
+  return new TextDecoder().decode(bytes);
+};
+
 async function scanWindow(url, from, to, inReg) {
   const found = new Set();
   let ok = true;
