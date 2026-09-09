@@ -48,6 +48,7 @@ const env = {
   // the same values wrangler.jsonc gives the Worker
   EXPLORER_API: process.env.EXPLORER_API || "https://robinhoodchain.blockscout.com/api/v2",
   STOCK_FACTORY: process.env.STOCK_FACTORY || "0x4783C67b63dE2B358Ac5951a7D41F47A38F3C046",
+  PUBLIC_RPC: process.env.PUBLIC_RPC || "https://rpc.mainnet.chain.robinhood.com",
 };
 
 // nothing is throttling us here, so the pacing exists only to be a good citizen
